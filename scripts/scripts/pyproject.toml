@@ -1,0 +1,19 @@
+[project]
+name = "ai-employee-scripts"
+version = "0.1.0"
+description = "Watcher scripts for the Personal AI Employee system"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "watchdog>=4.0.0",
+    "pyyaml>=6.0",
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+    "google-auth>=2.23.0",
+    "google-auth-oauthlib>=1.1.0",
+    "google-api-python-client>=2.100.0"
+]
+
+[project.scripts]
+vault-watcher = "main:watch_vault_changes"
+gmail-watcher = "gmail_watcher:main"

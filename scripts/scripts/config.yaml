@@ -1,0 +1,22 @@
+# Configuration for AI Employee Vault Watcher
+
+vault_paths:
+  inbox: "./Inbox"
+  needs_action: "./Needs_Action"
+  done: "./Done"
+  pending_approval: "./Pending_Approval"
+  approved: "./Approved"
+  rejected: "./Rejected"
+  logs: "./Logs"
+  plans: "./Plans"
+
+watcher:
+  recursive: true
+  file_extensions:
+    - ".md"
+  poll_interval: 1  # seconds
+
+processing_rules:
+  auto_move_new_files_to_needs_action: true
+  log_processed_files: true
+  backup_before_processing: false
