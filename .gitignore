@@ -32,3 +32,11 @@ Failed/*.md
 Approved/*.md
 Logs/*.json
 Logs/*.txt
+Logs/*.log
+Logs/*.txt
+Logs/*.json
+Logs/linkedin_queue.json
+approvalwatcher.err.log
+approvalwatcher.out.log
+gmailwatcher.err.log
+gmailwatcher.out.log
