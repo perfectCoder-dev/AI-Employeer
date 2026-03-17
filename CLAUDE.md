@@ -49,6 +49,8 @@ All skills are documented in `.claude/skills/`:
 5. NEVER commit credentials.json, token.json, or .env files
 6. For email actions: extract recipient from the `from:` field in frontmatter
 7. For LinkedIn posts: use browser automation via Playwright
+8. For email replies: use Groq LLaMA 3.3 70B API for contextual replies, fall back to template if API fails
+
 
 ## MCP Server
 Gmail Send MCP server is at `mcp-servers/gmail-send/`

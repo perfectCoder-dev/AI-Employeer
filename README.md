@@ -36,8 +36,9 @@ Gmail → gmail_watcher.py → Needs_Action/
 | Approval Watcher | Watches `Approved/`, executes actions automatically |
 | Claude Reasoning Loop | Analyzes emails, creates structured `Plan.md` files |
 | Gmail Send MCP Server | Node.js MCP server, sends real emails via Gmail API |
+| AI-Generated Replies | Uses Groq LLaMA 3.3 70B to write contextual email replies |
 | HITL Approval Workflow | Human moves file to `Approved/` to trigger execution |
-| LinkedIn Poster | Queues posts to `Logs/linkedin_queue.json` for review |
+| LinkedIn Poster | Auto-posts via Playwright browser automation |
 | Cron Scheduling | launchd plists run watchers on startup and every 2 min |
 | Agent Skills | 4 SKILL.md files documenting all agent capabilities |
 

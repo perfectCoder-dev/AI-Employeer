@@ -194,15 +194,79 @@ class ApprovalWatcher(FileSystemEventHandler):
                     self.move_to_failed(file_path)
                     return
 
-                # Build a clean reply body
+                # Build a contextual reply using Groq API
                 original_subject = frontmatter.get('subject', '')
                 original_from = frontmatter.get('from', '')
-                body = f"""Thank you for reaching out regarding "{original_subject}".
 
-We have received your message and will get back to you shortly.
+                # Extract sender name
+                import re as re3
+                name_match = re3.match(r'^([^<]+)', original_from)
+                sender_name = name_match.group(1).strip().split()[0] if name_match else "there"
+
+                # Extract email body content
+                email_body = content[content.find("**Email Content:**"):].replace("**Email Content:**", "").strip() if "**Email Content:**" in content else content
+
+                # Try Groq API first
+                body = None
+                try:
+                    import requests as req
+                    groq_key = os.getenv('GROQ_API_KEY')
+                    if groq_key:
+                        handbook_path = Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Company_Handbook.md")
+                        handbook = handbook_path.read_text() if handbook_path.exists() else ""
+
+                        response = req.post(
+                            "https://api.groq.com/openai/v1/chat/completions",
+                            headers={
+                                "Authorization": f"Bearer {groq_key}",
+                                "Content-Type": "application/json"
+                            },
+                            json={
+                                "model": "llama-3.3-70b-versatile",
+                                "messages": [
+                                    {
+                                        "role": "system",
+                                        "content": f"""You are a professional AI Employee assistant.
+Write a helpful, specific, and professional email reply.
+Use the company context below to personalize your response.
+Keep it under 150 words. Be warm and specific to their inquiry.
+Sign off as 'AI Employee Assistant' from purposework56@gmail.com.
+
+Company Context:
+{handbook[:500]}"""
+                                    },
+                                    {
+                                        "role": "user",
+                                        "content": f"""Write a reply to this email:
+Subject: {original_subject}
+From: {original_from}
+
+{email_body}"""
+                                    }
+                                ],
+                                "temperature": 0.7,
+                                "max_tokens": 300
+                            },
+                            timeout=10
+                        )
+                        if response.status_code == 200:
+                            body = response.json()['choices'][0]['message']['content']
+                            self.logger.info("Generated reply using Groq API")
+                except Exception as e:
+                    self.logger.warning(f"Groq API failed: {e}. Using fallback reply.")
+
+                # Fallback to contextual reply
+                if not body:
+                    body = f"""Hi {sender_name},
+
+Thank you for reaching out regarding "{original_subject}".
+
+I have reviewed your message and will personally look into this for you. Based on your inquiry, I will prepare a detailed response with all the information you need.
+
+You can expect a comprehensive follow-up from us within 24 hours.
 
 Best regards,
-AI Employee
+AI Employee Assistant
 purposework56@gmail.com"""
 
                 # Send the email
