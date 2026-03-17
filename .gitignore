@@ -24,5 +24,11 @@ uv.log
 *.log
 
 **/.DS_Store
-node_modules/
 test_send.js
+Done/*.md
+Plans/*.md
+Pending_Approval/*.md
+Failed/*.md
+Approved/*.md
+Logs/*.json
+Logs/*.txt
