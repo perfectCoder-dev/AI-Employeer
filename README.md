@@ -45,31 +45,53 @@ Gmail → gmail_watcher.py → Needs_Action/
 
 ## Project Structure
 ```
-AI_Employee_Vault/
-├── Dashboard.md                    # Live activity dashboard
-├── Company_Handbook.md             # AI decision-making context
-├── Inbox/                          # Raw incoming items
-├── Needs_Action/                   # Watcher drops files here
-├── Plans/                          # reasoning_loop creates Plan.md here
-├── Pending_Approval/               # Awaiting human approval
-├── Approved/                       # Human moves files here to approve
-├── Done/                           # Completed tasks
-├── Rejected/                       # Rejected tasks
-├── Failed/                         # Error files
-├── Logs/                           # Daily JSON logs
-├── scripts/scripts/
-│   ├── gmail_watcher.py            # Polls Gmail every 2 minutes
-│   ├── linkedin_poster.py          # Queues LinkedIn posts
-│   ├── reasoning_loop.py           # Claude brain, creates Plan.md
-│   ├── approval_watcher.py         # HITL orchestrator
-│   └── authenticate_gmail.py       # Gmail OAuth setup
-├── mcp-servers/gmail-send/
-│   └── index.js                    # Gmail Send MCP server
-└── .claude/skills/
-    ├── gmail-watcher/SKILL.md
-    ├── linkedin-poster/SKILL.md
-    ├── reasoning-loop/SKILL.md
-    └── hitl-approval/SKILL.md
+personal-ai-employee/
+│
+├── CLAUDE.md                          # Claude Code instructions & rules
+├── AGENTS.md                          # Agent documentation
+├── README.md                          # Project overview & setup guide
+├── Company_Handbook.md                # AI decision-making context
+├── Dashboard.md                       # Live activity dashboard
+├── .gitignore
+│
+├── .claude/
+│   ├── settings.local.json
+│   └── skills/
+│       ├── gmail-watcher/
+│       │   └── SKILL.md               # Gmail watcher skill docs
+│       ├── linkedin-poster/
+│       │   └── SKILL.md               # LinkedIn poster skill docs
+│       ├── reasoning-loop/
+│       │   └── SKILL.md               # Reasoning loop skill docs
+│       └── hitl-approval/
+│           └── SKILL.md               # HITL approval skill docs
+│
+├── scripts/
+│   ├── gmail_watcher.py               # Polls Gmail every 2 minutes
+│   ├── linkedin_poster.py             # Auto-posts to LinkedIn via Playwright
+│   ├── reasoning_loop.py              # Claude brain, creates Plan.md files
+│   ├── approval_watcher.py            # HITL orchestrator
+│   ├── authenticate_gmail.py          # Gmail OAuth setup
+│   ├── main.py                        # Entry point, runs all agents
+│   ├── .env.example                   # Environment variables template
+│   ├── pyproject.toml                 # Python dependencies
+│   └── uv.lock
+│
+├── mcp-servers/
+│   └── gmail-send/
+│       ├── index.js                   # Gmail Send MCP server
+│       ├── package.json
+│       └── package-lock.json
+│
+├── Inbox/                             # Raw incoming items
+├── Needs_Action/                      # Watcher drops files here
+├── Plans/                             # reasoning_loop creates Plan.md here
+├── Pending_Approval/                  # Awaiting human approval
+├── Approved/                          # Human moves files here to approve
+├── Done/                              # Completed tasks
+├── Rejected/                          # Rejected tasks
+├── Failed/                            # Error files
+└── Logs/                              # Daily JSON action logs
 ```
 
 ---
