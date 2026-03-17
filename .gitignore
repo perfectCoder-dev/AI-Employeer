@@ -23,4 +23,4 @@ node_modules/
 uv.log
 *.log
 
-.DS_Store
+**/.DS_Store
