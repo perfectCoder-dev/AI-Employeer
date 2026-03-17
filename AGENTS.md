@@ -1,0 +1,105 @@
+# Personal AI Employee - Agent Documentation
+
+## System Overview
+This system consists of 4 autonomous agents working together as a Personal AI Employee.
+
+---
+
+## Agent 1: Gmail Watcher
+**File:** `scripts/gmail_watcher.py`
+**Type:** Perception Agent (Watcher)
+**Trigger:** Runs every 2 minutes via launchd cron
+**Input:** Gmail inbox (unread important emails)
+**Output:** `.md` files in `Needs_Action/`
+
+### What it does:
+- Authenticates with Gmail API using OAuth2
+- Polls for unread important emails every 2 minutes
+- Creates structured markdown files with YAML frontmatter
+- Marks processed emails as read
+- Logs activity to `Logs/`
+
+---
+
+## Agent 2: Reasoning Loop
+**File:** `scripts/reasoning_loop.py`
+**Type:** Reasoning Agent (Brain)
+**Trigger:** Run manually or on schedule
+**Input:** `.md` files in `Needs_Action/`
+**Output:** `Plan.md` files in `Plans/`, moves originals to `Pending_Approval/`
+
+### What it does:
+- Reads all files in `Needs_Action/`
+- Analyzes content using Company_Handbook.md as context
+- Classifies action type: `email_send`, `linkedin_post`, or `manual`
+- Creates structured Plan.md with recommended steps
+- Routes files: action-required → `Pending_Approval/`, informational → `Done/`
+
+---
+
+## Agent 3: HITL Approval Watcher
+**File:** `scripts/approval_watcher.py`
+**Type:** Execution Agent (Hands)
+**Trigger:** Watchdog on `Approved/` folder
+**Input:** `.md` files moved to `Approved/` by human
+**Output:** Real-world actions (emails sent, LinkedIn posts published)
+
+### What it does:
+- Monitors `Approved/` folder using watchdog
+- Routes based on `type:` in YAML frontmatter:
+  - `email` / `email_send` → sends reply via Gmail API
+  - `linkedin_post` → posts via Playwright browser automation
+  - `plan` → moves to Done/ (no action needed)
+- Moves processed files to `Done/` or `Failed/`
+- Logs all actions to `Logs/YYYY-MM-DD.json`
+
+---
+
+## Agent 4: LinkedIn Poster
+**File:** `scripts/linkedin_poster.py`
+**Type:** Action Agent
+**Trigger:** Called by approval_watcher when type: linkedin_post
+**Input:** `.md` file with post content
+**Output:** Live LinkedIn post
+
+### What it does:
+- Launches Playwright browser (Chromium)
+- Logs into LinkedIn using credentials from `.env`
+- Navigates to feed and clicks "Start a post"
+- Types post content and clicks Post
+- Falls back to queue approach if automation fails
+
+---
+
+## MCP Server: Gmail Send
+**File:** `mcp-servers/gmail-send/index.js`
+**Type:** Tool Server (Model Context Protocol)
+**Protocol:** MCP over stdio
+**Tool:** `send_email(to, subject, body)`
+
+### What it does:
+- Exposes Gmail send functionality as an MCP tool
+- Claude Code can call it directly to send emails
+- Uses existing OAuth credentials (token.json + credentials.json)
+
+---
+
+## Human-in-the-Loop (HITL) Flow
+```
+AI proposes → Human decides → AI executes
+
+1. Agent detects task → creates Plan.md
+2. Task sits in Pending_Approval/ (AI cannot proceed)
+3. Human reviews plan in Obsidian
+4. Human drags file to Approved/ (explicit approval)
+5. Agent executes and moves to Done/
+```
+
+---
+
+## Scheduling
+| Agent | Schedule | Method |
+|---|---|---|
+| Gmail Watcher | Every 2 minutes | launchd plist |
+| Approval Watcher | Always running | launchd KeepAlive |
+| Reasoning Loop | On demand | Manual or cron |
