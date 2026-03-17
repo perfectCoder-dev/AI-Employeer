@@ -17,7 +17,7 @@ def authenticate_gmail():
     creds = None
 
     # Token file stores the user's access and refresh tokens
-    token_file = 'token.json'
+    token_file = os.getenv('TOKEN_PATH', './credentials/token.json')
 
     # Check if token.json exists and load credentials
     if os.path.exists(token_file):
@@ -31,8 +31,7 @@ def authenticate_gmail():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            credentials_file = 'credentials.json'
-
+            credentials_file = os.getenv('CREDENTIALS_PATH', './credentials/credentials.json')
             if not os.path.exists(credentials_file):
                 print(f"Error: {credentials_file} not found.")
                 return None

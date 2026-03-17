@@ -30,8 +30,9 @@ SCOPES = [
 class GmailWatcher:
     def __init__(self, vault_path="../.."):
         self.vault_path = Path(vault_path).resolve()
-        self.credentials_path = self.vault_path / "scripts" / "scripts" / "credentials.json"
-        self.token_path = self.vault_path / "scripts" / "scripts" / "token.json"
+        import os
+        self.credentials_path = Path(os.getenv('CREDENTIALS_PATH', self.vault_path / "credentials" / "credentials.json"))
+        self.token_path = Path(os.getenv('TOKEN_PATH', self.vault_path / "credentials" / "token.json"))
         self.processed_ids_path = self.vault_path / "scripts" / "scripts" / "processed_ids.json"
         self.needs_action_path = self.vault_path / "Needs_Action"
         self.logs_path = self.vault_path / "Logs"
@@ -40,13 +41,31 @@ class GmailWatcher:
         self.needs_action_path.mkdir(parents=True, exist_ok=True)
         self.logs_path.mkdir(parents=True, exist_ok=True)
 
-        # Load configuration (optional)
-        config_path = Path(__file__).parent / "config.yaml"
-        if config_path.exists():
-            with open(config_path, 'r') as f:
-                self.config = yaml.safe_load(f)
-        else:
-            self.config = {}
+        from dotenv import load_dotenv
+        load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
+        # Load config from environment variables
+        self.config = {
+            'vault_paths': {
+                'inbox': os.getenv('INBOX_PATH', './Inbox'),
+                'needs_action': os.getenv('NEEDS_ACTION_PATH', './Needs_Action'),
+                'done': os.getenv('DONE_PATH', './Done'),
+                'pending_approval': os.getenv('PENDING_APPROVAL_PATH', './Pending_Approval'),
+                'approved': os.getenv('APPROVED_PATH', './Approved'),
+                'rejected': os.getenv('REJECTED_PATH', './Rejected'),
+                'logs': os.getenv('LOGS_PATH', './Logs'),
+                'plans': os.getenv('PLANS_PATH', './Plans'),
+            },
+            'watcher': {
+                'recursive': os.getenv('WATCHER_RECURSIVE', 'true').lower() == 'true',
+                'file_extensions': [os.getenv('WATCHER_FILE_EXTENSIONS', '.md')],
+                'poll_interval': int(os.getenv('WATCHER_POLL_INTERVAL', '1')),
+            },
+            'processing_rules': {
+                'auto_move_new_files_to_needs_action': os.getenv('AUTO_MOVE_NEW_FILES_TO_NEEDS_ACTION', 'true').lower() == 'true',
+                'log_processed_files': os.getenv('LOG_PROCESSED_FILES', 'true').lower() == 'true',
+                'backup_before_processing': os.getenv('BACKUP_BEFORE_PROCESSING', 'false').lower() == 'true',
+            }
+        }
 
         # Load processed email IDs
         self.processed_email_ids = self.load_processed_ids()

@@ -1,19 +1,39 @@
 import os
 import time
-import yaml
-from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
+
+from dotenv import load_dotenv
 from pathlib import Path
 import logging
+import os
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Load configuration
-config_path = Path(__file__).parent / "config.yaml"
-with open(config_path, 'r') as f:
-    config = yaml.safe_load(f)
+# Load configuration from .env
+load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
+config = {
+    'vault_paths': {
+        'inbox': os.getenv('INBOX_PATH', './Inbox'),
+        'needs_action': os.getenv('NEEDS_ACTION_PATH', './Needs_Action'),
+        'done': os.getenv('DONE_PATH', './Done'),
+        'pending_approval': os.getenv('PENDING_APPROVAL_PATH', './Pending_Approval'),
+        'approved': os.getenv('APPROVED_PATH', './Approved'),
+        'rejected': os.getenv('REJECTED_PATH', './Rejected'),
+        'logs': os.getenv('LOGS_PATH', './Logs'),
+        'plans': os.getenv('PLANS_PATH', './Plans'),
+    },
+    'watcher': {
+        'recursive': os.getenv('WATCHER_RECURSIVE', 'true').lower() == 'true',
+        'file_extensions': [os.getenv('WATCHER_FILE_EXTENSIONS', '.md')],
+        'poll_interval': int(os.getenv('WATCHER_POLL_INTERVAL', '1')),
+    },
+    'processing_rules': {
+        'auto_move_new_files_to_needs_action': os.getenv('AUTO_MOVE_NEW_FILES_TO_NEEDS_ACTION', 'true').lower() == 'true',
+        'log_processed_files': os.getenv('LOG_PROCESSED_FILES', 'true').lower() == 'true',
+        'backup_before_processing': os.getenv('BACKUP_BEFORE_PROCESSING', 'false').lower() == 'true',
+    }
+}
 
 class VaultEventHandler(FileSystemEventHandler):
     """Handles file system events in the vault"""

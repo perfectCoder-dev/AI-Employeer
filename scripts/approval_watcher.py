@@ -81,8 +81,9 @@ class ApprovalWatcher(FileSystemEventHandler):
         """Send email using Gmail API with stored credentials."""
         try:
             # Load credentials and token from scripts directory
-            credentials_path = Path(__file__).parent / "credentials.json"
-            token_path = Path(__file__).parent / "token.json"
+            import os
+            credentials_path = Path(os.getenv('CREDENTIALS_PATH', Path(__file__).parent.parent / "credentials" / "credentials.json"))
+            token_path = Path(os.getenv('TOKEN_PATH', Path(__file__).parent.parent / "credentials" / "token.json"))
 
             if not credentials_path.exists():
                 raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
