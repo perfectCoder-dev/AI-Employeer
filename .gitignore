@@ -22,3 +22,5 @@ node_modules/
 # Logs
 uv.log
 *.log
+
+.DS_Store
