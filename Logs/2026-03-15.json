@@ -1,0 +1,72 @@
+[
+  {
+    "timestamp": "2026-03-15T13:57:16.168172",
+    "action": "plan_created",
+    "filename": "test_email_request.md",
+    "details": {
+      "plan_file": "PLAN_test_email_request.md",
+      "action_required": "yes",
+      "action_type": "manual"
+    }
+  },
+  {
+    "timestamp": "2026-03-15T13:57:16.168566",
+    "action": "file_moved_to_approval",
+    "filename": "test_email_request.md",
+    "details": {
+      "destination": "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Pending_Approval/test_email_request.md"
+    }
+  }
+]2026-03-16 10:10:00,188 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:10:00,304 - INFO - Executing LinkedIn post for /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:10:00,306 - ERROR - Error processing file /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md: 'str' object has no attribute 'name'
+2026-03-16 10:10:00,307 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/TEST_linkedin_post.md
+2026-03-16 10:10:21,462 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:10:21,463 - INFO - Executing LinkedIn post for /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:10:21,464 - ERROR - Error processing file /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md: 'str' object has no attribute 'name'
+2026-03-16 10:10:21,464 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/TEST_linkedin_post.md
+2026-03-16 10:10:44,024 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:10:44,027 - INFO - Executing LinkedIn post for /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:10:44,028 - ERROR - Error processing file /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md: 'str' object has no attribute 'name'
+2026-03-16 10:10:44,028 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/TEST_linkedin_post.md
+2026-03-16 10:10:56,877 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:10:56,879 - INFO - Executing LinkedIn post for /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:10:56,880 - ERROR - Error processing file /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md: 'str' object has no attribute 'name'
+2026-03-16 10:10:56,880 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/TEST_linkedin_post.md
+2026-03-16 10:11:40,822 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:11:40,825 - INFO - Executing LinkedIn post for /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:11:40,826 - ERROR - Error processing file /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md: 'str' object has no attribute 'name'
+2026-03-16 10:11:40,829 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/TEST_linkedin_post.md
+2026-03-16 10:11:59,586 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:11:59,588 - INFO - Executing LinkedIn post for /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:11:59,589 - ERROR - Error processing file /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md: 'str' object has no attribute 'name'
+2026-03-16 10:11:59,590 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/TEST_linkedin_post.md
+2026-03-16 10:12:25,027 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:12:25,030 - INFO - Executing LinkedIn post for /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:12:25,032 - ERROR - Error processing file /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md: 'str' object has no attribute 'name'
+2026-03-16 10:12:25,033 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/TEST_linkedin_post.md
+2026-03-16 10:12:50,969 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:12:50,970 - INFO - Executing LinkedIn post for /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:12:50,970 - ERROR - Error processing file /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md: 'str' object has no attribute 'name'
+2026-03-16 10:12:50,971 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/TEST_linkedin_post.md
+2026-03-16 10:13:04,744 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:13:04,745 - ERROR - No YAML frontmatter found in /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:13:04,746 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/TEST_linkedin_post.md
+2026-03-16 10:13:20,922 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:13:20,924 - ERROR - No closing --- found in frontmatter of /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:13:20,925 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/TEST_linkedin_post.md
+2026-03-16 10:13:58,448 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:13:58,451 - INFO - Executing LinkedIn post for /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md
+2026-03-16 10:13:58,452 - ERROR - Error processing file /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md: 'str' object has no attribute 'name'
+2026-03-16 10:13:58,453 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/TEST_linkedin_post.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/TEST_linkedin_post.md
+2026-03-17 12:33:28,301 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md
+2026-03-17 12:33:28,356 - WARNING - Unknown action type 'email_action' in /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md
+2026-03-17 12:33:28,360 - ERROR - Moved /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md to Failed/: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Failed/sample_demo_email.md
+2026-03-17 12:36:23,111 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md
+2026-03-17 12:36:23,113 - ERROR - Error processing file /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md: [Errno 2] No such file or directory: '/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md'
+2026-03-17 12:36:23,118 - ERROR - Error moving /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md to Failed/: [Errno 2] No such file or directory: '/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md'
+2026-03-17 12:36:59,381 - INFO - Processing file: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md
+2026-03-17 12:36:59,391 - INFO - Sending email for /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md
+2026-03-17 12:37:00,704 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-03-17 12:37:01,747 - INFO - Email sent successfully. Message ID: 19cfaba066c09028
+2026-03-17 12:37:01,748 - ERROR - Error moving /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md to Done/: [Errno 2] No such file or directory: '/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/Approved/sample_demo_email.md'

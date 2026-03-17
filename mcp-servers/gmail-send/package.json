@@ -1,0 +1,14 @@
+{
+  "name": "gmail-send-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for sending emails via Gmail",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "googleapis": "^171.4.0"
+  }
+}

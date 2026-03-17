@@ -1,0 +1,1186 @@
+Traceback (most recent call last):
+  File "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/gmail_watcher.py", line 4, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+2026-03-15 13:58:58,048 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 13:58:58,048 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:00:58,991 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:00:58,992 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:03:00,035 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:03:00,035 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:05:01,589 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:05:01,590 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:07:02,334 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:07:02,335 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:09:03,099 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:09:03,100 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:11:03,725 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:11:03,726 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:13:04,240 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:13:04,241 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:15:04,781 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:15:04,781 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:17:05,506 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:17:05,507 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:21:48,949 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:21:48,950 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:24:29,179 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:24:29,180 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:26:29,496 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:26:29,497 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:28:30,020 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:28:30,020 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:30:30,586 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:30:30,587 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:32:31,163 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:32:31,163 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:34:31,750 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:34:31,750 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:36:33,121 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:36:33,122 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:50:52,845 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:50:52,845 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 14:53:58,238 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 14:53:58,238 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 15:10:58,536 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 15:10:58,536 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 15:12:59,128 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 15:12:59,128 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 15:15:00,157 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 15:15:00,157 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 15:47:00,607 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 15:47:00,608 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 15:49:01,260 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 15:49:01,261 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 15:51:01,771 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 15:51:01,771 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 15:55:33,691 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 15:55:33,693 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 15:57:34,265 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 15:57:34,265 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 15:59:34,817 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 15:59:34,818 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:01:35,412 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:01:35,413 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:03:35,991 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:03:35,994 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:05:36,601 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:05:36,602 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:07:37,191 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:07:37,192 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:09:37,711 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:09:37,712 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:11:38,268 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:11:38,268 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:13:38,879 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:13:38,880 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:15:39,506 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:15:39,507 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:17:40,133 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:17:40,134 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:19:40,713 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:19:40,714 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:21:41,292 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:21:41,293 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:23:41,596 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:23:41,596 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:25:41,897 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:25:41,897 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:27:42,436 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:27:42,437 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:29:42,810 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:29:42,810 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:31:43,340 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:31:43,341 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:33:43,655 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:33:43,656 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:35:44,066 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:35:44,066 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:37:44,631 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:37:44,631 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:39:44,934 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:39:44,934 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:41:45,469 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:41:45,470 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:43:45,840 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:43:45,840 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:45:46,169 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:45:46,169 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:47:46,673 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:47:46,674 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:49:47,208 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:49:47,208 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:51:47,807 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:51:47,808 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:53:48,335 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:53:48,335 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 16:55:48,872 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 16:55:48,872 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 17:21:12,929 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 17:21:12,929 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 17:52:47,020 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 17:52:47,020 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 18:10:40,333 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 18:10:40,334 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 18:52:47,910 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 18:52:47,910 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 19:26:05,013 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 19:26:05,014 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 20:10:14,561 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 20:10:14,562 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 20:32:40,249 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 20:32:40,250 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 20:55:03,128 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 20:55:03,128 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 21:27:55,515 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 21:27:55,515 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 22:12:30,488 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 22:12:30,490 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 22:40:51,964 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 22:40:51,964 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 22:58:31,034 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 22:58:31,035 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:00:31,566 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:00:31,568 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:02:32,138 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:02:32,139 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:04:32,660 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:04:32,661 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:06:33,196 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:06:33,197 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:08:33,680 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:08:33,681 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:10:34,202 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:10:34,202 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:12:34,703 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:12:34,704 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:14:35,210 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:14:35,211 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:16:35,518 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:16:35,519 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:18:36,047 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:18:36,047 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:20:36,616 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:20:36,616 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:22:37,154 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:22:37,155 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:24:37,766 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:24:37,768 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:26:38,075 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:26:38,075 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:28:38,637 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:28:38,639 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:30:39,214 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:30:39,214 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:32:39,994 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:32:39,996 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:34:40,549 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:34:40,550 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:36:41,059 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:36:41,059 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:38:41,659 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:38:41,659 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:40:42,190 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:40:42,191 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:42:42,765 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:42:42,767 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:44:43,315 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:44:43,316 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:46:43,924 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:46:43,925 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:48:44,479 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:48:44,479 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:50:45,044 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:50:45,045 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:52:45,593 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:52:45,595 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:54:46,154 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:54:46,155 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:56:46,727 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:56:46,728 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-15 23:58:47,253 - INFO - Processed IDs file not found, starting with empty set
+2026-03-15 23:58:47,254 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:00:47,855 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:00:47,857 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:02:48,343 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:02:48,343 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:04:48,897 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:04:48,897 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:06:49,459 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:06:49,459 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:08:49,998 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:08:49,999 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:10:50,547 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:10:50,547 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:12:51,038 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:12:51,038 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:14:51,558 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:14:51,558 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:16:52,136 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:16:52,137 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:18:52,625 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:18:52,625 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:20:53,197 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:20:53,198 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 00:58:22,713 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 00:58:22,713 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 01:56:42,881 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 01:56:42,882 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 02:42:00,578 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 02:42:00,579 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 03:58:09,641 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 03:58:09,642 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 04:51:16,690 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 04:51:16,692 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 04:53:20,365 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 04:53:20,367 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 04:55:20,921 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 04:55:20,922 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 04:57:21,454 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 04:57:21,455 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 04:59:22,024 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 04:59:22,024 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:01:22,608 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:01:22,609 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:03:23,148 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:03:23,149 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:05:23,731 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:05:23,731 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:07:24,360 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:07:24,363 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:09:24,853 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:09:24,853 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:11:25,485 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:11:25,486 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:13:26,072 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:13:26,073 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:15:26,889 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:15:26,894 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:17:28,343 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:17:28,345 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:19:29,060 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:19:29,063 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:21:29,565 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:21:29,566 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:23:30,135 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:23:30,136 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:25:30,712 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:25:30,712 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:27:31,247 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:27:31,247 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:29:31,833 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:29:31,833 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:31:32,403 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:31:32,404 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:33:32,930 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:33:32,932 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:35:33,474 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:35:33,475 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:37:34,020 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:37:34,021 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 05:39:34,572 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 05:39:34,572 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 06:16:32,758 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 06:16:32,759 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 07:14:59,697 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 07:14:59,697 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 08:18:32,648 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 08:18:32,649 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 09:14:07,488 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 09:14:07,488 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 09:42:11,878 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 09:42:11,879 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 09:44:12,447 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 09:44:12,450 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 09:46:12,961 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 09:46:12,962 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 09:48:13,501 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 09:48:13,503 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 09:50:14,013 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 09:50:14,014 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 09:52:14,598 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 09:52:14,598 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 09:54:15,167 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 09:54:15,168 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 09:56:15,747 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 09:56:15,749 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 09:58:16,306 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 09:58:16,307 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:00:16,835 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:00:16,835 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:02:17,482 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:02:17,484 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:04:18,100 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:04:18,101 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:06:18,638 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:06:18,638 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:08:19,198 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:08:19,199 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:10:19,948 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:10:19,949 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:12:20,809 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:12:20,811 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:14:21,694 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:14:21,695 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:16:22,510 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:16:22,512 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:18:23,123 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:18:23,125 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:20:23,941 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:20:23,942 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:22:25,110 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:22:25,113 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:24:25,844 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:24:25,845 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:26:26,542 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:26:26,545 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:28:27,348 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:28:27,349 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:30:28,598 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:30:28,599 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:32:29,186 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:32:29,188 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:34:29,718 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:34:29,719 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:36:30,296 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:36:30,297 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:38:30,813 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:38:30,815 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:40:31,683 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:40:31,684 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:42:32,403 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:42:32,405 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:44:33,232 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:44:33,235 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:46:44,414 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:46:44,427 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:48:45,293 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:48:45,295 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:50:46,106 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:50:46,108 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:52:46,976 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:52:46,978 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:54:47,691 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:54:47,694 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:56:48,433 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:56:48,435 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 10:58:49,009 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 10:58:49,012 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:00:49,726 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:00:49,730 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:02:50,432 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:02:50,435 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:04:51,057 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:04:51,059 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:06:51,716 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:06:51,718 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:08:52,309 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:08:52,312 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:10:53,208 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:10:53,210 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:12:53,914 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:12:53,916 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:14:54,660 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:14:54,662 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:16:55,361 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:16:55,362 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:18:55,933 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:18:55,936 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:20:56,674 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:20:56,675 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:22:57,212 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:22:57,212 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:24:57,790 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:24:57,791 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:26:58,719 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:26:58,722 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:28:59,410 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:28:59,412 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:30:59,984 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:30:59,985 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:33:00,547 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:33:00,551 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:35:01,141 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:35:01,144 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:37:01,748 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:37:01,751 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:52:34,477 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:52:34,481 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:54:35,194 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:54:35,198 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:56:35,764 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:56:35,767 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 11:58:36,350 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 11:58:36,354 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:00:36,969 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:00:36,972 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:02:37,691 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:02:37,695 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:04:38,260 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:04:38,262 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:06:38,905 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:06:38,907 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:08:39,526 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:08:39,528 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:10:40,136 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:10:40,138 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:12:40,792 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:12:40,795 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:14:41,378 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:14:41,380 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:16:41,688 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:16:41,689 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:18:41,999 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:18:41,999 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:20:42,311 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:20:42,311 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:22:42,622 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:22:42,622 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:24:43,284 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:24:43,287 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:26:43,891 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:26:43,892 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:28:44,457 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:28:44,458 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:30:44,773 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:30:44,773 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:32:45,106 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:32:45,106 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:34:45,442 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:34:45,442 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 12:36:45,768 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 12:36:45,768 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 13:07:50,002 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 13:07:50,006 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 13:50:50,911 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 13:50:50,912 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 14:46:14,882 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 14:46:14,883 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 14:56:32,917 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 14:56:32,918 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 14:58:33,757 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 14:58:33,759 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:00:34,530 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:00:34,531 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:02:35,303 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:02:35,306 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:04:36,248 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:04:36,249 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:06:36,994 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:06:36,996 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:08:37,591 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:08:37,594 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:10:38,407 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:10:38,413 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:12:39,142 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:12:39,145 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:14:39,734 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:14:39,741 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:16:40,491 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:16:40,498 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:18:41,145 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:18:41,149 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:20:41,790 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:20:41,795 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:22:42,343 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:22:42,346 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:24:43,077 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:24:43,083 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:26:43,855 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:26:43,859 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:28:44,751 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:28:44,754 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:30:45,575 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:30:45,582 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:32:46,354 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:32:46,358 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 15:50:12,921 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 15:50:12,925 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 16:08:04,570 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 16:08:04,577 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 16:13:33,337 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 16:13:33,341 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 16:16:28,638 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 16:16:28,638 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 16:19:43,753 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 16:19:43,755 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 16:43:58,663 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 16:43:58,667 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 16:50:37,376 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 16:50:37,380 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 16:54:11,055 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 16:54:11,060 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 16:58:18,924 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 16:58:18,924 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:00:20,534 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:00:20,538 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:07:53,744 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:07:53,747 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:14:05,708 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:14:05,711 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:16:06,297 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:16:06,303 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:18:07,099 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:18:07,102 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:20:07,783 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:20:07,787 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:22:08,521 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:22:08,527 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:24:10,599 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:24:10,600 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:26:11,544 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:26:11,550 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:28:12,333 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:28:12,341 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:30:13,192 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:30:13,196 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:32:14,574 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:32:14,580 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:34:15,142 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:34:15,147 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:36:15,794 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:36:15,799 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:38:16,339 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:38:16,347 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:40:16,949 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:40:16,953 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:42:17,549 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:42:17,553 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:44:18,162 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:44:18,167 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:46:18,789 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:46:18,798 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:48:19,595 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:48:19,599 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:50:21,112 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:50:21,114 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:52:21,857 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:52:21,863 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:54:22,422 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:54:22,426 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:56:23,090 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:56:23,095 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 17:58:24,242 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 17:58:24,248 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:00:24,813 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:00:24,817 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:02:25,389 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:02:25,395 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:04:26,169 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:04:26,183 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:06:26,679 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:06:26,683 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:08:27,362 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:08:27,366 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:10:28,084 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:10:28,087 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:12:28,908 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:12:28,915 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:14:29,481 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:14:29,485 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:16:30,082 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:16:30,087 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:18:30,734 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:18:30,738 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:36:20,667 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:36:20,672 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:38:23,343 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:38:23,347 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:40:23,961 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:40:23,966 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:42:24,589 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:42:24,593 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:44:24,903 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:44:24,904 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:46:25,481 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:46:25,484 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:48:26,693 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:48:26,697 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:50:27,016 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:50:27,016 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:52:27,342 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:52:27,342 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:54:27,646 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:54:27,646 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:56:27,990 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:56:27,990 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 18:58:28,311 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 18:58:28,311 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 19:00:28,883 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 19:00:28,883 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 19:02:29,445 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 19:02:29,446 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 19:04:29,810 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 19:04:29,810 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 19:06:30,396 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 19:06:30,397 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 19:08:30,714 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 19:08:30,714 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 19:10:31,031 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 19:10:31,031 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 19:12:31,350 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 19:12:31,350 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 19:14:31,668 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 19:14:31,669 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 19:16:31,990 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 19:16:31,991 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 19:18:32,300 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 19:18:32,300 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 19:20:32,586 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 19:20:32,587 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:17:53,251 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:17:53,254 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:32:01,305 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:32:01,310 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:34:01,828 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:34:01,829 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:36:02,335 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:36:02,335 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:38:02,863 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:38:02,864 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:40:03,178 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:40:03,179 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:42:03,735 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:42:03,735 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:44:04,042 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:44:04,042 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:46:04,581 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:46:04,582 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:48:05,168 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:48:05,168 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:50:05,760 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:50:05,760 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:52:06,227 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:52:06,228 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:54:06,834 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:54:06,834 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:56:07,371 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:56:07,372 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 20:58:07,931 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 20:58:07,931 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:00:08,457 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:00:08,459 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:02:09,065 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:02:09,066 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:04:09,606 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:04:09,606 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:06:10,164 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:06:10,164 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:08:10,768 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:08:10,769 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:10:11,086 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:10:11,086 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:12:11,554 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:12:11,555 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:14:11,868 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:14:11,869 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:16:12,193 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:16:12,193 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:18:12,681 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:18:12,683 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:20:12,991 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:20:12,992 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:22:13,576 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:22:13,577 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:24:13,885 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:24:13,886 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:26:14,196 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:26:14,196 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:28:14,526 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:28:14,526 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:30:14,831 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:30:14,831 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:32:15,405 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:32:15,407 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:34:15,717 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:34:15,717 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:36:16,040 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:36:16,040 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:38:16,367 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:38:16,368 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:40:16,943 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:40:16,943 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:42:17,508 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:42:17,510 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:44:41,845 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:44:41,851 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:46:42,374 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:46:42,375 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:48:42,878 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:48:42,879 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:50:43,450 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:50:43,450 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:52:44,059 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:52:44,063 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:54:44,694 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:54:44,699 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:56:45,280 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:56:45,282 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 21:58:45,854 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 21:58:45,855 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:00:46,472 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:00:46,472 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:02:47,064 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:02:47,067 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:04:47,624 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:04:47,625 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:06:48,194 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:06:48,200 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:08:48,663 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:08:48,663 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:10:49,228 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:10:49,235 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:12:49,757 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:12:49,764 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:14:50,348 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:14:50,350 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:16:50,971 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:16:50,977 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:18:51,560 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:18:51,567 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:20:52,164 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:20:52,170 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:22:52,738 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:22:52,745 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:24:53,437 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:24:53,444 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:26:53,971 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:26:53,976 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:28:54,447 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:28:54,450 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:30:55,130 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:30:55,135 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:32:55,756 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:32:55,764 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:34:56,383 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:34:56,387 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:36:56,918 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:36:56,925 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:44:16,451 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:44:16,469 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:46:17,239 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:46:17,244 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:48:18,240 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:48:18,266 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:50:19,016 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:50:19,020 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:52:19,755 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:52:19,761 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:54:20,360 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:54:20,366 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:56:21,183 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:56:21,188 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 22:58:21,777 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 22:58:21,786 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:00:23,148 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:00:23,154 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:02:24,021 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:02:24,026 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:04:24,822 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:04:24,826 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:06:25,407 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:06:25,413 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:08:25,989 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:08:25,991 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:10:26,540 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:10:26,541 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:12:27,120 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:12:27,121 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:14:27,653 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:14:27,654 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:16:28,233 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:16:28,239 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:18:28,794 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:18:28,796 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:20:29,344 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:20:29,345 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:22:29,882 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:22:29,883 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:24:30,444 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:24:30,450 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:26:31,050 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:26:31,059 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:28:31,608 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:28:31,609 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:30:32,163 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:30:32,164 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:32:32,693 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:32:32,701 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:34:33,226 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:34:33,227 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:36:33,761 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:36:33,762 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:38:34,398 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:38:34,404 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:40:34,966 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:40:34,967 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:42:35,522 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:42:35,523 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:44:36,070 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:44:36,074 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:46:36,622 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:46:36,629 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:48:37,229 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:48:37,235 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-16 23:50:37,770 - INFO - Processed IDs file not found, starting with empty set
+2026-03-16 23:50:37,771 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:09:02,297 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:09:02,302 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:11:02,930 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:11:02,930 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:13:03,236 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:13:03,237 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:15:03,555 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:15:03,556 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:17:03,867 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:17:03,867 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:19:04,192 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:19:04,193 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:21:04,520 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:21:04,520 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:23:04,839 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:23:04,839 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:25:05,157 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:25:05,157 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:27:05,494 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:27:05,494 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:29:05,804 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:29:05,804 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 00:31:06,353 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 00:31:06,353 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 01:20:37,855 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 01:20:37,855 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 02:16:11,925 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 02:16:11,926 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 03:10:21,644 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 03:10:21,644 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:08:32,983 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:08:32,984 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:39:26,498 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:39:26,499 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:41:27,022 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:41:27,028 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:43:27,633 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:43:27,638 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:45:28,189 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:45:28,191 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:47:28,778 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:47:28,785 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:49:29,783 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:49:29,785 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:51:30,356 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:51:30,361 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:53:31,162 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:53:31,166 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:55:31,728 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:55:31,736 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:57:32,288 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:57:32,295 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 04:59:32,923 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 04:59:32,933 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:01:33,557 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:01:33,564 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:03:34,157 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:03:34,162 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:05:34,882 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:05:34,885 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:07:35,451 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:07:35,456 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:09:36,002 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:09:36,006 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:11:36,566 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:11:36,571 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:13:37,175 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:13:37,183 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:15:37,725 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:15:37,731 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:17:38,294 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:17:38,298 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:19:38,804 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:19:38,811 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:21:39,353 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:21:39,357 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:23:39,962 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:23:39,966 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:25:40,537 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:25:40,541 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:27:41,098 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:27:41,101 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:29:41,744 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:29:41,747 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:31:42,351 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:31:42,352 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:33:42,915 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:33:42,916 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:35:43,454 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:35:43,461 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:37:44,026 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:37:44,032 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:39:44,587 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:39:44,592 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:41:45,153 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:41:45,155 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:43:46,672 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:43:46,677 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:45:47,216 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:45:47,216 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:47:47,812 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:47:47,813 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:49:48,439 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:49:48,443 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:51:48,988 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:51:48,989 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:53:49,821 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:53:49,844 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:55:50,429 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:55:50,436 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:57:50,979 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:57:50,980 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 05:59:51,476 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 05:59:51,477 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:01:51,954 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:01:51,954 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:03:52,469 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:03:52,469 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:05:53,017 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:05:53,018 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:07:53,562 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:07:53,563 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:09:54,100 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:09:54,100 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:11:54,601 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:11:54,602 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:13:55,102 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:13:55,103 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:15:55,616 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:15:55,617 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:17:56,131 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:17:56,131 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:19:56,660 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:19:56,661 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:21:57,206 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:21:57,208 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:23:57,696 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:23:57,697 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:25:58,014 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:25:58,014 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:27:58,607 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:27:58,608 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:29:58,919 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:29:58,919 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:31:59,493 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:31:59,495 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:34:00,013 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:34:00,014 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:36:00,322 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:36:00,322 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 06:38:00,752 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 06:38:00,753 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 07:15:37,690 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 07:15:37,690 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 08:27:03,314 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 08:27:03,314 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 09:41:34,684 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 09:41:34,684 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 09:55:05,755 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 09:55:05,759 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 09:57:06,575 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 09:57:06,583 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 09:59:07,375 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 09:59:07,379 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:01:07,981 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:01:07,987 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:03:08,599 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:03:08,605 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:05:09,171 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:05:09,175 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:07:09,752 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:07:09,758 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:09:10,313 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:09:10,316 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:11:10,885 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:11:10,891 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:13:11,441 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:13:11,450 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:15:12,031 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:15:12,039 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:17:12,674 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:17:12,682 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:19:13,299 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:19:13,303 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:21:13,878 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:21:13,885 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:23:14,450 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:23:14,457 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:25:15,021 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:25:15,032 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:27:15,661 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:27:15,669 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:29:16,267 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:29:16,275 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:31:16,864 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:31:16,870 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:33:17,425 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:33:17,430 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:35:18,026 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:35:18,032 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:37:18,601 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:37:18,608 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:39:19,204 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:39:19,208 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:41:20,444 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:41:20,450 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:43:21,236 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:43:21,241 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:45:21,853 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:45:21,857 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:47:22,392 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:47:22,399 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:49:22,975 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:49:22,982 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:51:23,563 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:51:23,563 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:53:24,133 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:53:24,134 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:55:24,722 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:55:24,723 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:57:25,317 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:57:25,323 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 10:59:25,880 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 10:59:25,889 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:01:26,483 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:01:26,493 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:03:27,090 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:03:27,098 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:05:27,718 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:05:27,719 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:07:28,283 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:07:28,290 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:09:28,862 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:09:28,862 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:11:29,464 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:11:29,466 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:13:29,983 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:13:29,985 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:15:30,580 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:15:30,582 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:17:31,174 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:17:31,181 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:19:31,692 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:19:31,693 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:21:32,313 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:21:32,320 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:23:32,954 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:23:32,955 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:25:33,545 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:25:33,552 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:27:34,112 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:27:34,120 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:29:34,663 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:29:34,664 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:31:35,239 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:31:35,246 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:33:35,853 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:33:35,854 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:35:36,169 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:35:36,169 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:37:36,716 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:37:36,722 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:39:37,323 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:39:37,330 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:41:37,892 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:41:37,894 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:43:38,453 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:43:38,454 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:45:39,038 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:45:39,039 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:47:39,657 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:47:39,662 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:49:40,185 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:49:40,186 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:51:40,759 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:51:40,770 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:53:41,356 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:53:41,364 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:55:41,922 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:55:41,925 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:57:42,488 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:57:42,491 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 11:59:42,900 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 11:59:42,900 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:01:43,461 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:01:43,470 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:03:44,018 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:03:44,024 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:05:44,576 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:05:44,576 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:07:45,153 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:07:45,154 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:09:45,703 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:09:45,704 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:11:46,465 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:11:46,477 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:13:47,602 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:13:47,602 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:15:48,373 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:15:48,382 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:17:48,952 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:17:48,958 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:19:49,498 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:19:49,506 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:21:50,078 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:21:50,085 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:23:50,703 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:23:50,712 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:25:51,267 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:25:51,267 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:27:51,896 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:27:51,907 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:29:52,626 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:29:52,630 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:31:53,208 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:31:53,210 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:33:53,744 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:33:53,752 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:35:54,303 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:35:54,309 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:37:54,886 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:37:54,898 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:39:55,439 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:39:55,447 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:41:56,034 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:41:56,041 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:43:56,816 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:43:56,824 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:45:57,627 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:45:57,637 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:47:58,443 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:47:58,444 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:49:58,818 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:49:58,818 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:51:59,326 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:51:59,327 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:53:59,716 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:53:59,716 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:56:00,049 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:56:00,050 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 12:58:00,455 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 12:58:00,457 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 13:00:00,875 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 13:00:00,877 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/scripts/scripts/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 13:02:01,361 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 13:02:01,367 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/scripts/scripts/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 13:04:01,719 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 13:04:01,724 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/scripts/scripts/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 13:06:02,036 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 13:06:02,037 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/scripts/scripts/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 13:08:02,788 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 13:08:02,789 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/scripts/scripts/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 13:10:03,512 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 13:10:03,516 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/scripts/scripts/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 13:12:04,006 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 13:12:04,008 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/scripts/scripts/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 13:14:04,489 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 13:14:04,498 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/scripts/scripts/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.
+2026-03-17 13:16:05,063 - INFO - Processed IDs file not found, starting with empty set
+2026-03-17 13:16:05,065 - ERROR - Failed to start Gmail Watcher: Credentials file not found at /Users/muhammadomerfarooq/scripts/scripts/credentials.json. Please create a Google Cloud project, enable the Gmail API, and download the credentials.json file.

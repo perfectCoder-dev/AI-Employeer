@@ -1,0 +1,37 @@
+[
+  {
+    "timestamp": "2026-03-13T16:22:13.066807",
+    "content": "This is a test post to verify that the LinkedIn poster script is working correctly. If you're seeing this post, then the automation is functioning as expected!",
+    "status": "queued_for_manual_post"
+  },
+  {
+    "timestamp": "2026-03-13T16:24:00.533719",
+    "content": "Excited to share that I'm building a Personal AI Employee using Claude Code and Obsidian! \ud83e\udd16 The system monitors Gmail, creates action plans autonomously, and uses a human-in-the-loop approval workflow. #AI #Automation #BuildingInPublic",
+    "status": "queued_for_manual_post"
+  },
+  {
+    "timestamp": "2026-03-17T17:23:55.063016",
+    "content": "Excited to share that I built a Personal AI Employee using Claude Code and Obsidian! \ud83e\udd16\n\nThe system autonomously monitors Gmail, creates action plans, and uses human-in-the-loop approval before taking actions.\n\nBuilt for the Panaversity AI Hackathon 2026. #AI #Automation #ClaudeCode #Panaversity",
+    "status": "queued_for_manual_post"
+  },
+  {
+    "timestamp": "2026-03-17T17:25:45.071256",
+    "content": "Excited to share that I built a Personal AI Employee using Claude Code and Obsidian! \ud83e\udd16\n\nThe system autonomously monitors Gmail, creates action plans, and uses human-in-the-loop approval before taking actions.\n\nBuilt for the Panaversity AI Hackathon 2026. #AI #Automation #ClaudeCode #Panaversity",
+    "status": "queued_for_manual_post"
+  },
+  {
+    "timestamp": "2026-03-17T17:27:21.597052",
+    "content": "Excited to share that I built a Personal AI Employee using Claude Code and Obsidian! \ud83e\udd16\n\nThe system autonomously monitors Gmail, creates action plans, and uses human-in-the-loop approval before taking actions.\n\nBuilt for the Panaversity AI Hackathon 2026. #AI #Automation #ClaudeCode #Panaversity",
+    "status": "queued_for_manual_post"
+  },
+  {
+    "timestamp": "2026-03-17T17:29:41.878136",
+    "content": "Excited to share that I built a Personal AI Employee using Claude Code and Obsidian! \ud83e\udd16\n\nThe system autonomously monitors Gmail, creates action plans, and uses human-in-the-loop approval before taking actions.\n\nBuilt for the Panaversity AI Hackathon 2026. #AI #Automation #ClaudeCode #Panaversity",
+    "status": "queued_for_manual_post"
+  },
+  {
+    "timestamp": "2026-03-17T17:31:41.034994",
+    "content": "Excited to share that I built a Personal AI Employee using Claude Code and Obsidian! \ud83e\udd16\n\nThe system autonomously monitors Gmail, creates action plans, and uses human-in-the-loop approval before taking actions.\n\nBuilt for the Panaversity AI Hackathon 2026. #AI #Automation #ClaudeCode #Panaversity",
+    "status": "queued_for_manual_post"
+  }
+]

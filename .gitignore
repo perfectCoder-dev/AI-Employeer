@@ -1,0 +1,6 @@
+credentials.json
+token.json
+.env
+.venv/
+processed_ids.json
+scripts/scripts/processed_ids.json

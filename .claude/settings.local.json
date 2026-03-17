@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd scripts:*)",
+      "Bash(ls -la *.md)",
+      "Bash(python3 /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/linkedin_poster.py)",
+      "Bash(python3 /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/test_linkedin_post.py)",
+      "Bash(python3 /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/reasoning_loop.py)",
+      "Bash(cd /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/mcp-servers/gmail-send && npm install)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"import\\('@modelcontextprotocol/sdk'\\).then\\(\\(\\) => console.log\\('Import successful'\\)\\).catch\\(e => console.error\\('Import error:', e.message\\)\\)\")",
+      "Bash(pkill -f node)",
+      "Bash(node:*)",
+      "Bash(npm list:*)",
+      "Bash(launchctl load:*)",
+      "Bash(launchctl list:*)",
+      "Bash(cat:*)",
+      "Bash(echo:*)",
+      "Bash(ls:*)",
+      "Bash(python:*)",
+      "Bash(/Library/Frameworks/Python.framework/Versions/3.13/bin/python3 ./scripts/scripts/reasoning_loop.py)",
+      "Bash(/Library/Frameworks/Python.framework/Versions/3.13/bin/python3 ./scripts/scripts/approval_watcher.py)",
+      "Bash(./.venv/bin/python ./scripts/scripts/approval_watcher.py)",
+      "Bash(pkill:*)",
+      "Bash(./.venv/bin/python ./scripts/scripts/reasoning_loop.py)",
+      "Bash(gtimeout:*)"
+    ]
+  }
+}

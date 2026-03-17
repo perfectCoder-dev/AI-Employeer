@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/approval_watcher.py", line 9, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+Traceback (most recent call last):
+  File "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/approval_watcher.py", line 9, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+Traceback (most recent call last):
+  File "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/approval_watcher.py", line 14, in <module>
+    from watchdog.observers import Observer
+ModuleNotFoundError: No module named 'watchdog'
+Traceback (most recent call last):
+  File "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/approval_watcher.py", line 14, in <module>
+    from watchdog.observers import Observer
+ModuleNotFoundError: No module named 'watchdog'
+Traceback (most recent call last):
+  File "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/approval_watcher.py", line 14, in <module>
+    from watchdog.observers import Observer
+ModuleNotFoundError: No module named 'watchdog'
+Traceback (most recent call last):
+  File "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/approval_watcher.py", line 16, in <module>
+    from google.auth.transport.requests import Request
+ModuleNotFoundError: No module named 'google'
+Traceback (most recent call last):
+  File "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/approval_watcher.py", line 16, in <module>
+    from google.auth.transport.requests import Request
+ModuleNotFoundError: No module named 'google'
+Traceback (most recent call last):
+  File "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/approval_watcher.py", line 18, in <module>
+    from googleapiclient.discovery import build
+ModuleNotFoundError: No module named 'googleapiclient'
