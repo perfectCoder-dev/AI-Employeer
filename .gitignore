@@ -1,7 +1,6 @@
 # Security - never commit these
 credentials/
-credentials.json
-token.json
+credentials/
 .env
 
 # Python

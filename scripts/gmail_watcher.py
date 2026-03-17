@@ -28,12 +28,12 @@ SCOPES = [
 ]
 
 class GmailWatcher:
-    def __init__(self, vault_path="../.."):
+    def __init__(self, vault_path="/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault"):
         self.vault_path = Path(vault_path).resolve()
         import os
-        self.credentials_path = Path(os.getenv('CREDENTIALS_PATH', self.vault_path / "credentials" / "credentials.json"))
-        self.token_path = Path(os.getenv('TOKEN_PATH', self.vault_path / "credentials" / "token.json"))
-        self.processed_ids_path = self.vault_path / "scripts" / "scripts" / "processed_ids.json"
+        self.credentials_path = Path(os.getenv('CREDENTIALS_PATH', './credentials/credentials.json'))
+        self.token_path = Path(os.getenv('TOKEN_PATH', './credentials/token.json'))
+        self.processed_ids_path = self.vault_path / "scripts" / "processed_ids.json"
         self.needs_action_path = self.vault_path / "Needs_Action"
         self.logs_path = self.vault_path / "Logs"
 
@@ -139,7 +139,7 @@ class GmailWatcher:
         """Retrieve unread important emails from Gmail"""
         try:
             # Query for unread emails marked as important
-            query = "is:unread is:important"
+            query = "is:unread in:inbox -category:promotions -category:social -category:updates"
             results = self.service.users().messages().list(
                 userId='me',
                 q=query,

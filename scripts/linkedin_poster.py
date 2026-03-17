@@ -7,7 +7,7 @@ from pathlib import Path
 from datetime import datetime
 try:
     from dotenv import load_dotenv
-    load_dotenv(Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts/.env"))
+    load_dotenv(Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/.env"))
 except ImportError:
     pass
 

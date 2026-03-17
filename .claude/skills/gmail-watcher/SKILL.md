@@ -6,7 +6,7 @@ The Gmail Watcher skill monitors your Gmail account for unread important emails 
 ## Prerequisites
 1. Google Cloud Project with Gmail API enabled
 2. Downloaded `credentials.json` file from Google Cloud Console
-3. Place the `credentials.json` file in the vault root directory
+3. Place the `credentials.json` file in the credentials/ folder at the project root
 
 ## Setup Instructions
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
@@ -14,7 +14,7 @@ The Gmail Watcher skill monitors your Gmail account for unread important emails 
 3. Enable the Gmail API for your project
 4. Create credentials (OAuth 2.0 Client IDs) for a desktop application
 5. Download the credentials file and rename it to `credentials.json`
-6. Place `credentials.json` in the vault root directory
+6. Place `credentials.json` in the credentials/ folder at the project root
 
 ## How to Invoke
 ```bash
@@ -22,7 +22,7 @@ The Gmail Watcher skill monitors your Gmail account for unread important emails 
 uv run gmail-watcher
 
 # Or from the scripts directory
-cd scripts/scripts && python gmail_watcher.py
+cd scripts && python gmail_watcher.py
 ```
 
 ## Functionality

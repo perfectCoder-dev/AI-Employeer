@@ -29,10 +29,10 @@ The reasoning loop is an AI-powered task processing system that acts as Claude's
 - `manual`: Requires manual intervention
 
 ## File Structure
-- Input: `/Needs_Action/*.md`
-- Output: `/Plans/PLAN_[original_name].md`
-- Routing: `/Pending_Approval/` or `/Done/`
-- Logging: `/Logs/[date].json`
+- Input: `Needs_Action/*.md`
+- Output: `Plans/PLAN_[original_name].md`
+- Routing: `Pending_Approval/` or `Done/`
+- Logging: `Logs/[date].json`
 
 ## Usage
 Simply place task files in `Needs_Action/` and the reasoning loop will automatically process them, create plans, and route them appropriately.

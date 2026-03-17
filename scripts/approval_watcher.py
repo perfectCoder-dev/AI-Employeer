@@ -20,8 +20,8 @@ from googleapiclient.errors import HttpError
 import mimetypes
 
 # Add the scripts directory to the path so we can import other modules
-sys.path.insert(0, '/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts')
-os.chdir('/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/scripts')
+sys.path.insert(0, '/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts')
+os.chdir('/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts')
 
 # Import the LinkedIn poster module
 try:
@@ -82,8 +82,8 @@ class ApprovalWatcher(FileSystemEventHandler):
         try:
             # Load credentials and token from scripts directory
             import os
-            credentials_path = Path(os.getenv('CREDENTIALS_PATH', Path(__file__).parent.parent / "credentials" / "credentials.json"))
-            token_path = Path(os.getenv('TOKEN_PATH', Path(__file__).parent.parent / "credentials" / "token.json"))
+            credentials_path = Path('/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/credentials/credentials.json')
+            token_path = Path('/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/credentials/token.json')
 
             if not credentials_path.exists():
                 raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
@@ -162,13 +162,15 @@ class ApprovalWatcher(FileSystemEventHandler):
                 if process_markdown_file:
                     self.logger.info(f"Executing LinkedIn post for {file_path}")
                     success = process_markdown_file(str(file_path))
-                    if success:
-                        self.move_to_done(file_path)
-                    else:
-                        self.move_to_failed(file_path)
+                    # linkedin_poster.py handles file moving internally
+                    # so we don't need to move it again here
+                    if not success:
+                        if file_path.exists():
+                            self.move_to_failed(file_path)
                 else:
                     self.logger.error(f"LinkedIn poster module not available for {file_path}")
-                    self.move_to_failed(file_path)
+                    if file_path.exists():
+                        self.move_to_failed(file_path)
 
             elif action_type in ('email_send', 'email', 'email_request', 'email_action'):
                 self.logger.info(f"Sending email for {file_path}")

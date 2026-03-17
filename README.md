@@ -112,14 +112,14 @@ cd AI_Employee_Vault
 
 ### 2. Install Python dependencies
 ```bash
-cd scripts/scripts
+cd scripts
 uv sync
 ```
 
 ### 3. Set up Gmail OAuth
-Place your `credentials.json` from Google Cloud Console in `scripts/scripts/`, then:
+Place your `credentials.json` from Google Cloud Console in `scripts/`, then:
 ```bash
-cd scripts/scripts
+cd scripts
 .venv/bin/python authenticate_gmail.py
 ```
 Complete the browser OAuth flow. `token.json` will be created.
@@ -132,7 +132,7 @@ npm install
 
 ### 5. Set up environment variables
 ```bash
-# scripts/scripts/.env
+# scripts/.env
 LINKEDIN_ACCESS_TOKEN=your_token_here
 ```
 

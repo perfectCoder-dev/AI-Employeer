@@ -51,6 +51,6 @@ All skills are documented in `.claude/skills/`:
 7. For LinkedIn posts: use browser automation via Playwright
 
 ## MCP Server
-Gmail Send MCP server is at `mcp-servers/gmail-send/index.js`
+Gmail Send MCP server is at `mcp-servers/gmail-send/`
 Start it with: `node mcp-servers/gmail-send/index.js`
 It exposes one tool: `send_email(to, subject, body)`
