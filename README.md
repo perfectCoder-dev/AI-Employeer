@@ -3,7 +3,7 @@
 **Author:** Muhammad Umar Farooq  
 **GitHub:** [omerfarooq223](https://github.com/omerfarooq223)  
 **Tier:** Silver  
-**Stack:** Claude Code + Obsidian + Python + Node.js + Gmail API
+**Stack:** Claude Code + Obsidian + Python + Node.js + Gmail API + Groq LLaMA 3.3 70B
 
 ---
 
@@ -23,7 +23,9 @@ Gmail → gmail_watcher.py → Needs_Action/
                                                         ↓
                                               [YOU approve by moving file]
                                                         ↓
-                                        approval_watcher.py → Gmail MCP → Real Email Sent → Done/
+                                        approval_watcher.py → Groq AI → Gmail MCP → Real Email Sent → Done/
+                                                        ↓
+                                                LinkedIn Poster → Live LinkedIn Post
 ```
 
 ---
@@ -38,7 +40,7 @@ Gmail → gmail_watcher.py → Needs_Action/
 | Gmail Send MCP Server | Node.js MCP server, sends real emails via Gmail API |
 | AI-Generated Replies | Uses Groq LLaMA 3.3 70B to write contextual email replies |
 | HITL Approval Workflow | Human moves file to `Approved/` to trigger execution |
-| LinkedIn Poster | Auto-posts via Playwright browser automation |
+| LinkedIn Auto-Poster | Auto-posts via Playwright browser automation |
 | Cron Scheduling | launchd plists run watchers on startup and every 2 min |
 | Agent Skills | 4 SKILL.md files documenting all agent capabilities |
 
@@ -71,7 +73,7 @@ personal-ai-employee/
 │   ├── gmail_watcher.py               # Polls Gmail every 2 minutes
 │   ├── linkedin_poster.py             # Auto-posts to LinkedIn via Playwright
 │   ├── reasoning_loop.py              # Claude brain, creates Plan.md files
-│   ├── approval_watcher.py            # HITL orchestrator
+│   ├── approval_watcher.py            # HITL orchestrator + Groq AI replies
 │   ├── authenticate_gmail.py          # Gmail OAuth setup
 │   ├── main.py                        # Entry point, runs all agents
 │   ├── .env.example                   # Environment variables template
@@ -104,26 +106,29 @@ personal-ai-employee/
 - Node.js v22+
 - Claude Code
 - Gmail account with OAuth credentials
+- Groq API key (free at console.groq.com)
+- LinkedIn account
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/omerfarooq223/AI_Employee_Vault
-cd AI_Employee_Vault
+git clone https://github.com/omerfarooq223/personal-ai-employee
+cd personal-ai-employee
 ```
 
 ### 2. Install Python dependencies
 ```bash
 cd scripts
 uv sync
+.venv/bin/playwright install chromium
 ```
 
 ### 3. Set up Gmail OAuth
-Place your `credentials.json` from Google Cloud Console in `scripts/`, then:
+Place your `credentials.json` from Google Cloud Console in `credentials/`, then:
 ```bash
 cd scripts
 .venv/bin/python authenticate_gmail.py
 ```
-Complete the browser OAuth flow. `token.json` will be created.
+Complete the browser OAuth flow. `token.json` will be created in `credentials/`.
 
 ### 4. Install MCP server dependencies
 ```bash
@@ -133,8 +138,13 @@ npm install
 
 ### 5. Set up environment variables
 ```bash
-# scripts/.env
-LINKEDIN_ACCESS_TOKEN=your_token_here
+# Copy the example file
+cp scripts/.env.example scripts/.env
+
+# Fill in your credentials
+LINKEDIN_EMAIL=your_linkedin_email
+LINKEDIN_PASSWORD=your_linkedin_password
+GROQ_API_KEY=your_groq_api_key
 ```
 
 ### 6. Start the watchers
@@ -144,15 +154,29 @@ launchctl load ~/Library/LaunchAgents/com.aiemployee.gmailwatcher.plist
 launchctl load ~/Library/LaunchAgents/com.aiemployee.approvalwatcher.plist
 ```
 
+### 7. Or run manually
+```bash
+cd personal-ai-employee
+
+# Terminal 1 - Approval watcher
+.venv/bin/python scripts/approval_watcher.py
+
+# Terminal 2 - Gmail watcher
+.venv/bin/python scripts/gmail_watcher.py
+
+# Terminal 2 - Reasoning loop (when emails arrive)
+.venv/bin/python scripts/reasoning_loop.py
+```
+
 ---
 
 ## How It Works — End to End
 
-1. **Email arrives** in `purposework56@gmail.com`
-2. **`gmail_watcher.py`** detects it and creates a `.md` file in `Needs_Action/`
+1. **Email arrives** in Gmail inbox
+2. **`gmail_watcher.py`** detects it, creates a `.md` file in `Needs_Action/`
 3. **`reasoning_loop.py`** analyzes the email using `Company_Handbook.md` context, creates a `Plan.md` in `Plans/`, moves original to `Pending_Approval/`
 4. **You review** the plan in Obsidian and drag the file to `Approved/`
-5. **`approval_watcher.py`** detects the approval, sends a real reply email via Gmail API
+5. **`approval_watcher.py`** detects the approval, calls **Groq LLaMA 3.3 70B** to generate a contextual reply, sends it via Gmail API
 6. File moves to `Done/`, action logged to `Logs/YYYY-MM-DD.json`
 
 ---
@@ -183,7 +207,7 @@ To **reject**: move file from `Pending_Approval/` → `Rejected/`
 All AI functionality is documented as Claude Agent Skills in `.claude/skills/`:
 
 - **gmail-watcher** — monitors Gmail, creates action items
-- **linkedin-poster** — queues LinkedIn posts for review
+- **linkedin-poster** — auto-posts to LinkedIn via Playwright
 - **reasoning-loop** — analyzes tasks, creates structured plans
 - **hitl-approval** — orchestrates human approval workflow
 
