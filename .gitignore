@@ -24,3 +24,5 @@ uv.log
 *.log
 
 **/.DS_Store
+node_modules/
+test_send.js
