@@ -23,7 +23,10 @@
       "Bash(./.venv/bin/python ./scripts/scripts/approval_watcher.py)",
       "Bash(pkill:*)",
       "Bash(./.venv/bin/python ./scripts/scripts/reasoning_loop.py)",
-      "Bash(gtimeout:*)"
+      "Bash(gtimeout:*)",
+      "Bash(.venv/bin/python scripts/gmail_watcher.py)",
+      "Bash(.venv/bin/python scripts/reasoning_loop.py)",
+      "Bash(.venv/bin/python scripts/approval_watcher.py)"
     ]
   }
 }

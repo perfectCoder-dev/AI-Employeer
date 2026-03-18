@@ -13,28 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Welcome.md",
+                "file": "Done/email_20260318_214926_Client_Project_Proposal_-_Need_Response.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Welcome"
-            }
-          }
-        ]
-      },
-      {
-        "id": "4a941a4c8bdf5560",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "4721ebf2994554e5",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "title": "email_20260318_214926_Client_Project_Proposal_-_Need_Response"
             }
           }
         ]
@@ -110,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
+                "file": "Done/email_20260318_214926_Client_Project_Proposal_-_Need_Response.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Welcome"
+              "title": "Backlinks for email_20260318_214926_Client_Project_Proposal_-_Need_Response"
             }
           },
           {
@@ -201,6 +185,10 @@
   },
   "active": "84d1ed7f692290de",
   "lastOpenFiles": [
+    "AGENTS.md",
+    "Done/email_20260318_214926_Client_Project_Proposal_-_Need_Response.md",
+    "Plans/PLAN_email_20260318_214925_New_Website_Design_Project_-_Quote_Request.md",
+    "Done/email_20260318_214923_Partnership_Opportunity_-_Lets_Connect.md",
     "Welcome.md"
   ]
 }

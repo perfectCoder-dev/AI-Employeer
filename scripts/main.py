@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 from pathlib import Path
 import logging
 import os
+from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
