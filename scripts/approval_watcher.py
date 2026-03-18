@@ -10,6 +10,7 @@ import yaml
 import shutil
 import logging
 import datetime
+import re
 from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
@@ -30,6 +31,154 @@ try:
 except ImportError as e:
     print(f"Warning: Could not import linkedin_poster: {e}. LinkedIn functionality will be disabled.")
     process_markdown_file = None
+
+
+def categorize_email_by_content(content):
+    """Classify email into specific categories"""
+    categories = {
+        'sales_inquiry': ['web development', 'project proposal', 'service offering', 'quote', 'pricing', 'estimate', 'collaboration', 'business opportunity', 'proposal', 'development work'],
+        'support_issue': ['problem', 'issue', 'bug', 'error', 'trouble', 'help', 'support', 'fix', 'broken', 'not working'],
+        'networking': ['connect', 'linkedin', 'network', 'introduction', 'opportunity', 'collaboration', 'meet', 'relationship'],
+        'meeting_request': ['meeting', 'call', 'schedule', 'appointment', 'calendar', 'availability', 'zoom', 'teams', 'discuss'],
+        'informational': ['thank you', 'appreciate', 'nice to meet', 'follow up', 'update', 'just saying hi']
+    }
+
+    content_lower = content.lower()
+    scores = {}
+
+    for category, keywords in categories.items():
+        score = sum(1 for keyword in keywords if keyword in content_lower)
+        scores[category] = score
+
+    # Return the highest scoring category
+    return max(scores, key=scores.get) if max(scores.values()) > 0 else 'general'
+
+
+def generate_contextual_reply(original_content, original_subject, original_from, handbook_context):
+    """Generate more contextual email replies without API"""
+
+    # Extract key information from the original email
+    # Determine tone based on sender's language
+    formal_indicators = ['dear', 'regards', 'sincerely', 'respectfully', 'hello', 'good morning', 'good afternoon']
+    casual_indicators = ['hi', 'hey', 'thanks', 'awesome', 'cool', 'sounds good']
+
+    is_formal = any(indicator in original_content.lower() for indicator in formal_indicators)
+    is_casual = any(indicator in original_content.lower() for indicator in casual_indicators)
+
+    # Get sender name
+    name_match = re.search(r'^([A-Za-z\s]+)(?:\s*<|$)', original_from)
+    sender_name = name_match.group(1).strip().split()[0] if name_match else "there"
+
+    # Generate reply based on content category
+    category = categorize_email_by_content(original_content)
+
+    # Template-based response generation
+    templates = {
+        'sales_inquiry': {
+            'formal': f"""Dear {sender_name},
+
+Thank you for your inquiry regarding "{original_subject}". I appreciate you reaching out about this opportunity.
+
+I will review your requirements and prepare a detailed proposal for you. Our team specializes in delivering high-quality solutions tailored to client needs.
+
+I will follow up with you within 24-48 hours with more specific information.
+
+Best regards,
+AI Employee Assistant""",
+            'casual': f"""Hi {sender_name},
+
+Thanks for reaching out about "{original_subject}"! We'd love to hear more about your project and see how we can help.
+
+I'm putting together a detailed proposal based on your requirements and will send it over soon. Looking forward to potentially working together!
+
+Best,
+AI Employee Assistant"""
+        },
+        'support_issue': {
+            'formal': f"""Dear {sender_name},
+
+Thank you for bringing this matter to our attention. We take all support requests seriously and appreciate you providing the details about "{original_subject}".
+
+Our technical team will investigate the issue and provide a resolution as quickly as possible. You can expect an initial response within 24 hours.
+
+We apologize for any inconvenience this may have caused.
+
+Best regards,
+AI Employee Assistant""",
+            'casual': f"""Hi {sender_name},
+
+Thanks for letting us know about the issue with "{original_subject}". We're looking into it right away!
+
+Someone will reach out with a solution shortly. Thanks for your patience as we get this sorted out.
+
+Best,
+AI Employee Assistant"""
+        },
+        'meeting_request': {
+            'formal': f"""Dear {sender_name},
+
+Thank you for your interest in scheduling a meeting regarding "{original_subject}". I appreciate you reaching out.
+
+I will check our calendar availability and propose suitable meeting times for discussion. Please allow 24-48 hours for confirmation.
+
+Looking forward to our conversation.
+
+Best regards,
+AI Employee Assistant""",
+            'casual': f"""Hi {sender_name},
+
+Thanks for wanting to connect about "{original_subject}"! I'll check our schedule and get back to you with some available time slots soon.
+
+Appreciate your interest in connecting with us!
+
+Best,
+AI Employee Assistant"""
+        },
+        'networking': {
+            'formal': f"""Dear {sender_name},
+
+Thank you for reaching out and expressing interest in connecting. I appreciate you contacting us regarding "{original_subject}".
+
+I will review your connection request and respond accordingly. Thank you for your interest in our services.
+
+Best regards,
+AI Employee Assistant""",
+            'casual': f"""Hi {sender_name},
+
+Thanks for reaching out! Appreciate the connection interest regarding "{original_subject}".
+
+Happy to explore potential synergies. Looking forward to learning more about your interests.
+
+Best,
+AI Employee Assistant"""
+        },
+        'informational': {
+            'formal': f"""Dear {sender_name},
+
+Thank you for your message regarding "{original_subject}". I appreciate you keeping us informed.
+
+Your information has been noted and will be kept on file for reference. Thank you for sharing this with us.
+
+Best regards,
+AI Employee Assistant""",
+            'casual': f"""Hi {sender_name},
+
+Thanks for sharing this information about "{original_subject}". Appreciate you keeping us in the loop!
+
+Have a great day!
+
+Best,
+AI Employee Assistant"""
+        }
+    }
+
+    # Get appropriate template based on category and tone
+    template_category = templates.get(category, templates.get('sales_inquiry'))  # Default fallback
+
+    if is_casual or (not is_formal and is_casual):  # If casual or neutral, use casual
+        return template_category['casual']
+    else:
+        return template_category['formal']
 
 
 class ApprovalWatcher(FileSystemEventHandler):
@@ -255,19 +404,9 @@ From: {original_from}
                 except Exception as e:
                     self.logger.warning(f"Groq API failed: {e}. Using fallback reply.")
 
-                # Fallback to contextual reply
+                # Enhanced fallback to contextual reply with improved categorization
                 if not body:
-                    body = f"""Hi {sender_name},
-
-Thank you for reaching out regarding "{original_subject}".
-
-I have reviewed your message and will personally look into this for you. Based on your inquiry, I will prepare a detailed response with all the information you need.
-
-You can expect a comprehensive follow-up from us within 24 hours.
-
-Best regards,
-AI Employee Assistant
-purposework56@gmail.com"""
+                    body = generate_contextual_reply(email_body, original_subject, original_from, "")
 
                 # Send the email
                 try:

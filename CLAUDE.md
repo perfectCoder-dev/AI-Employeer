@@ -39,7 +39,10 @@ cd /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault
 cd /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault
 .venv/bin/python scripts/reasoning_loop.py
 ```
-- This creates Plan.md files in Plans/
+- Analyzes emails with enhanced rule-based system and smart categorization
+- Creates Plan.md files in Plans/ with priority scoring
+- Automatically categorizes emails (sales, support, meetings, networking, informational)
+- Calculates priority scores based on urgency and importance
 - Moves files to Pending_Approval/ if action needed
 - Moves files to Done/ if informational
 
@@ -78,9 +81,10 @@ cd /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault
 5. NEVER commit credentials.json, token.json, or .env
 6. If a script fails, read the error and fix it before continuing
 7. If 0 emails found, clear processed_ids.json and retry once
-8. For email replies: Groq LLaMA 3.3 70B generates contextual replies
+8. For email replies: Enhanced contextual analysis generates appropriate replies (with optional Groq LLaMA 3.3 70B enhancement)
 9. For LinkedIn: Playwright browser automation handles posting
-10. NEVER ask the human what to do — figure it out from this file
+10. Enhanced reasoning: Smart categorization and priority scoring for better task management
+11. NEVER ask the human what to do — figure it out from this file
 
 ## Agent Skills
 Read these files to understand each agent:

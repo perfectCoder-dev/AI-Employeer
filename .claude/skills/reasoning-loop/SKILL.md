@@ -14,12 +14,17 @@ The reasoning loop is an AI-powered task processing system that acts as Claude's
 
 ## Processing Logic
 1. **Input**: Reads markdown files from `Needs_Action/`
-2. **Analysis**: Uses rule-based intelligence (with potential Anthropic API integration) to analyze content
-3. **Planning**: Creates structured plans with:
+2. **Analysis**: Uses enhanced rule-based intelligence with advanced pattern matching and categorization to analyze content
+   - Identifies email categories: sales inquiries, support issues, meeting requests, networking, informational
+   - Detects urgency indicators and importance markers
+   - Applies contextual understanding for appropriate response planning
+3. **Prioritization**: Calculates priority scores based on urgency indicators, importance markers, and content analysis
+4. **Planning**: Creates structured plans with:
    - Task summary
-   - Recommended steps
+   - Contextually appropriate recommended steps
    - Action requirements classification
-4. **Routing**: Moves original files to appropriate destinations:
+   - Priority level and score
+5. **Routing**: Moves original files to appropriate destinations:
    - `Pending_Approval/` if action required (email, LinkedIn post, manual task)
    - `Done/` if informational only
 

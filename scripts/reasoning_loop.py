@@ -47,30 +47,150 @@ def read_company_handbook(vault_dir):
     return ""
 
 
-def create_plan_based_on_rules(content, handbook_context, original_filename):
-    """
-    Create a plan using smart rule-based logic (fallback when no API key available).
-    """
-    # Basic rule-based analysis
-    content_lower = content.lower()
+def categorize_email_by_content(content):
+    """Classify email into specific categories"""
+    categories = {
+        'sales_inquiry': ['web development', 'project proposal', 'service offering', 'quote', 'pricing', 'estimate', 'collaboration', 'business opportunity', 'proposal'],
+        'support_issue': ['problem', 'issue', 'bug', 'error', 'trouble', 'help', 'support', 'fix', 'broken', 'not working'],
+        'networking': ['connect', 'linkedin', 'network', 'introduction', 'opportunity', 'collaboration', 'meet', 'relationship'],
+        'meeting_request': ['meeting', 'call', 'schedule', 'appointment', 'calendar', 'availability', 'zoom', 'teams', 'discuss'],
+        'informational': ['thank you', 'appreciate', 'nice to meet', 'follow up', 'update', 'just saying hi']
+    }
 
-    # Check for informational indicators first
+    content_lower = content.lower()
+    scores = {}
+
+    for category, keywords in categories.items():
+        score = sum(1 for keyword in keywords if keyword in content_lower)
+        scores[category] = score
+
+    # Return the highest scoring category
+    return max(scores, key=scores.get) if max(scores.values()) > 0 else 'general'
+
+
+def calculate_priority_score(content, sender_importance=1):
+    """Calculate priority score based on multiple factors"""
+    score = 0
+
+    # Urgency indicators (+ points)
+    urgency_terms = ['urgent', 'asap', 'immediately', 'today', 'deadline', 'critical', 'as soon as possible', 'right away']
+    score += sum(10 for term in urgency_terms if term.lower() in content.lower())
+
+    # Importance indicators (+ points)
+    importance_terms = ['ceo', 'manager', 'executive', 'important', 'priority', 'vip', 'decision maker']
+    score += sum(5 for term in importance_terms if term.lower() in content.lower())
+
+    # Meeting/request indicators (+ points)
+    request_terms = ['meeting', 'call', 'schedule', 'proposal', 'quote', 'urgent response']
+    score += sum(3 for term in request_terms if term.lower() in content.lower())
+
+    # Question indicators (+ points)
+    question_count = len(re.findall(r'\?', content))
+    score += question_count * 2
+
+    # Length factor (longer emails might be more detailed/important)
+    score += min(len(content.split()) // 100, 5)  # Max 5 points for length
+
+    # Apply sender importance multiplier
+    final_score = score * sender_importance
+
+    # Convert to priority level
+    if final_score >= 20:
+        return "high", final_score
+    elif final_score >= 10:
+        return "medium", final_score
+    else:
+        return "low", final_score
+
+
+def create_plan_based_on_advanced_rules(content, handbook_context, original_filename):
+    """
+    Create a plan using enhanced rule-based logic with advanced categorization and priority scoring.
+    """
+    import re
+
+    # Enhanced pattern matching
+    patterns = {
+        'urgent_indicators': [
+            r'\burgen(t|cy|cies)',
+            r'asap',
+            r'as soon as possible',
+            r'by end of (day|week|month)',
+            r'immediately',
+            r'within (\d+) (hours|days)',
+            r'critical',
+            r'high priority',
+            r'expedited'
+        ],
+        'meeting_requests': [
+            r'(schedule|book|set up|arrange) (a )?meeting',
+            r'available for (a )?call',
+            r'when (are you|can we) talk',
+            r'sync up',
+            r'catch up',
+            r'zoom|teams|call',
+            r'calendar',
+            r'free (slot|time|time slot)',
+            r'appointment'
+        ],
+        'project_inquiries': [
+            r'web development',
+            r'project proposal',
+            r'service offering',
+            r'quote|pricing|cost|estimate',
+            r'estimate',
+            r'collaboration',
+            r'partnership',
+            r'business opportunity',
+            r'development work'
+        ],
+        'social_media': [
+            r'linkedin (post|share|article)',
+            r'social media',
+            r'content creation',
+            r'brand awareness',
+            r'post idea',
+            r'publish content'
+        ]
+    }
+
+    # Score content against patterns
+    scores = {}
+    for category, regex_list in patterns.items():
+        score = 0
+        for pattern in regex_list:
+            matches = re.findall(pattern, content.lower(), re.IGNORECASE)
+            score += len(matches)
+        scores[category] = score
+
+    # Determine action type based on highest scoring category
+    action_type = max(scores, key=scores.get) if max(scores.values()) > 0 else "manual"
+
+    # Determine urgency
+    urgency, priority_score = calculate_priority_score(content)
+
+    # Determine action type mapping
+    action_type_mapping = {
+        'urgent_indicators': 'email_send',
+        'meeting_requests': 'email_send',
+        'project_inquiries': 'email_send',
+        'social_media': 'linkedin_post',
+        'manual': 'manual'
+    }
+
+    final_action_type = action_type_mapping.get(action_type, 'manual')
+
+    # Check for informational indicators
+    content_lower = content.lower()
     informational_indicators = ['no action needed', 'for reference', 'just for info', 'informational', 'as a note']
     is_informational = any(indicator in content_lower for indicator in informational_indicators)
 
-    # Determine if action is required based on content
+    # Determine if action is required
     action_keywords = ['email', 'send', 'contact', 'reach out', 'reply', 'response', 'linkedin', 'post', 'share', 'urgent', 'important', 'need to', 'required', 'request', 'ask']
     action_required = any(keyword in content_lower for keyword in action_keywords) and not is_informational
 
-    # Determine action type if required
-    action_type = "manual"  # default
-
-    if ('email' in content_lower or 'send' in content_lower or 'contact' in content_lower or
-        'reply' in content_lower or 'schedule' in content_lower or 'meeting' in content_lower or
-        'availability' in content_lower or 'let me know' in content_lower or 'please' in content_lower):
-        action_type = "email_send"
-    elif 'linkedin' in content_lower or 'post' in content_lower:
-        action_type = "linkedin_post"
+    # Create more specific steps based on identified patterns
+    steps = generate_contextual_steps(action_type, content)
 
     # Create summary based on content
     lines = content.split('\n')
@@ -80,44 +200,59 @@ def create_plan_based_on_rules(content, handbook_context, original_filename):
     if len(content) > 200:
         summary += "..."
 
-    # Create recommended steps based on content
-    steps = []
-
-    if action_type == "email_send":
-        steps.extend([
-            "Review the email content and recipient details",
-            "Draft appropriate response considering company guidelines",
-            "Send the email after approval"
-        ])
-    elif action_type == "linkedin_post":
-        steps.extend([
-            "Review the post content for appropriateness",
-            "Ensure it aligns with company messaging",
-            "Schedule or publish the LinkedIn post"
-        ])
-    else:
-        if is_informational:
-            steps.extend([
-                "Review the information for awareness",
-                "File appropriately for reference",
-                "No further action required"
-            ])
-        else:
-            steps.extend([
-                "Analyze the content thoroughly",
-                "Follow company guidelines as outlined in handbook",
-                "Take appropriate action based on requirements"
-            ])
-
-    # Add a generic step
-    steps.append("Document the outcome and close the task")
-
     return {
         "summary": summary,
         "steps": steps,
         "action_required": "yes" if action_required else "no",
-        "action_type": action_type
+        "action_type": final_action_type,
+        "priority": urgency,
+        "priority_score": priority_score
     }
+
+
+def generate_contextual_steps(action_type, content):
+    """Generate steps based on detected action type"""
+    base_steps = [
+        "Analyze the request details thoroughly",
+        "Reference company handbook for guidelines",
+        "Prepare appropriate response/action"
+    ]
+
+    if action_type == 'urgent_indicators':
+        base_steps.extend([
+            "Prioritize this request due to urgency indicators",
+            "Respond within 24 hours as specified",
+            "Escalate if needed"
+        ])
+    elif action_type == 'meeting_requests':
+        base_steps.extend([
+            "Check calendar availability",
+            "Propose suitable meeting times",
+            "Send calendar invite once agreed"
+        ])
+    elif action_type == 'project_inquiries':
+        base_steps.extend([
+            "Review project requirements",
+            "Prepare project proposal if appropriate",
+            "Coordinate with relevant team members"
+        ])
+    elif action_type == 'social_media':
+        base_steps.extend([
+            "Review content for brand alignment",
+            "Schedule for optimal posting time",
+            "Monitor engagement after posting"
+        ])
+
+    base_steps.append("Document outcome and close the task")
+    return base_steps
+
+
+def create_plan_based_on_rules(content, handbook_context, original_filename):
+    """
+    Create a plan using smart rule-based logic (fallback when no API key available).
+    """
+    # Use the enhanced rule-based system
+    return create_plan_based_on_advanced_rules(content, handbook_context, original_filename)
 
 
 def create_plan_file(original_file_path, plan_data, vault_dir):
@@ -136,6 +271,8 @@ type: plan
 source_file: {original_file_path.name}
 created: {datetime.now().isoformat()}
 status: pending
+priority: {plan_data.get('priority', 'medium')}
+priority_score: {plan_data.get('priority_score', 0)}
 ---
 ## Task Summary
 {plan_data['summary']}
@@ -149,8 +286,11 @@ status: pending
     plan_content += f"""
 ## Action Required
 {plan_data['action_required']}  # Type: {plan_data['action_type']}
-"""
 
+## Priority Details
+Priority Level: {plan_data.get('priority', 'medium')}
+Priority Score: {plan_data.get('priority_score', 0)}
+"""
     # Write the plan file
     with open(plan_path, 'w', encoding='utf-8') as f:
         f.write(plan_content)
@@ -164,6 +304,46 @@ def move_file_to_destination(source_path, destination_subdir, vault_dir):
     dest_path.parent.mkdir(exist_ok=True)
     shutil.move(str(source_path), str(dest_path))
     return dest_path
+
+
+def log_detailed_action(action, filename, details=None, vault_dir=None):
+    """Enhanced logging with more details"""
+    if vault_dir is None:
+        vault_dir = Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault")
+
+    today = datetime.now().strftime('%Y-%m-%d')
+    logs_dir = vault_dir / 'Logs'
+    logs_dir.mkdir(exist_ok=True)
+
+    log_file = logs_dir / f"{today}_detailed.json"
+
+    log_entry = {
+        "timestamp": datetime.now().isoformat(),
+        "action": action,
+        "filename": filename,
+        "details": details,
+        "duration": None,  # Will be calculated if timing
+        "success": True,   # Will be updated if needed
+        "processed_by": "AI_Employee"
+    }
+
+    # Read existing log or create new one
+    logs = []
+    if log_file.exists():
+        try:
+            with open(log_file, 'r') as f:
+                content = f.read().strip()
+                if content:
+                    logs = json.loads(content)
+                    if not isinstance(logs, list):
+                        logs = []
+        except (json.JSONDecodeError, ValueError):
+            logs = []
+
+    logs.append(log_entry)
+
+    with open(log_file, 'w') as f:
+        json.dump(logs, f, indent=2)
 
 
 def log_action(action, filename, details=None, vault_dir=None):
