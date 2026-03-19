@@ -186,7 +186,7 @@ cd personal-ai-employee
 2. gmail_watcher.py detects it automatically (runs every 2 min via launchd)
 3. gmail_watcher.py auto-triggers reasoning_loop.py immediately
 4. reasoning_loop.py analyzes the email, creates Plan.md, moves to Pending_Approval/
-    4b. reasoning_loop.py also auto-generates a LinkedIn post based on the business activity detected — no human writing needed
+         4b. reasoning_loop.py also auto-generates a LinkedIn post based on the business activity detected — no human writing needed
 5. YOU drag the file from Pending_Approval/ to Approved/ — this is the ONLY human step
 6. approval_watcher.py detects it instantly (always running via launchd)
 7. Groq LLaMA 3.3 70B generates contextual reply → sent via Gmail API

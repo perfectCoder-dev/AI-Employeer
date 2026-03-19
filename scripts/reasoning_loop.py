@@ -427,6 +427,13 @@ def process_needs_action_files():
                 'priority': plan_data.get('priority', 'medium')
             })
 
+            # Track processed file
+            processed_files.append({
+                'filename': file_path.name,
+                'category': plan_data.get('action_type', 'general'),
+                'priority': plan_data.get('priority', 'medium')
+            })
+
             # Log the plan creation
             log_action(
                 action='plan_created',
@@ -483,18 +490,21 @@ def generate_linkedin_post(vault_dir, handbook_content, processed_files):
         return
 
     # Build post based on recent business activity
+
     topics = []
     for f in processed_files:
         category = f.get('category', 'general')
-        if category == 'sales_inquiry':
+        action_type = f.get('action_type', 'general')
+        # Match both category names and action types
+        if category in ('sales_inquiry', 'project_inquiries') or action_type == 'email_send':
             topics.append("client inquiries")
         elif category == 'meeting_request':
             topics.append("business meetings")
-        elif category == 'project_inquiries':
-            topics.append("new projects")
-
+        elif category == 'networking':
+            topics.append("networking opportunities")
+    # Always generate a post if emails were processed
     if not topics:
-        return
+        topics.append("business communications")
 
     # Try Groq API for post generation
     post_content = None
