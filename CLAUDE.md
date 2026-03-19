@@ -42,42 +42,32 @@ These run automatically via launchd on startup:
       ↓
 [AUTOMATIC] gmail_watcher.py detects it → creates .md in Needs_Action/
       ↓
-[CLAUDE CODE] Run reasoning_loop.py → creates Plan.md → moves to Pending_Approval/
+[AUTOMATIC] gmail_watcher.py triggers reasoning_loop.py automatically
       ↓
-[HUMAN] Reviews plan in Obsidian → drags file to Approved/ (this is the only human step)
+[AUTOMATIC] Plan.md created → file moved to Pending_Approval/
       ↓
-[AUTOMATIC] approval_watcher.py detects file → sends reply or posts LinkedIn → moves to Done/
+[HUMAN] Only step: drag file from Pending_Approval/ to Approved/
+      ↓
+[AUTOMATIC] approval_watcher.py detects it → sends reply/posts LinkedIn → Done/
 ```
 
 ---
 
-## When Claude Code Is Triggered
-Claude Code only needs to run when:
-1. New files appear in `Needs_Action/` — run `reasoning_loop.py`
-2. A script crashes and needs fixing
+## When Claude Code Is Needed
+Claude Code is only needed when:
+1. A script crashes and needs fixing
+2. You want to manually trigger the pipeline for testing
 
-**Trigger prompt:** `Process new emails in Needs_Action/`
-
-**What Claude does:**
-```bash
-cd /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault
-.venv/bin/python scripts/reasoning_loop.py
-```
-
-Then reports:
-```
-Processed X emails:
-1. [filename] — Category: [category] — Priority: [high/medium/low]
-   → Moved to Pending_Approval/
-
-Please review plans in Obsidian and move approved files to Approved/.
-approval_watcher.py will handle execution automatically.
-```
+**The system runs fully autonomously — no Claude Code prompting needed.**
 
 **Claude does NOT need to:**
-- Run gmail_watcher.py (launchd does it)
-- Run approval_watcher.py (launchd does it)
-- Wait for "done" (approval_watcher watches automatically)
+- Run gmail_watcher.py (launchd does it every 2 min)
+- Run reasoning_loop.py (gmail_watcher triggers it automatically)
+- Run approval_watcher.py (launchd keeps it always running)
+- Wait for human input (approval_watcher watches Approved/ automatically)
+
+**Only human action required:**
+- Drag file from Pending_Approval/ to Approved/ to approve
 
 ---
 
