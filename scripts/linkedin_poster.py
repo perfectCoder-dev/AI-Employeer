@@ -4,6 +4,7 @@ import yaml
 import json
 import shutil
 from pathlib import Path
+from config import VAULT_DIR, CREDENTIALS_PATH, TOKEN_PATH, NEEDS_ACTION, PLANS, PENDING_APPROVAL, APPROVED, DONE, FAILED, LOGS, PROCESSED_IDS, ENV_PATH
 from datetime import datetime
 try:
     from dotenv import load_dotenv
@@ -11,7 +12,7 @@ try:
 except ImportError:
     pass
 
-VAULT_DIR = Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault").resolve()
+VAULT_DIR = VAULT_DIR
 
 def read_markdown_with_frontmatter(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:

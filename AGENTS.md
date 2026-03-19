@@ -116,3 +116,26 @@ AI proposes → Human decides → AI executes
 | Gmail Watcher | Every 2 minutes | launchd plist |
 | Approval Watcher | Always running | launchd KeepAlive |
 | Reasoning Loop | On demand | Manual or cron |
+
+---
+
+## Shared Configuration
+**File:** `scripts/config.py`
+**Type:** Central Configuration Module
+
+All agents import from this file. No hardcoded paths anywhere.
+
+| Constant | Value |
+|---|---|
+| `VAULT_DIR` | Vault root path |
+| `CREDENTIALS_PATH` | Gmail credentials.json |
+| `TOKEN_PATH` | Gmail token.json |
+| `NEEDS_ACTION` | Needs_Action/ folder |
+| `PLANS` | Plans/ folder |
+| `PENDING_APPROVAL` | Pending_Approval/ folder |
+| `APPROVED` | Approved/ folder |
+| `DONE` | Done/ folder |
+| `FAILED` | Failed/ folder |
+| `LOGS` | Logs/ folder |
+| `PROCESSED_IDS` | processed_ids.json |
+| `GROQ_MODEL` | llama-3.3-70b-versatile |

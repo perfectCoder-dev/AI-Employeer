@@ -4,6 +4,7 @@ import time
 import yaml
 from datetime import datetime
 from pathlib import Path
+from config import VAULT_DIR, CREDENTIALS_PATH, TOKEN_PATH, NEEDS_ACTION, PLANS, PENDING_APPROVAL, APPROVED, DONE, FAILED, LOGS, PROCESSED_IDS, ENV_PATH
 import logging
 import pickle
 import base64
@@ -28,7 +29,7 @@ SCOPES = [
 ]
 
 class GmailWatcher:
-    def __init__(self, vault_path="/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault"):
+    def __init__(self, vault_path=str(VAULT_DIR)):
         self.vault_path = Path(vault_path).resolve()
         import os
         self.credentials_path = Path(os.getenv('CREDENTIALS_PATH', './credentials/credentials.json'))
@@ -135,24 +136,37 @@ class GmailWatcher:
         with open(self.processed_ids_path, 'w') as f:
             json.dump(list(self.processed_email_ids), f)
 
-    def get_unread_important_emails(self):
-        """Retrieve unread important emails from Gmail"""
-        try:
-            # Query for unread emails marked as important
-            query = "is:unread in:inbox -category:promotions -category:social -category:updates"
-            results = self.service.users().messages().list(
-                userId='me',
-                q=query,
-                maxResults=50  # Limit to prevent too many emails at once
-            ).execute()
-
-            messages = results.get('messages', [])
-            logger.info(f"Found {len(messages)} unread important emails")
-
-            return messages
-        except HttpError as error:
-            logger.error(f"An error occurred while fetching emails: {error}")
-            return []
+    def get_unread_important_emails(self, max_retries=3):
+        """Retrieve unread important emails from Gmail with retry logic"""
+        import time
+        for attempt in range(max_retries):
+            try:
+                query = "is:unread in:inbox -category:promotions -category:social -category:updates"
+                results = self.service.users().messages().list(
+                    userId='me',
+                    q=query,
+                    maxResults=50
+                ).execute()
+                messages = results.get('messages', [])
+                logger.info(f"Found {len(messages)} unread important emails")
+                return messages
+            except HttpError as error:
+                if error.resp.status == 429:  # Rate limit
+                    wait = 2 ** attempt
+                    logger.warning(f"Rate limited, waiting {wait}s before retry {attempt+1}/{max_retries}...")
+                    time.sleep(wait)
+                elif error.resp.status == 401:  # Auth error
+                    logger.error("Authentication error — token may be expired. Re-authenticate.")
+                    return []
+                else:
+                    logger.error(f"Gmail API error (attempt {attempt+1}/{max_retries}): {error}")
+                    if attempt < max_retries - 1:
+                        time.sleep(2)
+            except Exception as e:
+                logger.error(f"Unexpected error fetching emails: {e}")
+                return []
+        logger.error("Max retries reached. Could not fetch emails.")
+        return []
 
     def get_email_details(self, msg_id):
         """Get detailed information about a specific email"""
@@ -322,7 +336,7 @@ class GmailWatcher:
             logger.info("New emails found — auto-triggering reasoning loop...")
             import subprocess
             import sys
-            vault_dir = "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault"
+            vault_dir = str(VAULT_DIR)
             python = f"{vault_dir}/.venv/bin/python"
             script = f"{vault_dir}/scripts/reasoning_loop.py"
             result = subprocess.run([python, script], capture_output=True, text=True)

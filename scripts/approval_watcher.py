@@ -14,6 +14,7 @@ import re
 from dotenv import load_dotenv
 load_dotenv('/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/.env')
 from pathlib import Path
+from config import VAULT_DIR, CREDENTIALS_PATH, TOKEN_PATH, NEEDS_ACTION, PLANS, PENDING_APPROVAL, APPROVED, DONE, FAILED, LOGS, PROCESSED_IDS, ENV_PATH
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from google.auth.transport.requests import Request
@@ -233,8 +234,8 @@ class ApprovalWatcher(FileSystemEventHandler):
         try:
             # Load credentials and token from scripts directory
             import os
-            credentials_path = Path('/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/credentials/credentials.json')
-            token_path = Path('/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/credentials/token.json')
+            credentials_path = CREDENTIALS_PATH
+            token_path = TOKEN_PATH
 
             if not credentials_path.exists():
                 raise FileNotFoundError(f"Credentials file not found: {credentials_path}")

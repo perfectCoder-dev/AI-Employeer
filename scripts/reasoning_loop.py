@@ -12,6 +12,7 @@ import yaml
 import json
 import shutil
 from pathlib import Path
+from config import VAULT_DIR, CREDENTIALS_PATH, TOKEN_PATH, NEEDS_ACTION, PLANS, PENDING_APPROVAL, APPROVED, DONE, FAILED, LOGS, PROCESSED_IDS, ENV_PATH
 from datetime import datetime
 import re
 
@@ -309,7 +310,7 @@ def move_file_to_destination(source_path, destination_subdir, vault_dir):
 def log_detailed_action(action, filename, details=None, vault_dir=None):
     """Enhanced logging with more details"""
     if vault_dir is None:
-        vault_dir = Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault")
+        vault_dir = VAULT_DIR
 
     today = datetime.now().strftime('%Y-%m-%d')
     logs_dir = vault_dir / 'Logs'
@@ -349,7 +350,7 @@ def log_detailed_action(action, filename, details=None, vault_dir=None):
 def log_action(action, filename, details=None, vault_dir=None):
     """Log the action to a daily log file."""
     if vault_dir is None:
-        vault_dir = Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault")
+        vault_dir = VAULT_DIR
 
     today = datetime.now().strftime('%Y-%m-%d')
     logs_dir = vault_dir / 'Logs'
@@ -386,7 +387,7 @@ def log_action(action, filename, details=None, vault_dir=None):
 
 def process_needs_action_files():
     """Main function to process all files in Needs_Action/ directory. Returns list of processed file data."""
-    vault_dir = Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault")
+    vault_dir = VAULT_DIR
     needs_action_dir = vault_dir / 'Needs_Action'
 
     if not needs_action_dir.exists():
@@ -587,7 +588,7 @@ def main():
 
     # Auto-generate LinkedIn post if emails were processed
     if processed_files:
-        vault_dir = Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault")
+        vault_dir = VAULT_DIR
         handbook_content = read_company_handbook(vault_dir)
         generate_linkedin_post(vault_dir, handbook_content, processed_files)
 

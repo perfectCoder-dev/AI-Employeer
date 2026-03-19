@@ -86,6 +86,7 @@ personal-ai-employee/
 │   ├── pyproject.toml                 # Python dependencies
 │   └── uv.lock
 │   └── test_pipeline.py               # Basic pipeline
+│   ├── config.py                      # Central configuration — all paths and constants
 │
 ├── mcp-servers/
 │   └── gmail-send/
@@ -180,17 +181,18 @@ cd personal-ai-employee
 
 ---
 
-## How It Works — End to End
+## How It Works — End-to-End Flow
 
-1. Email arrives in Gmail inbox
-2. gmail_watcher.py detects it automatically (runs every 2 min via launchd)
-3. gmail_watcher.py auto-triggers reasoning_loop.py immediately
-4. reasoning_loop.py analyzes the email, creates Plan.md, moves to Pending_Approval/
-         4b. reasoning_loop.py also auto-generates a LinkedIn post based on the business activity detected — no human writing needed
-5. YOU drag the file from Pending_Approval/ to Approved/ — this is the ONLY human step
-6. approval_watcher.py detects it instantly (always running via launchd)
-7. Groq LLaMA 3.3 70B generates contextual reply → sent via Gmail API
-8. File moves to Done/, action logged to Logs/
+1. **Email Inbound:** A new message arrives in the Gmail inbox.
+2. **Detection:** `gmail_watcher.py` (running every 2 min via `launchd`) detects it automatically.
+3. **Trigger:** `gmail_watcher.py` auto-triggers `reasoning_loop.py` immediately.
+4. **AI Processing:** `reasoning_loop.py` analyzes the email and performs two actions:
+    * Creates `Plan.md` and moves it to `Pending_Approval/`.
+    * Auto-generates a LinkedIn post based on the detected business activity.
+5. **Human Gatekeeper:** > 💡 **Manual Step:** You drag the file from `Pending_Approval/` to `Approved/`. This is the **only** manual interaction required.
+6. **Approval Detection:** `approval_watcher.py` (always running via `launchd`) detects the file move instantly.
+7. **Execution:** **Groq LLaMA 3.3 70B** generates the contextual reply, which is sent via the Gmail API.
+8. **Cleanup:** The file is moved to `Done/` and the entire action is logged to `Logs/`.
 
 ---
 
