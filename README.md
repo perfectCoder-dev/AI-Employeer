@@ -214,6 +214,22 @@ To **reject**: move file from `Pending_Approval/` → `Rejected/`
 
 ---
 
+## Technology Stack — How Each Is Used
+
+| Technology | How It's Used |
+|---|---|
+| **Claude Code** | Primary AI brain — reads vault, runs reasoning loop, fixes errors autonomously |
+| **Python 3.13** | All watcher scripts and agent logic |
+| **Groq LLaMA 3.3 70B** | Generates contextual email replies and LinkedIn post content |
+| **Gmail API** | Reads inbox, sends replies, marks emails as read |
+| **Playwright** | Browser automation for LinkedIn posting |
+| **Node.js MCP** | Gmail Send MCP server — exposes send_email tool to Claude Code |
+| **Obsidian** | Local markdown vault — visual dashboard for all agent activity |
+| **launchd** | macOS service manager — keeps watchers running 24/7 |
+| **uv** | Fast Python package manager for dependency management |
+
+---
+
 ## Security
 
 - `credentials.json`, `token.json`, `.env` are in `.gitignore` — never committed
