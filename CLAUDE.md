@@ -81,7 +81,7 @@ Claude Code is only needed when:
 ---
 
 ## Rules
-See `GUARDRAILS.md` for full safety rules. Summary:
+See `docs/GUARDRAILS.md` for full safety rules. Summary:
 1. NEVER act without human approval for emails/LinkedIn
 2. ALWAYS use `.venv/bin/python`
 3. ALWAYS work from vault root
@@ -94,10 +94,10 @@ See `GUARDRAILS.md` for full safety rules. Summary:
 - `.claude/skills/hitl-approval/SKILL.md`
 
 ## Deployment
-See `DEPLOYMENT.md` for launchd setup and service management.
+See `docs/DEPLOYMENT.md` for launchd setup and service management.
 
 ## Guardrails
-See `GUARDRAILS.md` for safety rules and risk thresholds.
+See `docs/GUARDRAILS.md` for safety rules and risk thresholds.
 
 ## MCP Server
 Location: `mcp-servers/gmail-send/index.js`

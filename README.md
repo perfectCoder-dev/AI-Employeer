@@ -59,9 +59,13 @@ personal-ai-employee/
 ├── CLAUDE.md                          # Claude Code instructions & rules
 ├── AGENTS.md                          # Agent documentation
 ├── README.md                          # Project overview & setup guide
-├── Company_Handbook.md                # AI decision-making context
-├── Dashboard.md                       # Live activity dashboard
 ├── .gitignore
+│
+├── docs/
+│   ├── Company_Handbook.md            # AI decision-making context
+│   ├── Dashboard.md                   # Live activity dashboard
+│   ├── GUARDRAILS.md                  # Safety rules and risk thresholds
+│   └── DEPLOYMENT.md                  # Deployment config and service management
 │
 ├── .claude/
 │   ├── settings.local.json
@@ -76,23 +80,27 @@ personal-ai-employee/
 │           └── SKILL.md               # HITL approval skill docs
 │
 ├── scripts/
-│   ├── gmail_watcher.py               # Polls Gmail every 2 minutes
-│   ├── linkedin_poster.py             # Auto-posts to LinkedIn via Playwright
-│   ├── reasoning_loop.py              # Claude brain, creates Plan.md files
-│   ├── approval_watcher.py            # HITL orchestrator + Groq AI replies
+│   ├── config.py                      # Central configuration — all paths and constants
+│   ├── gmail_watcher.py               # Polls Gmail, auto-triggers reasoning loop
+│   ├── reasoning_loop.py              # Claude brain — creates Plan.md + LinkedIn posts
+│   ├── approval_watcher.py            # HITL orchestrator — sends emails, posts LinkedIn
+│   ├── linkedin_poster.py             # Playwright browser automation for LinkedIn
 │   ├── authenticate_gmail.py          # Gmail OAuth setup
 │   ├── main.py                        # Entry point, runs all agents
+│   ├── test_pipeline.py               # Basic pipeline tests
 │   ├── .env.example                   # Environment variables template
 │   ├── pyproject.toml                 # Python dependencies
 │   └── uv.lock
-│   └── test_pipeline.py               # Basic pipeline
-│   ├── config.py                      # Central configuration — all paths and constants
 │
 ├── mcp-servers/
 │   └── gmail-send/
 │       ├── index.js                   # Gmail Send MCP server
 │       ├── package.json
 │       └── package-lock.json
+│
+├── credentials/                       # Never committed — in .gitignore
+│   ├── credentials.json               # Gmail OAuth app credentials
+│   └── token.json                     # Gmail user token
 │
 ├── Inbox/                             # Raw incoming items
 ├── Needs_Action/                      # Watcher drops files here
@@ -103,8 +111,6 @@ personal-ai-employee/
 ├── Rejected/                          # Rejected tasks
 ├── Failed/                            # Error files
 └── Logs/                              # Daily JSON action logs
-├── GUARDRAILS.md                      # Safety rules and risk thresholds
-├── DEPLOYMENT.md                      # Deployment config and service management
                            
 ```
 
