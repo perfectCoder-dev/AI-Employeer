@@ -385,7 +385,7 @@ def log_action(action, filename, details=None, vault_dir=None):
 
 
 def process_needs_action_files():
-    """Main function to process all files in Needs_Action/ directory."""
+    """Main function to process all files in Needs_Action/ directory. Returns list of processed file data."""
     vault_dir = Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault")
     needs_action_dir = vault_dir / 'Needs_Action'
 
@@ -404,6 +404,7 @@ def process_needs_action_files():
 
     # Read company handbook for context
     handbook_content = read_company_handbook(vault_dir)
+    processed_files = []
 
     for file_path in md_files:
         try:
@@ -418,6 +419,13 @@ def process_needs_action_files():
             # Create plan file
             plan_path = create_plan_file(file_path, plan_data, vault_dir)
             print(f"Created plan: {plan_path.name}")
+
+            # Track processed file
+            processed_files.append({
+                'filename': file_path.name,
+                'category': plan_data.get('action_type', 'general'),
+                'priority': plan_data.get('priority', 'medium')
+            })
 
             # Log the plan creation
             log_action(
@@ -466,12 +474,112 @@ def process_needs_action_files():
                 vault_dir=vault_dir
             )
 
+    return processed_files
+
+
+def generate_linkedin_post(vault_dir, handbook_content, processed_files):
+    """Auto-generate a LinkedIn post based on business activity."""
+    if not processed_files:
+        return
+
+    # Build post based on recent business activity
+    topics = []
+    for f in processed_files:
+        category = f.get('category', 'general')
+        if category == 'sales_inquiry':
+            topics.append("client inquiries")
+        elif category == 'meeting_request':
+            topics.append("business meetings")
+        elif category == 'project_inquiries':
+            topics.append("new projects")
+
+    if not topics:
+        return
+
+    # Try Groq API for post generation
+    post_content = None
+    try:
+        import requests
+        import os
+        from dotenv import load_dotenv
+        load_dotenv(vault_dir / 'scripts' / '.env')
+        groq_key = os.getenv('GROQ_API_KEY')
+
+        if groq_key:
+            response = requests.post(
+                "https://api.groq.com/openai/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {groq_key}",
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "model": "llama-3.3-70b-versatile",
+                    "messages": [
+                        {
+                            "role": "system",
+                            "content": f"""You are a professional LinkedIn content writer.
+Write a short, engaging LinkedIn post to generate business leads.
+Keep it under 200 words. Include 3-5 relevant hashtags.
+Base it on the company context provided.
+Company context: {handbook_content[:300]}"""
+                        },
+                        {
+                            "role": "user",
+                            "content": f"Write a LinkedIn post about our business activity today. We handled: {', '.join(set(topics))}. Make it professional and engaging to attract potential clients."
+                        }
+                    ],
+                    "temperature": 0.8,
+                    "max_tokens": 300
+                },
+                timeout=10
+            )
+            if response.status_code == 200:
+                post_content = response.json()['choices'][0]['message']['content']
+    except Exception as e:
+        print(f"Groq API failed for LinkedIn post: {e}")
+
+    # Fallback post
+    if not post_content:
+        topic_str = ' and '.join(set(topics))
+        post_content = f"""Staying busy with {topic_str} today! 
+
+Our team is committed to delivering excellent results for every client inquiry we receive.
+
+If you're looking for professional services, we'd love to hear from you.
+
+#Business #ProfessionalServices #AI #Automation #BuildingInPublic"""
+
+    # Create the LinkedIn post file in Pending_Approval/
+    today = datetime.now().strftime('%Y%m%d_%H%M%S')
+    post_filename = f"linkedin_post_{today}.md"
+    post_path = vault_dir / 'Pending_Approval' / post_filename
+
+    post_content_md = f"""---
+type: linkedin_post
+title: "Auto-generated LinkedIn Post"
+created: {datetime.now().isoformat()}
+---
+
+{post_content}"""
+
+    with open(post_path, 'w', encoding='utf-8') as f:
+        f.write(post_content_md)
+
+    print(f"Auto-generated LinkedIn post: {post_filename}")
+    print("Move from Pending_Approval/ to Approved/ to post on LinkedIn")
+
 
 def main():
     """Main entry point."""
     print("Starting Claude Reasoning Loop...")
-    process_needs_action_files()
+    processed_files = process_needs_action_files()
     print("Reasoning Loop completed!")
+
+    # Auto-generate LinkedIn post if emails were processed
+    if processed_files:
+        vault_dir = Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault")
+        handbook_content = read_company_handbook(vault_dir)
+        generate_linkedin_post(vault_dir, handbook_content, processed_files)
 
 
 if __name__ == "__main__":

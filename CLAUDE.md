@@ -1,99 +1,160 @@
 # Personal AI Employee - Claude Code Instructions
 
 ## IMPORTANT: Read This First
-When asked to "run the pipeline" or "check inbox" or any similar request,
-Claude should follow the AUTONOMOUS WORKFLOW below WITHOUT asking for instructions.
-All decisions should be made based on this file alone.
+This system runs autonomously. Most agents run in the background via launchd.
+Claude Code is only needed to run the reasoning loop when new emails arrive.
+
+---
 
 ## Project Overview
-This is a Personal AI Employee. It monitors Gmail, reasons about tasks,
-and takes actions with human approval. You are the AI brain of this system.
+A Personal AI Employee that monitors Gmail, reasons about tasks, and takes
+real-world actions with human approval. Local-first, agent-driven, HITL.
 
 ## Vault Location
 /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault
 
 ## Python Interpreter
-Always use: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/.venv/bin/python
-Never use: python or python3 directly
+ALWAYS use: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/.venv/bin/python
+NEVER use: python or python3 directly
 
-## AUTONOMOUS WORKFLOW
-When triggered, follow these steps IN ORDER without asking for confirmation:
+---
 
-### Step 1: Clear processed IDs (only if inbox check returns 0 emails)
-```bash
-echo "[]" > /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/processed_ids.json
+## System Architecture
+
+### Always Running (Background — no human needed)
+These run automatically via launchd on startup:
+
+| Agent | Script | Schedule | What it does |
+|---|---|---|---|
+| Gmail Watcher | `scripts/gmail_watcher.py` | Every 2 min | Detects new emails → creates `.md` in `Needs_Action/` |
+| Approval Watcher | `scripts/approval_watcher.py` | Always on | Watches `Approved/` → sends emails, posts LinkedIn |
+
+### Auto-triggered (No human needed)
+| Agent | Script | Trigger | What it does |
+|---|---|---|---|
+| Reasoning Loop | `scripts/reasoning_loop.py` | Auto-triggered by gmail_watcher when new emails found | Analyzes emails → creates Plan.md → routes to Pending_Approval/ |
+
+---
+
+## Full Autonomous Flow (No Human Input Needed Except Approval)
+```
+[AUTOMATIC] Gmail arrives
+      ↓
+[AUTOMATIC] gmail_watcher.py detects it → creates .md in Needs_Action/
+      ↓
+[CLAUDE CODE] Run reasoning_loop.py → creates Plan.md → moves to Pending_Approval/
+      ↓
+[HUMAN] Reviews plan in Obsidian → drags file to Approved/ (this is the only human step)
+      ↓
+[AUTOMATIC] approval_watcher.py detects file → sends reply or posts LinkedIn → moves to Done/
 ```
 
-### Step 2: Run Gmail Watcher
-```bash
-cd /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault
-.venv/bin/python scripts/gmail_watcher.py
-```
-- Wait for "Processed X new emails" for 15 seconds
-- If 0 emails found, clear processed_ids.json and run again within 15 seconds
-- New .md files will appear in Needs_Action/
-- Proceed to take Step 3 (Reasoning Loop) if news emails are found within 10 secs after the emails were found
+---
 
-### Step 3: Run Reasoning Loop
+## When Claude Code Is Triggered
+Claude Code only needs to run when:
+1. New files appear in `Needs_Action/` — run `reasoning_loop.py`
+2. A script crashes and needs fixing
+
+**Trigger prompt:** `Process new emails in Needs_Action/`
+
+**What Claude does:**
 ```bash
 cd /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault
 .venv/bin/python scripts/reasoning_loop.py
 ```
-- Analyzes emails with enhanced rule-based system and smart categorization
-- Creates Plan.md files in Plans/ with priority scoring
-- Automatically categorizes emails (sales, support, meetings, networking, informational)
-- Calculates priority scores based on urgency and importance
-- Moves files to Pending_Approval/ if action needed
-- Moves files to Done/ if informational
 
-### Step 4: Report to Human (HITL)
-- Tell the human: "I found X emails and created X plans"
-- List each file now in Pending_Approval/
-- Say: "Please move files from Pending_Approval/ to Approved/ to approve"
-- Wait for human confirmation before proceeding
-
-### Step 5: Run Approval Watcher
-```bash
-cd /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault
-.venv/bin/python scripts/approval_watcher.py
+Then reports:
 ```
-- This watches Approved/ and executes actions
-- For emails: generates Groq AI reply and sends via Gmail
-- For LinkedIn: posts via Playwright browser automation
-- Files move to Done/ when complete
+Processed X emails:
+1. [filename] — Category: [category] — Priority: [high/medium/low]
+   → Moved to Pending_Approval/
 
-### Step 6: Report Results
-- Show what emails were sent
-- Show what LinkedIn posts were published
-- Show the log entry in Logs/YYYY-MM-DD.json
+Please review plans in Obsidian and move approved files to Approved/.
+approval_watcher.py will handle execution automatically.
+```
+
+**Claude does NOT need to:**
+- Run gmail_watcher.py (launchd does it)
+- Run approval_watcher.py (launchd does it)
+- Wait for "done" (approval_watcher watches automatically)
+
+---
 
 ## Key File Locations
-- Scripts: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/
-- Credentials: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/credentials/
-- Environment: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/.env
-- Processed IDs: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/processed_ids.json
+- Scripts: `scripts/`
+- Credentials: `credentials/`
+- Environment: `scripts/.env`
+- Processed IDs: `scripts/processed_ids.json`
+- Logs: `Logs/YYYY-MM-DD.json`
 
-## Rules Claude Must Follow
-1. NEVER take irreversible actions without human approval
-2. ALWAYS run steps in the order defined above
-3. ALWAYS use the .venv/bin/python interpreter
-4. ALWAYS work from the vault root directory
-5. NEVER commit credentials.json, token.json, or .env
-6. If a script fails, read the error and fix it before continuing
-7. If 0 emails found, clear processed_ids.json and retry once
-8. For email replies: Enhanced contextual analysis generates appropriate replies (with optional Groq LLaMA 3.3 70B enhancement)
-9. For LinkedIn: Playwright browser automation handles posting
-10. Enhanced reasoning: Smart categorization and priority scoring for better task management
-11. NEVER ask the human what to do — figure it out from this file
+---
+
+## Rules
+See `GUARDRAILS.md` for full safety rules. Summary:
+1. NEVER act without human approval for emails/LinkedIn
+2. ALWAYS use `.venv/bin/python`
+3. ALWAYS work from vault root
+4. NEVER commit credentials
 
 ## Agent Skills
-Read these files to understand each agent:
-- .claude/skills/gmail-watcher/SKILL.md
-- .claude/skills/linkedin-poster/SKILL.md
-- .claude/skills/reasoning-loop/SKILL.md
-- .claude/skills/hitl-approval/SKILL.md
+- `.claude/skills/gmail-watcher/SKILL.md`
+- `.claude/skills/linkedin-poster/SKILL.md`
+- `.claude/skills/reasoning-loop/SKILL.md`
+- `.claude/skills/hitl-approval/SKILL.md`
+
+## Deployment
+See `DEPLOYMENT.md` for launchd setup and service management.
+
+## Guardrails
+See `GUARDRAILS.md` for safety rules and risk thresholds.
 
 ## MCP Server
-Gmail Send MCP is at mcp-servers/gmail-send/index.js
-Start with: node mcp-servers/gmail-send/index.js
-Tool available: send_email(to, subject, body)
+Location: `mcp-servers/gmail-send/index.js`
+Tool: `send_email(to, subject, body)`
+
+---
+
+## LinkedIn Autonomous Workflow
+
+### How LinkedIn Posting Works
+The AI proactively generates LinkedIn posts based on business activity.
+You never write the post — the AI writes it, you just approve.
+```
+[AUTOMATIC] reasoning_loop.py processes emails
+              ↓
+[AUTOMATIC] Detects business activity (inquiries, meetings, projects)
+              ↓
+[AUTOMATIC] Groq LLaMA generates relevant LinkedIn post
+              ↓
+[AUTOMATIC] Creates linkedin_post.md in Pending_Approval/
+              ↓
+[HUMAN] Only step: drag file from Pending_Approval/ to Approved/
+              ↓
+[AUTOMATIC] approval_watcher.py detects it
+              ↓
+[AUTOMATIC] Playwright logs into LinkedIn → posts → Done/
+```
+
+### What Triggers a LinkedIn Post
+reasoning_loop.py auto-generates a post when it processes:
+- Sales inquiries (new client interest)
+- Meeting requests (business activity)
+- Project inquiries (new opportunities)
+
+### LinkedIn Credentials
+Stored in `scripts/.env`:
+- `LINKEDIN_EMAIL` — your LinkedIn email
+- `LINKEDIN_PASSWORD` — your LinkedIn password
+
+### Fallback Behavior
+If Playwright automation fails:
+- Post queued in `Logs/linkedin_queue.json`
+- Dashboard.md notified
+- Human can manually post from queue
+
+### LinkedIn Post Guidelines
+- Under 200 words
+- 3-5 relevant hashtags
+- Professional tone
+- Never post confidential client information

@@ -317,6 +317,21 @@ class GmailWatcher:
         logger.info(f"Processed {new_emails_count} new emails")
         self.log_activity(f"Gmail Watcher processed {new_emails_count} new emails")
 
+        # Auto-trigger reasoning loop if new emails were found
+        if new_emails_count > 0:
+            logger.info("New emails found — auto-triggering reasoning loop...")
+            import subprocess
+            import sys
+            vault_dir = "/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault"
+            python = f"{vault_dir}/.venv/bin/python"
+            script = f"{vault_dir}/scripts/reasoning_loop.py"
+            result = subprocess.run([python, script], capture_output=True, text=True)
+            if result.returncode == 0:
+                logger.info("Reasoning loop completed successfully")
+                logger.info(result.stdout)
+            else:
+                logger.error(f"Reasoning loop failed: {result.stderr}")
+
         return new_emails_count
 
     def run_continuous(self, interval_minutes=2):

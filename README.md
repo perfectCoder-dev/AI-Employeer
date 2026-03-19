@@ -17,17 +17,21 @@ A fully autonomous Personal AI Employee that monitors your Gmail, reasons about 
 
 ## Architecture
 ```
-Gmail → gmail_watcher.py → Needs_Action/
-                                ↓
-                        reasoning_loop.py → Plans/ + Pending_Approval/
-                                                        ↓
-                                              [YOU approve by moving file]
-                                                        ↓
-                                        approval_watcher.py → Groq AI → Gmail MCP → Real Email Sent → Done/
-                                                        ↓
-                                                LinkedIn Poster → Live LinkedIn Post
-```
+[launchd] Every 2 min:
+gmail_watcher.py → detects email → Needs_Action/
+                                        ↓ (auto-triggers)
+                                reasoning_loop.py → Plans/ + Pending_Approval/
+                                                              ↓
+                                                    [HUMAN: drag to Approved/]
+                                                              ↓
+[launchd] Always running:                                     ↓
+approval_watcher.py ←────────────────────────────────────────┘
+        ↓                    ↓
+Groq AI reply sent     LinkedIn posted
+        ↓                    ↓
+                         Done/
 
+```
 ---
 
 ## Silver Tier Features
@@ -40,7 +44,7 @@ Gmail → gmail_watcher.py → Needs_Action/
 | Gmail Send MCP Server | Node.js MCP server, sends real emails via Gmail API |
 | AI-Generated Replies | Uses enhanced contextual analysis to write appropriate email replies (with Groq LLaMA 3.3 70B as optional enhancement) |
 | HITL Approval Workflow | Human moves file to `Approved/` to trigger execution |
-| LinkedIn Auto-Poster | Auto-posts via Playwright browser automation |
+| LinkedIn Auto-Poster | AI generates posts from business activity → Playwright auto-posts |
 | Cron Scheduling | launchd plists run watchers on startup and every 2 min |
 | Agent Skills | 4 SKILL.md files documenting all agent capabilities |
 | Smart Prioritization | Automatic priority scoring based on urgency indicators, importance, and content analysis |
@@ -81,6 +85,7 @@ personal-ai-employee/
 │   ├── .env.example                   # Environment variables template
 │   ├── pyproject.toml                 # Python dependencies
 │   └── uv.lock
+│   └── test_pipeline.py               # Basic pipeline
 │
 ├── mcp-servers/
 │   └── gmail-send/
@@ -97,6 +102,9 @@ personal-ai-employee/
 ├── Rejected/                          # Rejected tasks
 ├── Failed/                            # Error files
 └── Logs/                              # Daily JSON action logs
+├── GUARDRAILS.md                      # Safety rules and risk thresholds
+├── DEPLOYMENT.md                      # Deployment config and service management
+                           
 ```
 
 ---
@@ -174,12 +182,15 @@ cd personal-ai-employee
 
 ## How It Works — End to End
 
-1. **Email arrives** in Gmail inbox
-2. **`gmail_watcher.py`** detects it, creates a `.md` file in `Needs_Action/`
-3. **`reasoning_loop.py`** analyzes the email using `Company_Handbook.md` context, creates a `Plan.md` in `Plans/`, moves original to `Pending_Approval/`
-4. **You review** the plan in Obsidian and drag the file to `Approved/`
-5. **`approval_watcher.py`** detects the approval, calls **Groq LLaMA 3.3 70B** to generate a contextual reply, sends it via Gmail API
-6. File moves to `Done/`, action logged to `Logs/YYYY-MM-DD.json`
+1. Email arrives in Gmail inbox
+2. gmail_watcher.py detects it automatically (runs every 2 min via launchd)
+3. gmail_watcher.py auto-triggers reasoning_loop.py immediately
+4. reasoning_loop.py analyzes the email, creates Plan.md, moves to Pending_Approval/
+    4b. reasoning_loop.py also auto-generates a LinkedIn post based on the business activity detected — no human writing needed
+5. YOU drag the file from Pending_Approval/ to Approved/ — this is the ONLY human step
+6. approval_watcher.py detects it instantly (always running via launchd)
+7. Groq LLaMA 3.3 70B generates contextual reply → sent via Gmail API
+8. File moves to Done/, action logged to Logs/
 
 ---
 

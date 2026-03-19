@@ -11,6 +11,8 @@ import shutil
 import logging
 import datetime
 import re
+from dotenv import load_dotenv
+load_dotenv('/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/.env')
 from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
