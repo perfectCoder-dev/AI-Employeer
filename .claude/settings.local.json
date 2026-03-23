@@ -26,7 +26,8 @@
       "Bash(gtimeout:*)",
       "Bash(.venv/bin/python scripts/gmail_watcher.py)",
       "Bash(.venv/bin/python scripts/reasoning_loop.py)",
-      "Bash(.venv/bin/python scripts/approval_watcher.py)"
+      "Bash(.venv/bin/python scripts/approval_watcher.py)",
+      "Bash(launchctl unload:*)"
     ]
   }
 }
