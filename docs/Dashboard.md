@@ -9,16 +9,19 @@ Welcome to your Personal AI Employee Vault! This dashboard serves as your centra
 - **Approved**: [[Approved]] - Green-lit tasks
 - **Done**: [[Done]] - Completed work
 - **Rejected**: [[Rejected]] - Discontinued tasks
+- **Failed**: [[Failed]] - Tasks that encountered errors
 
 ## Daily Tasks
-- [ ] Review new items in [[Inbox]]
 - [ ] Process items in [[Needs_Action]]
-- [ ] Update task statuses
+- [ ] Approve or modify items in [[Pending_Approval]]
+- [ ] Monitor [[Failed]] for script errors
 - [ ] Review logs in [[Logs]]
 
-## Quick Links
-- [[Company_Handbook]]
-- [[Plans]]
+## Reference & Documentation
+- [[AGENTS|System Documentation]]
+- [[DEPLOYMENT|Deployment Config]]
+- [[GUARDRAILS|System Guardrails]]
+- [[Company_Handbook|Company Context]]
 
-## Notifications
-- LinkedIn post ready for manual posting - check Logs/linkedin_queue.json
+## Quick Links
+- [[Plans]]

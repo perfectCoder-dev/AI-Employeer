@@ -27,7 +27,8 @@ These run automatically via launchd on startup:
 | Agent | Script | Schedule | What it does |
 |---|---|---|---|
 | Gmail Watcher | `scripts/gmail_watcher.py` | Every 2 min | Detects new emails → creates `.md` in `Needs_Action/` |
-| Approval Watcher | `scripts/approval_watcher.py` | Always on | Watches `Approved/` → sends emails, posts LinkedIn |
+| Approval Watcher | `scripts/approval_watcher.py` | Always on | Watches `Approved/` → routes to appropriate action handlers |
+| LinkedIn Poster | `scripts/linkedin_poster.py` | Always on | Watches for LinkedIn posts in `Approved/` → publishes to LinkedIn |
 
 ### Auto-triggered (No human needed)
 | Agent | Script | Trigger | What it does |
@@ -48,7 +49,9 @@ These run automatically via launchd on startup:
       ↓
 [HUMAN] Only step: drag file from Pending_Approval/ to Approved/
       ↓
-[AUTOMATIC] approval_watcher.py detects it → sends reply/posts LinkedIn → Done/
+[AUTOMATIC] approval_watcher.py detects it → routes based on type:
+      ├─ email_send → sends reply via Gmail API → Done/
+      └─ linkedin_post → linkedin_poster.py → publishes to LinkedIn → Done/
 ```
 
 ---
@@ -64,6 +67,7 @@ Claude Code is only needed when:
 - Run gmail_watcher.py (launchd does it every 2 min)
 - Run reasoning_loop.py (gmail_watcher triggers it automatically)
 - Run approval_watcher.py (launchd keeps it always running)
+- Run linkedin_poster.py (runs as separate service watching Approved/ folder)
 - Wait for human input (approval_watcher watches Approved/ automatically)
 
 **Only human action required:**
@@ -77,6 +81,22 @@ Claude Code is only needed when:
 - Environment: `scripts/.env`
 - Processed IDs: `scripts/processed_ids.json`
 - Logs: `Logs/YYYY-MM-DD.json`
+- Shared Config: `scripts/config.py` (centralized configuration imported by all agents)
+
+## Shared Configuration
+All agents import from `scripts/config.py` which contains centralized constants:
+- `VAULT_DIR`: Vault root path
+- `CREDENTIALS_PATH`: Gmail credentials.json
+- `TOKEN_PATH`: Gmail token.json
+- `NEEDS_ACTION`: Needs_Action/ folder
+- `PLANS`: Plans/ folder
+- `PENDING_APPROVAL`: Pending_Approval/ folder
+- `APPROVED`: Approved/ folder
+- `DONE`: Done/ folder
+- `FAILED`: Failed/ folder
+- `LOGS`: Logs/ folder
+- `PROCESSED_IDS`: processed_ids.json
+- `GROQ_MODEL`: llama-3.3-70b-versatile
 
 ---
 
@@ -88,10 +108,10 @@ See `docs/GUARDRAILS.md` for full safety rules. Summary:
 4. NEVER commit credentials
 
 ## Agent Skills
-- `.claude/skills/gmail-watcher/SKILL.md`
-- `.claude/skills/linkedin-poster/SKILL.md`
-- `.claude/skills/reasoning-loop/SKILL.md`
-- `.claude/skills/hitl-approval/SKILL.md`
+- `.claude/skills/gmail-watcher/SKILL.md` - Gmail Watcher Agent
+- `.claude/skills/reasoning-loop/SKILL.md` - Reasoning Loop Agent
+- `.claude/skills/hitl-approval/SKILL.md` - HITL Approval Watcher Agent
+- `.claude/skills/linkedin-poster/SKILL.md` - LinkedIn Poster Agent
 
 ## Deployment
 See `docs/DEPLOYMENT.md` for launchd setup and service management.
@@ -121,7 +141,7 @@ You never write the post — the AI writes it, you just approve.
               ↓
 [HUMAN] Only step: drag file from Pending_Approval/ to Approved/
               ↓
-[AUTOMATIC] approval_watcher.py detects it
+[AUTOMATIC] linkedin_poster.py detects it (via approval_watcher)
               ↓
 [AUTOMATIC] Playwright logs into LinkedIn → posts → Done/
 ```
@@ -139,7 +159,7 @@ Stored in `scripts/.env`:
 
 ### Fallback Behavior
 If Playwright automation fails:
-- Post queued in `Logs/linkedin_queue.json`
+- Post queued in `Logs/linkedin_queue.json` by linkedin_poster.py
 - Dashboard.md notified
 - Human can manually post from queue
 

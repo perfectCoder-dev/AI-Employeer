@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c32854458f94a53b",
+        "id": "15bc72745b6e48be",
         "type": "tabs",
         "children": [
           {
-            "id": "84d1ed7f692290de",
+            "id": "5f1f0d461ae32577",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Done/email_20260318_214926_Client_Project_Proposal_-_Need_Response.md",
+                "file": "Plans/PLAN_email_20260324_185146_Team_Update__Q1_Progress.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "email_20260318_214926_Client_Project_Proposal_-_Need_Response"
+              "title": "PLAN_email_20260324_185146_Team_Update__Q1_Progress"
             }
           }
         ]
@@ -183,12 +183,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "84d1ed7f692290de",
+  "active": "5f1f0d461ae32577",
   "lastOpenFiles": [
-    "AGENTS.md",
-    "Done/email_20260318_214926_Client_Project_Proposal_-_Need_Response.md",
-    "Plans/PLAN_email_20260318_214925_New_Website_Design_Project_-_Quote_Request.md",
-    "Done/email_20260318_214923_Partnership_Opportunity_-_Lets_Connect.md",
-    "Welcome.md"
+    "Logs/gmail_watcher_log_20260324-185750.txt",
+    "Logs/gmail_watcher_log_20260324-185550.txt",
+    "Plans/PLAN_email_20260324_185145_Content_Writing_Services__Need_Quote.md",
+    "Plans/PLAN_email_20260324_185143_Web_Development_Project__Partnership_Opportunity.md",
+    "Logs/gmail_watcher_log_20260324-185349.txt",
+    "Done/linkedin_post_20260324_185148.md",
+    "Done/email_20260324_185145_Content_Writing_Services__Need_Quote.md",
+    "Done/email_20260324_185143_Web_Development_Project__Partnership_Opportunity.md",
+    "Approved/linkedin_post_20260324_185148.md",
+    "Approved/email_20260324_185145_Content_Writing_Services__Need_Quote.md",
+    "Approved/email_20260324_185143_Web_Development_Project__Partnership_Opportunity.md",
+    "Pending_Approval/linkedin_post_20260324_185148.md",
+    "Pending_Approval/email_20260324_185145_Content_Writing_Services__Need_Quote.md",
+    "Pending_Approval/email_20260324_185143_Web_Development_Project__Partnership_Opportunity.md",
+    "Done/email_20260324_185146_Team_Update__Q1_Progress.md",
+    "Plans/PLAN_email_20260324_185146_Team_Update__Q1_Progress.md",
+    "Logs/gmail_watcher_log_20260324-185147.txt",
+    "Needs_Action/email_20260324_185146_Team_Update__Q1_Progress.md",
+    "Needs_Action/email_20260324_185145_Content_Writing_Services__Need_Quote.md",
+    "Needs_Action/email_20260324_185143_Web_Development_Project__Partnership_Opportunity.md",
+    "Logs/gmail_watcher_log_20260324-184941.txt",
+    "Logs/gmail_watcher_log_20260324-175900.txt",
+    "Logs/gmail_watcher_log_20260324-142239.txt",
+    "Logs/gmail_watcher_log_20260324-174457.txt",
+    "Logs/gmail_watcher_log_20260324-152318.txt",
+    "Logs/gmail_watcher_log_20260324-100450.txt",
+    "Logs/gmail_watcher_log_20260324-111427.txt",
+    "Pending_Approval/linkedin_post_20260324_184741.md",
+    "Pending_Approval/email_20260324_184738_Content_Writing_Services__Need_Quote.md",
+    "Plans/PLAN_email_20260324_184738_Content_Writing_Services__Need_Quote.md",
+    "Done/email_20260324_184736_Team_Update__Q1_Progress.md",
+    "Plans/PLAN_email_20260324_184736_Team_Update__Q1_Progress.md",
+    "Pending_Approval/email_20260324_184739_Web_Development_Project__Partnership_Opportunity.md",
+    "Plans/PLAN_email_20260324_184739_Web_Development_Project__Partnership_Opportunity.md",
+    "Needs_Action/email_20260324_184739_Web_Development_Project__Partnership_Opportunity.md",
+    "Needs_Action/email_20260324_184738_Content_Writing_Services__Need_Quote.md"
   ]
 }
