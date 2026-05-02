@@ -3,7 +3,7 @@
 **Author:** Muhammad Umar Farooq  
 **GitHub:** [omerfarooq223](https://github.com/omerfarooq223)  
 **Tier:** Silver  
-**Stack:** Claude Code + Obsidian + Python + Node.js + Gmail API + Groq LLaMA 3.3 70B
+**Stack:** Claude Code + Obsidian + Python + Flask + Node.js + Gmail API + Groq LLaMA 3.3 70B
 
 ---
 
@@ -49,6 +49,7 @@ Groq AI reply sent     LinkedIn posted
 | Agent Skills | 4 SKILL.md files documenting all agent capabilities |
 | Smart Prioritization | Automatic priority scoring based on urgency indicators, importance, and content analysis |
 | Enhanced Categorization | Intelligent email classification into sales, support, meetings, networking, and informational categories |
+| **Web Dashboard** | Flask + vanilla JS/CSS dashboard at `http://localhost:5000` — live KPIs, one-click approve/reject, activity timeline |
 
 ---
 
@@ -61,9 +62,16 @@ personal-ai-employee/
 ├── README.md                          # Project overview & setup guide
 ├── .gitignore
 │
+├── dashboard/                         # ✨ Web Dashboard (Flask)
+│   ├── app.py                         # REST API server (8 endpoints)
+│   └── static/
+│       ├── index.html                 # Single-page dashboard app
+│       ├── style.css                  # Dark glassmorphism UI
+│       └── app.js                     # Live data + approve/reject logic
+│
 ├── docs/
 │   ├── Company_Handbook.md            # AI decision-making context
-│   ├── Dashboard.md                   # Live activity dashboard
+│   ├── Dashboard.md                   # Obsidian dashboard overview
 │   ├── GUARDRAILS.md                  # Safety rules and risk thresholds
 │   └── DEPLOYMENT.md                  # Deployment config and service management
 │
@@ -111,7 +119,6 @@ personal-ai-employee/
 ├── Rejected/                          # Rejected tasks
 ├── Failed/                            # Error files
 └── Logs/                              # Daily JSON action logs
-                           
 ```
 
 ---
@@ -171,7 +178,14 @@ launchctl load ~/Library/LaunchAgents/com.aiemployee.gmailwatcher.plist
 launchctl load ~/Library/LaunchAgents/com.aiemployee.approvalwatcher.plist
 ```
 
-### 7. Or run manually
+### 7. Launch the Web Dashboard
+```bash
+cd dashboard
+python3 app.py
+# → open http://127.0.0.1:5000 in your browser
+```
+
+### 8. Or run everything manually
 ```bash
 cd personal-ai-employee
 
@@ -181,8 +195,11 @@ cd personal-ai-employee
 # Terminal 2 - Gmail watcher
 .venv/bin/python scripts/gmail_watcher.py
 
-# Terminal 2 - Reasoning loop (when emails arrive)
+# Terminal 3 - Reasoning loop (when emails arrive)
 .venv/bin/python scripts/reasoning_loop.py
+
+# Terminal 4 - Web Dashboard
+cd dashboard && python3 app.py
 ```
 
 ---
@@ -209,6 +226,10 @@ No sensitive action is ever taken without human approval. The workflow:
 AI proposes → Human decides → AI executes
 ```
 
+**Via Web Dashboard (recommended):**  
+Open `http://127.0.0.1:5000` → click **Pending Approval** → click **✓ Approve** or **✗ Reject**
+
+**Via file system:**  
 To **approve**: move file from `Pending_Approval/` → `Approved/`  
 To **reject**: move file from `Pending_Approval/` → `Rejected/`
 
@@ -220,11 +241,12 @@ To **reject**: move file from `Pending_Approval/` → `Rejected/`
 |---|---|
 | **Claude Code** | Primary AI brain — reads vault, runs reasoning loop, fixes errors autonomously |
 | **Python 3.13** | All watcher scripts and agent logic |
+| **Flask + Vanilla JS** | Web dashboard — live KPIs, approve/reject UI, activity log at `localhost:5000` |
 | **Groq LLaMA 3.3 70B** | Generates contextual email replies and LinkedIn post content |
 | **Gmail API** | Reads inbox, sends replies, marks emails as read |
 | **Playwright** | Browser automation for LinkedIn posting |
 | **Node.js MCP** | Gmail Send MCP server — exposes send_email tool to Claude Code |
-| **Obsidian** | Local markdown vault — visual dashboard for all agent activity |
+| **Obsidian** | Local markdown vault — secondary view of all agent activity |
 | **launchd** | macOS service manager — keeps watchers running 24/7 |
 | **uv** | Fast Python package manager for dependency management |
 
@@ -247,3 +269,40 @@ All AI functionality is documented as Claude Agent Skills in `.claude/skills/`:
 - **linkedin-poster** — auto-posts to LinkedIn via Playwright
 - **reasoning-loop** — analyzes tasks, creates structured plans
 - **hitl-approval** — orchestrates human approval workflow
+
+---
+
+## Web Dashboard
+
+A purpose-built command center for monitoring and controlling all agents.
+
+**Start:**
+```bash
+cd dashboard && python3 app.py
+# → http://127.0.0.1:5000
+```
+
+**Views:**
+
+| View | What you see |
+|---|---|
+| Dashboard | 6 live KPI cards, agent pipeline diagram, recent activity, action breakdown chart |
+| Pending Approval | All items awaiting approval — one-click ✓ Approve / ✗ Reject |
+| Needs Action | Items currently queued for AI processing |
+| Done | Successfully completed emails and LinkedIn posts |
+| Plans | All AI-generated action plans with priority and steps |
+| Activity Log | Full audit timeline from daily JSON logs |
+| Failed | Items that encountered errors — for debugging |
+
+**API endpoints** (`dashboard/app.py`):
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/api/stats` | GET | KPI counts + action breakdown + recent activity |
+| `/api/folder/<key>` | GET | List any workflow folder |
+| `/api/file/<folder>/<name>` | GET | Read a single markdown file (parsed frontmatter + body) |
+| `/api/approve/<name>` | POST | Move file `Pending_Approval/` → `Approved/` |
+| `/api/reject/<name>` | POST | Move file `Pending_Approval/` → `Rejected/` |
+| `/api/logs` | GET | All entries from daily JSON log files |
+| `/api/agent-log` | GET | Last 200 lines of `agent.log` |
+| `/api/all-items` | GET | Every item across all folders (for timeline view) |

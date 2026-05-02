@@ -82,6 +82,7 @@ Claude Code is only needed when:
 - Processed IDs: `scripts/processed_ids.json`
 - Logs: `Logs/YYYY-MM-DD.json`
 - Shared Config: `scripts/config.py` (centralized configuration imported by all agents)
+- **Web Dashboard:** `dashboard/app.py` + `dashboard/static/` (Flask API + frontend)
 
 ## Shared Configuration
 All agents import from `scripts/config.py` which contains centralized constants:
@@ -122,6 +123,30 @@ See `docs/GUARDRAILS.md` for safety rules and risk thresholds.
 ## MCP Server
 Location: `mcp-servers/gmail-send/index.js`
 Tool: `send_email(to, subject, body)`
+
+---
+
+## Web Dashboard
+Location: `dashboard/app.py` (Flask) + `dashboard/static/` (HTML/CSS/JS)
+URL: `http://127.0.0.1:5000`
+
+### Start command:
+```bash
+cd dashboard && python3 app.py
+```
+
+### What it exposes:
+- Real-time KPI cards (pending, done, failed, plans, actions)
+- **Pending Approval view** with one-click ✓ Approve / ✗ Reject
+- Full Activity Log from `Logs/*.json`
+- File detail modal (shows frontmatter + body of any vault file)
+- 8 REST API endpoints — all data read live from vault folders
+- Auto-refreshes every 30 seconds
+
+### Dependencies (system Python):
+```bash
+python3 -m pip install flask flask-cors pyyaml --break-system-packages
+```
 
 ---
 

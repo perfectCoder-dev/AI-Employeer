@@ -1,7 +1,7 @@
 # Personal AI Employee - Agent Documentation
 
 ## System Overview
-This system consists of 4 autonomous agents working together as a Personal AI Employee.
+This system consists of 4 autonomous agents, 1 MCP server, and a **Web Dashboard** working together as a Personal AI Employee.
 
 ---
 
@@ -97,15 +97,54 @@ After processing emails, reasoning_loop automatically:
 
 ---
 
+## Web Dashboard
+**Files:** `dashboard/app.py`, `dashboard/static/`  
+**Type:** Monitoring & Control UI  
+**URL:** `http://127.0.0.1:5000`  
+**Start:** `cd dashboard && python3 app.py`
+
+### What it does:
+- Serves a real-time dark glassmorphism web dashboard
+- Reads live data from all vault folders and JSON log files
+- Exposes 8 REST API endpoints consumed by the frontend
+- Allows one-click **Approve** / **Reject** from the browser (moves files via the API)
+- Auto-refreshes every 30 seconds
+
+### Views:
+| View | Description |
+|---|---|
+| Dashboard | KPI cards, agent pipeline diagram, recent activity, action breakdown |
+| Pending Approval | One-click ✓ Approve / ✗ Reject for each item |
+| Needs Action | Items queued for AI processing |
+| Done | Completed items with full content viewer |
+| Plans | AI-generated action plans |
+| Activity Log | Full audit timeline from `Logs/*.json` |
+| Failed | Items that errored — for debugging |
+
+### API Endpoints:
+| Endpoint | Method | Description |
+|---|---|---|
+| `/api/stats` | GET | KPIs + breakdown + recent activity |
+| `/api/folder/<key>` | GET | List any workflow folder |
+| `/api/file/<folder>/<name>` | GET | Read single file (frontmatter + body) |
+| `/api/approve/<name>` | POST | Move Pending_Approval → Approved |
+| `/api/reject/<name>` | POST | Move Pending_Approval → Rejected |
+| `/api/logs` | GET | All daily JSON log entries |
+| `/api/agent-log` | GET | Last 200 lines of agent.log |
+| `/api/all-items` | GET | All items across all folders |
+
+---
+
 ## Human-in-the-Loop (HITL) Flow
 ```
 AI proposes → Human decides → AI executes
 
 1. Agent detects task → creates Plan.md
 2. Task sits in Pending_Approval/ (AI cannot proceed)
-3. Human reviews plan in Obsidian
-4. Human drags file to Approved/ (explicit approval)
-5. Agent executes and moves to Done/
+3. Human reviews plan:
+   - Option A: Web Dashboard → Pending Approval → click ✓ Approve
+   - Option B: Drag file from Pending_Approval/ → Approved/ in Finder
+4. Agent executes and moves to Done/
 ```
 
 ---
@@ -115,7 +154,8 @@ AI proposes → Human decides → AI executes
 |---|---|---|
 | Gmail Watcher | Every 2 minutes | launchd plist |
 | Approval Watcher | Always running | launchd KeepAlive |
-| Reasoning Loop | On demand | Manual or cron |
+| Reasoning Loop | On demand | Auto-triggered by gmail_watcher |
+| **Web Dashboard** | Always running (manual) | `python3 dashboard/app.py` |
 
 ---
 

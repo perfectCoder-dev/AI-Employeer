@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Employee — Command Center</title>
+  <meta name="description" content="Personal AI Employee Vault — real-time agent monitoring, HITL approval, and activity dashboard."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+
+<!-- ── Ambient background blobs ─────────────────────────────────────────── -->
+<div class="bg-blob blob-1"></div>
+<div class="bg-blob blob-2"></div>
+<div class="bg-blob blob-3"></div>
+
+<!-- ── Sidebar ──────────────────────────────────────────────────────────── -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="logo-text">
+      <span class="logo-title">AI Employee</span>
+      <span class="logo-sub">Command Center</span>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="nav-item active" data-view="dashboard" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a class="nav-item" data-view="pending" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Pending Approval
+      <span class="nav-badge" id="badge-pending">0</span>
+    </a>
+    <a class="nav-item" data-view="needs_action" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Needs Action
+      <span class="nav-badge" id="badge-action">0</span>
+    </a>
+    <a class="nav-item" data-view="done" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      Done
+    </a>
+    <a class="nav-item" data-view="plans" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Plans
+    </a>
+    <a class="nav-item" data-view="activity" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Activity Log
+    </a>
+    <a class="nav-item" data-view="failed" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+      Failed
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="agent-status">
+      <span class="status-dot" id="agent-dot"></span>
+      <span id="agent-status-text">Checking agents…</span>
+    </div>
+    <button class="btn-refresh" id="btn-refresh" title="Refresh data">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+    </button>
+  </div>
+</aside>
+
+<!-- ── Main content ──────────────────────────────────────────────────────── -->
+<main class="main">
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <h1 class="view-title" id="view-title">Dashboard</h1>
+      <span class="view-subtitle" id="view-subtitle">Real-time agent overview</span>
+    </div>
+    <div class="topbar-right">
+      <span class="last-updated" id="last-updated">—</span>
+    </div>
+  </header>
+
+  <!-- ── VIEW: Dashboard ───────────────────────────────────────────────── -->
+  <section class="view active" id="view-dashboard">
+    <!-- KPI cards -->
+    <div class="kpi-grid" id="kpi-grid">
+      <div class="kpi-card kpi-amber">
+        <div class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="kpi-value" id="kpi-pending">—</div>
+        <div class="kpi-label">Pending Approval</div>
+        <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-pending"></div></div>
+      </div>
+      <div class="kpi-card kpi-blue">
+        <div class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/></svg></div>
+        <div class="kpi-value" id="kpi-action">—</div>
+        <div class="kpi-label">Needs Action</div>
+        <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-action"></div></div>
+      </div>
+      <div class="kpi-card kpi-green">
+        <div class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="kpi-value" id="kpi-done">—</div>
+        <div class="kpi-label">Completed</div>
+        <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-done"></div></div>
+      </div>
+      <div class="kpi-card kpi-red">
+        <div class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
+        <div class="kpi-value" id="kpi-failed">—</div>
+        <div class="kpi-label">Failed</div>
+        <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-failed"></div></div>
+      </div>
+      <div class="kpi-card kpi-purple">
+        <div class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
+        <div class="kpi-value" id="kpi-plans">—</div>
+        <div class="kpi-label">Plans Created</div>
+        <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-plans"></div></div>
+      </div>
+      <div class="kpi-card kpi-teal">
+        <div class="kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="kpi-value" id="kpi-total">—</div>
+        <div class="kpi-label">Total Actions</div>
+        <div class="kpi-bar"><div class="kpi-bar-fill" id="bar-total"></div></div>
+      </div>
+    </div>
+
+    <!-- Agent pipeline -->
+    <div class="pipeline-section">
+      <h2 class="section-title">Agent Pipeline</h2>
+      <div class="pipeline">
+        <div class="pipeline-step">
+          <div class="pstep-icon pstep-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="pstep-body">
+            <div class="pstep-name">Gmail Watcher</div>
+            <div class="pstep-desc">Polls every 2 min · marks read</div>
+          </div>
+          <div class="pstep-badge badge-running">Running</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="pstep-icon pstep-purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div class="pstep-body">
+            <div class="pstep-name">Reasoning Loop</div>
+            <div class="pstep-desc">LLaMA 3.3 70B · Groq API</div>
+          </div>
+          <div class="pstep-badge badge-auto">Auto-triggered</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="pstep-icon pstep-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="pstep-body">
+            <div class="pstep-name">Human Approval</div>
+            <div class="pstep-desc">HITL · you decide here</div>
+          </div>
+          <div class="pstep-badge badge-waiting">Waiting</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="pstep-icon pstep-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 11.08 22 12 12 22.5 2 12 2 11.08 12 2 22 11.08"/></svg>
+          </div>
+          <div class="pstep-body">
+            <div class="pstep-name">Execution</div>
+            <div class="pstep-desc">Send email · Post LinkedIn</div>
+          </div>
+          <div class="pstep-badge badge-running">Running</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent activity -->
+    <div class="two-col">
+      <div class="panel">
+        <div class="panel-header">
+          <h2 class="section-title">Recent Activity</h2>
+        </div>
+        <div class="activity-list" id="recent-activity">
+          <div class="loading-spinner"><div class="spinner"></div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-header">
+          <h2 class="section-title">Action Breakdown</h2>
+        </div>
+        <div class="breakdown-list" id="action-breakdown">
+          <div class="loading-spinner"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VIEW: Pending Approval ────────────────────────────────────────── -->
+  <section class="view" id="view-pending">
+    <div class="panel">
+      <div class="panel-header">
+        <h2 class="section-title">Items Awaiting Your Approval</h2>
+        <span class="panel-count" id="pending-count">0 items</span>
+      </div>
+      <div class="items-list" id="pending-list">
+        <div class="loading-spinner"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VIEW: Needs Action ────────────────────────────────────────────── -->
+  <section class="view" id="view-needs_action">
+    <div class="panel">
+      <div class="panel-header">
+        <h2 class="section-title">Items Needing Action</h2>
+        <span class="panel-count" id="needs-count">0 items</span>
+      </div>
+      <div class="items-list" id="needs-list">
+        <div class="loading-spinner"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VIEW: Done ────────────────────────────────────────────────────── -->
+  <section class="view" id="view-done">
+    <div class="panel">
+      <div class="panel-header">
+        <h2 class="section-title">Completed Items</h2>
+        <span class="panel-count" id="done-count">0 items</span>
+      </div>
+      <div class="items-list" id="done-list">
+        <div class="loading-spinner"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VIEW: Plans ───────────────────────────────────────────────────── -->
+  <section class="view" id="view-plans">
+    <div class="panel">
+      <div class="panel-header">
+        <h2 class="section-title">Generated Plans</h2>
+        <span class="panel-count" id="plans-count">0 items</span>
+      </div>
+      <div class="items-list" id="plans-list">
+        <div class="loading-spinner"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VIEW: Activity Log ─────────────────────────────────────────────── -->
+  <section class="view" id="view-activity">
+    <div class="panel">
+      <div class="panel-header">
+        <h2 class="section-title">Full Activity Log</h2>
+      </div>
+      <div class="log-timeline" id="log-timeline">
+        <div class="loading-spinner"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VIEW: Failed ──────────────────────────────────────────────────── -->
+  <section class="view" id="view-failed">
+    <div class="panel">
+      <div class="panel-header">
+        <h2 class="section-title">Failed Items</h2>
+        <span class="panel-count" id="failed-count">0 items</span>
+      </div>
+      <div class="items-list" id="failed-list">
+        <div class="loading-spinner"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ── File detail modal ─────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-overlay" style="display:none">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-meta">
+        <span class="type-badge" id="modal-type-badge">email</span>
+        <span class="priority-badge" id="modal-priority-badge">medium</span>
+      </div>
+      <button class="modal-close" id="modal-close">✕</button>
+    </div>
+    <h2 class="modal-title" id="modal-title">—</h2>
+    <div class="modal-from" id="modal-from"></div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-actions" id="modal-actions"></div>
+  </div>
+</div>
+
+<!-- ── Toast notifications ─────────────────────────────────────────────── -->
+<div class="toast-container" id="toast-container"></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
