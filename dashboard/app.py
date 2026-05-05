@@ -241,5 +241,8 @@ def api_all_items():
 
 
 if __name__ == "__main__":
-    print("🚀 AI Employee Dashboard running at http://127.0.0.1:5000")
-    app.run(debug=True, port=5000, host="127.0.0.1")
+    host = os.getenv("HOST", "127.0.0.1")
+    port = int(os.getenv("PORT", "5000"))
+    debug = os.getenv("DEBUG", "1").lower() not in {"0", "false", "no"}
+    print(f"🚀 AI Employee Dashboard running at http://{host}:{port}")
+    app.run(debug=debug, port=port, host=host)

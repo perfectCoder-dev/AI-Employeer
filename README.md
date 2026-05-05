@@ -181,8 +181,8 @@ launchctl load ~/Library/LaunchAgents/com.aiemployee.approvalwatcher.plist
 ### 7. Launch the Web Dashboard
 ```bash
 cd dashboard
-python3 app.py
-# → open http://127.0.0.1:5000 in your browser
+PORT=5001 python3 app.py
+# → open http://127.0.0.1:5001 in your browser
 ```
 
 ### 8. Or run everything manually
@@ -199,7 +199,7 @@ cd personal-ai-employee
 .venv/bin/python scripts/reasoning_loop.py
 
 # Terminal 4 - Web Dashboard
-cd dashboard && python3 app.py
+cd dashboard && PORT=5001 python3 app.py
 ```
 
 ---
@@ -278,8 +278,8 @@ A purpose-built command center for monitoring and controlling all agents.
 
 **Start:**
 ```bash
-cd dashboard && python3 app.py
-# → http://127.0.0.1:5000
+cd dashboard && PORT=5001 python3 app.py
+# → http://127.0.0.1:5001
 ```
 
 **Views:**
