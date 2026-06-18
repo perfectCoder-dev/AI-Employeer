@@ -20,7 +20,7 @@ A fully autonomous Personal AI Employee that monitors your Gmail, reasons about 
 [launchd] Every 2 min:
 gmail_watcher.py → detects email → Needs_Action/
                                         ↓ (auto-triggers)
-                                reasoning_loop.py → Plans/ + Pending_Approval/
+                                reasoning_loop.py → Plans/ + exact approval drafts
                                                               ↓
                                                     [HUMAN: drag to Approved/]
                                                               ↓
@@ -42,14 +42,15 @@ Groq AI reply sent     LinkedIn posted
 | Approval Watcher | Watches `Approved/`, executes actions automatically |
 | Claude Reasoning Loop | Analyzes emails with enhanced rule-based system, creates structured `Plan.md` files with priority scoring |
 | Gmail Send MCP Server | Node.js MCP server, sends real emails via Gmail API |
-| AI-Generated Replies | Uses enhanced contextual analysis to write appropriate email replies (with Groq LLaMA 3.3 70B as optional enhancement) |
+| AI-Generated Replies | Drafts exact email replies before approval; approval sends only the reviewed `draft_body` |
 | HITL Approval Workflow | Human moves file to `Approved/` to trigger execution |
-| LinkedIn Auto-Poster | AI generates posts from business activity → Playwright auto-posts |
-| Cron Scheduling | launchd plists run watchers on startup and every 2 min |
+| University Handbook Retrieval | Retrieves relevant pages from `docs/University_Handbook.md` for each reply |
+| LinkedIn Auto-Poster | Optional only; disabled by default for university department deployments |
+| launchd Scheduling | launchd plists keep Gmail watcher, approval watcher, and dashboard running |
 | Agent Skills | 4 SKILL.md files documenting all agent capabilities |
 | Smart Prioritization | Automatic priority scoring based on urgency indicators, importance, and content analysis |
-| Enhanced Categorization | Intelligent email classification into sales, support, meetings, networking, and informational categories |
-| **Web Dashboard** | Flask + vanilla JS/CSS dashboard at `http://localhost:5000` — live KPIs, one-click approve/reject, activity timeline |
+| Enhanced Categorization | Intelligent email classification into registration, attendance, exams, fees/refunds, scholarships, conduct, hostel, library/IT, grievance, and related university categories |
+| **Web Dashboard** | Flask + vanilla JS/CSS dashboard at `http://127.0.0.1:5000` — token-protected in production, live KPIs, one-click approve/reject, activity timeline |
 
 ---
 
@@ -70,10 +71,17 @@ personal-ai-employee/
 │       └── app.js                     # Live data + approve/reject logic
 │
 ├── docs/
-│   ├── Company_Handbook.md            # AI decision-making context
+│   ├── University_Handbook.md         # Extracted undergraduate handbook knowledge base
+│   ├── Company_Handbook.md            # Legacy/context file
 │   ├── Dashboard.md                   # Obsidian dashboard overview
 │   ├── GUARDRAILS.md                  # Safety rules and risk thresholds
+│   ├── UNIVERSITY_AGENT.md            # University deployment notes
 │   └── DEPLOYMENT.md                  # Deployment config and service management
+│
+├── launchd/                           # launchd plist templates for production services
+│   ├── com.aiemployee.gmailwatcher.plist.template
+│   ├── com.aiemployee.approvalwatcher.plist.template
+│   └── com.aiemployee.dashboard.plist.template
 │
 ├── .claude/
 │   ├── settings.local.json
@@ -165,41 +173,60 @@ npm install
 # Copy the example file
 cp scripts/.env.example scripts/.env
 
-# Fill in your credentials
+# Fill in your credentials and production settings
 LINKEDIN_EMAIL=your_linkedin_email
 LINKEDIN_PASSWORD=your_linkedin_password
 GROQ_API_KEY=your_groq_api_key
+DASHBOARD_APPROVAL_TOKEN=use_a_long_random_value
 ```
 
-### 6. Start the watchers
+To create a strong dashboard token on macOS:
 ```bash
-# Load launchd agents (runs on startup automatically)
+openssl rand -hex 32
+```
+
+Paste the generated value into `scripts/.env` as `DASHBOARD_APPROVAL_TOKEN=...`.
+
+### 6. Generate launchd plists
+The repo contains templates with `__VAULT_DIR__` placeholders. Render them once for your machine:
+```bash
+mkdir -p ~/Library/LaunchAgents
+sed "s#__VAULT_DIR__#$(pwd)#g" launchd/com.aiemployee.gmailwatcher.plist.template > ~/Library/LaunchAgents/com.aiemployee.gmailwatcher.plist
+sed "s#__VAULT_DIR__#$(pwd)#g" launchd/com.aiemployee.approvalwatcher.plist.template > ~/Library/LaunchAgents/com.aiemployee.approvalwatcher.plist
+sed "s#__VAULT_DIR__#$(pwd)#g" launchd/com.aiemployee.dashboard.plist.template > ~/Library/LaunchAgents/com.aiemployee.dashboard.plist
+```
+
+### 7. Start the production services
+```bash
 launchctl load ~/Library/LaunchAgents/com.aiemployee.gmailwatcher.plist
 launchctl load ~/Library/LaunchAgents/com.aiemployee.approvalwatcher.plist
+launchctl load ~/Library/LaunchAgents/com.aiemployee.dashboard.plist
 ```
 
-### 7. Launch the Web Dashboard
+### 8. Launch the Web Dashboard manually
 ```bash
 cd dashboard
-PORT=5001 python3 app.py
-# → open http://127.0.0.1:5001 in your browser
+../scripts/.venv/bin/python app.py
+# → open http://127.0.0.1:5000 in your browser
 ```
 
-### 8. Or run everything manually
+In production, the dashboard prompts for `DASHBOARD_APPROVAL_TOKEN` the first time it receives a protected API response.
+
+### 9. Or run everything manually
 ```bash
 cd personal-ai-employee
 
 # Terminal 1 - Approval watcher
-.venv/bin/python scripts/approval_watcher.py
+scripts/.venv/bin/python scripts/approval_watcher.py
 
 # Terminal 2 - Gmail watcher
-.venv/bin/python scripts/gmail_watcher.py
+scripts/.venv/bin/python scripts/gmail_watcher.py
 
 # Terminal 3 - Reasoning loop (when emails arrive)
-.venv/bin/python scripts/reasoning_loop.py
+scripts/.venv/bin/python scripts/reasoning_loop.py
 
 # Terminal 4 - Web Dashboard
-cd dashboard && PORT=5001 python3 app.py
+cd dashboard && ../scripts/.venv/bin/python app.py
 ```
 
 ---
@@ -209,12 +236,12 @@ cd dashboard && PORT=5001 python3 app.py
 1. **Email Inbound:** A new message arrives in the Gmail inbox.
 2. **Detection:** `gmail_watcher.py` (running every 2 min via `launchd`) detects it automatically.
 3. **Trigger:** `gmail_watcher.py` auto-triggers `reasoning_loop.py` immediately.
-4. **AI Processing:** `reasoning_loop.py` analyzes the email and performs two actions:
-    * Creates `Plan.md` and moves it to `Pending_Approval/`.
-    * Auto-generates a LinkedIn post based on the detected business activity.
-5. **Human Gatekeeper:** > 💡 **Manual Step:** You drag the file from `Pending_Approval/` to `Approved/`. This is the **only** manual interaction required.
+4. **AI Processing:** `reasoning_loop.py` analyzes the email and prepares the response:
+    * Creates `Plan.md` and an exact approval artifact in `Pending_Approval/`.
+    * Retrieves relevant pages from `docs/University_Handbook.md` and includes them in the approval artifact.
+5. **Human Gatekeeper:** > 💡 **Manual Step:** You review the exact draft/action, then drag the file from `Pending_Approval/` to `Approved/`.
 6. **Approval Detection:** `approval_watcher.py` (always running via `launchd`) detects the file move instantly.
-7. **Execution:** **Groq LLaMA 3.3 70B** generates the contextual reply, which is sent via the Gmail API.
+7. **Execution:** `approval_watcher.py` sends the exact approved `draft_body` via the Gmail API. It refuses to generate a new email after approval.
 8. **Cleanup:** The file is moved to `Done/` and the entire action is logged to `Logs/`.
 
 ---
@@ -227,7 +254,7 @@ AI proposes → Human decides → AI executes
 ```
 
 **Via Web Dashboard (recommended):**  
-Open `http://127.0.0.1:5000` → click **Pending Approval** → click **✓ Approve** or **✗ Reject**
+Open `http://127.0.0.1:5000` → enter the dashboard token if prompted → click **Pending Approval** → review the exact draft/action → click **✓ Approve** or **✗ Reject**
 
 **Via file system:**  
 To **approve**: move file from `Pending_Approval/` → `Approved/`  
@@ -241,7 +268,7 @@ To **reject**: move file from `Pending_Approval/` → `Rejected/`
 |---|---|
 | **Claude Code** | Primary AI brain — reads vault, runs reasoning loop, fixes errors autonomously |
 | **Python 3.13** | All watcher scripts and agent logic |
-| **Flask + Vanilla JS** | Web dashboard — live KPIs, approve/reject UI, activity log at `localhost:5000` |
+| **Flask + Vanilla JS** | Web dashboard — live KPIs, approve/reject UI, activity log at `127.0.0.1:5000` |
 | **Groq LLaMA 3.3 70B** | Generates contextual email replies and LinkedIn post content |
 | **Gmail API** | Reads inbox, sends replies, marks emails as read |
 | **Playwright** | Browser automation for LinkedIn posting |
@@ -258,6 +285,9 @@ To **reject**: move file from `Pending_Approval/` → `Rejected/`
 - All data stored locally in Obsidian vault
 - No third-party cloud storage
 - Payments and irreversible actions always require human approval
+- Email execution is fail-closed: approved files must contain `draft_body`, and duplicate `action_id`s are skipped
+- In production, dashboard read/write APIs require `DASHBOARD_APPROVAL_TOKEN`
+- Production startup fails if Gmail credentials, Gmail token, dashboard token, or the university handbook are missing
 
 ---
 
@@ -278,9 +308,11 @@ A purpose-built command center for monitoring and controlling all agents.
 
 **Start:**
 ```bash
-cd dashboard && PORT=5001 python3 app.py
-# → http://127.0.0.1:5001
+cd dashboard && ../scripts/.venv/bin/python app.py
+# → http://127.0.0.1:5000
 ```
+
+In production, enter the value of `DASHBOARD_APPROVAL_TOKEN` when the browser prompts for it.
 
 **Views:**
 

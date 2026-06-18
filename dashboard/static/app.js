@@ -1,10 +1,37 @@
 /* ── JS for AI Employee Dashboard ──────────────────────────────────── */
 // Use same-origin API so the dashboard works on any PORT/HOST.
 const API = `${window.location.origin}/api`;
+const TOKEN_STORAGE_KEY = 'aiEmployeeApprovalToken';
 
 // ── State ─────────────────────────────────────────────────────────────
 let currentView = 'dashboard';
 let statsCache  = null;
+
+function getApprovalToken() {
+  return sessionStorage.getItem(TOKEN_STORAGE_KEY) || '';
+}
+
+function setApprovalToken(token) {
+  if (token) sessionStorage.setItem(TOKEN_STORAGE_KEY, token);
+  else sessionStorage.removeItem(TOKEN_STORAGE_KEY);
+}
+
+async function apiFetch(url, options = {}) {
+  const headers = new Headers(options.headers || {});
+  const token = getApprovalToken();
+  if (token) headers.set('X-Approval-Token', token);
+
+  let response = await fetch(url, { ...options, headers });
+  if (response.status !== 403) return response;
+
+  const entered = window.prompt('Enter dashboard approval token');
+  if (!entered) return response;
+  setApprovalToken(entered.trim());
+  headers.set('X-Approval-Token', entered.trim());
+  response = await fetch(url, { ...options, headers });
+  if (response.status === 403) setApprovalToken('');
+  return response;
+}
 
 // ── Navigation ────────────────────────────────────────────────────────
 document.querySelectorAll('.nav-item').forEach(el => {
@@ -35,7 +62,7 @@ function switchView(view) {
 
 // ── Data loaders ──────────────────────────────────────────────────────
 async function fetchJSON(url) {
-  const r = await fetch(url);
+  const r = await apiFetch(url);
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   return r.json();
 }
@@ -208,7 +235,7 @@ function typeToIcon(type) {
 // ── Approve / Reject ─────────────────────────────────────────────────
 async function approveItem(filename, listId, countId) {
   try {
-    const r = await fetch(`${API}/approve/${encodeURIComponent(filename)}`, { method: 'POST' });
+    const r = await apiFetch(`${API}/approve/${encodeURIComponent(filename)}`, { method: 'POST' });
     const data = await r.json();
     if (data.success) {
       toast(`✓ Approved: ${filename}`, 'success');
@@ -220,7 +247,7 @@ async function approveItem(filename, listId, countId) {
 
 async function rejectItem(filename, listId, countId) {
   try {
-    const r = await fetch(`${API}/reject/${encodeURIComponent(filename)}`, { method: 'POST' });
+    const r = await apiFetch(`${API}/reject/${encodeURIComponent(filename)}`, { method: 'POST' });
     const data = await r.json();
     if (data.success) {
       toast(`✗ Rejected: ${filename}`, 'error');

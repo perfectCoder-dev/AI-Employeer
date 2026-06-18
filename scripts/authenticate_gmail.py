@@ -4,25 +4,22 @@ from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
+from config import CREDENTIALS_PATH, TOKEN_PATH, GMAIL_SCOPES
 
 # Define the Gmail API scopes
-SCOPES = [
-    'https://www.googleapis.com/auth/gmail.readonly',
-    'https://www.googleapis.com/auth/gmail.send',
-    'https://www.googleapis.com/auth/gmail.modify'
-]
+SCOPES = GMAIL_SCOPES
 
 def authenticate_gmail():
     """Authenticate and return Gmail service object."""
     creds = None
 
     # Token file stores the user's access and refresh tokens
-    token_file = os.getenv('TOKEN_PATH', './credentials/token.json')
+    token_file = TOKEN_PATH
 
     # Check if token.json exists and load credentials
-    if os.path.exists(token_file):
+    if token_file.exists():
         try:
-            creds = Credentials.from_authorized_user_file(token_file, SCOPES)
+            creds = Credentials.from_authorized_user_file(str(token_file), SCOPES)
         except Exception:
             creds = None
 
@@ -31,17 +28,18 @@ def authenticate_gmail():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            credentials_file = os.getenv('CREDENTIALS_PATH', './credentials/credentials.json')
-            if not os.path.exists(credentials_file):
+            credentials_file = CREDENTIALS_PATH
+            if not credentials_file.exists():
                 print(f"Error: {credentials_file} not found.")
                 return None
 
             flow = InstalledAppFlow.from_client_secrets_file(
-                credentials_file, SCOPES
+                str(credentials_file), SCOPES
             )
             creds = flow.run_local_server(port=0)
 
         # Save as JSON (not pickle)
+        token_file.parent.mkdir(parents=True, exist_ok=True)
         with open(token_file, 'w') as token:
             token.write(creds.to_json())
         print(f"Credentials saved to {token_file}")

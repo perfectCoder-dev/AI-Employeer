@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.aiemployee.dashboard</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>__VAULT_DIR__/scripts/.venv/bin/python</string>
+    <string>__VAULT_DIR__/dashboard/app.py</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>__VAULT_DIR__/dashboard</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>ENVIRONMENT</key>
+    <string>production</string>
+    <key>VAULT_DIR</key>
+    <string>__VAULT_DIR__</string>
+    <key>HOST</key>
+    <string>127.0.0.1</string>
+    <key>PORT</key>
+    <string>5000</string>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+
+  <key>StandardOutPath</key>
+  <string>__VAULT_DIR__/Logs/dashboard.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>__VAULT_DIR__/Logs/dashboard.err.log</string>
+</dict>
+</plist>

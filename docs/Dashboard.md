@@ -8,8 +8,10 @@ A real-time browser-based command center for monitoring and controlling all agen
 
 **Start:**
 ```bash
-cd dashboard && python3 app.py
+cd dashboard && ../scripts/.venv/bin/python app.py
 ```
+
+Production deployments should set `DASHBOARD_APPROVAL_TOKEN`. When it is set, the browser prompts for the token and sends it as `X-Approval-Token` for all API requests.
 
 ### Views
 
@@ -26,9 +28,10 @@ cd dashboard && python3 app.py
 ### HITL Approval (via Dashboard)
 
 1. Open `http://127.0.0.1:5000`
-2. Click **Pending Approval** in the sidebar
-3. Click **✓ Approve** — file moves to `Approved/`, `approval_watcher.py` executes it
-4. Or click **✗ Reject** — file moves to `Rejected/`, no action taken
+2. Enter `DASHBOARD_APPROVAL_TOKEN` if prompted
+3. Click **Pending Approval** in the sidebar
+4. Review the exact draft/action, then click **✓ Approve** — file moves to `Approved/`, `approval_watcher.py` executes it
+5. Or click **✗ Reject** — file moves to `Rejected/`, no action taken
 
 ### API Endpoints
 
@@ -42,6 +45,8 @@ cd dashboard && python3 app.py
 | `/api/logs` | GET | All entries from daily JSON log files |
 | `/api/agent-log` | GET | Last 200 lines of `agent.log` |
 | `/api/all-items` | GET | Every item across all workflow folders |
+
+When `DASHBOARD_APPROVAL_TOKEN` is set, every endpoint requires the `X-Approval-Token` header. In production, startup fails if the token is missing.
 
 ---
 
@@ -62,6 +67,7 @@ For browsing vault files visually in Obsidian.
 ## Daily Checklist
 
 - [ ] Open web dashboard at `http://127.0.0.1:5000`
+- [ ] Enter dashboard token if prompted
 - [ ] Review and action items in **Pending Approval**
 - [ ] Check **Failed** for any script errors
 - [ ] Review **Activity Log** for overnight activity
@@ -71,4 +77,7 @@ For browsing vault files visually in Obsidian.
 - [[AGENTS|System Documentation]]
 - [[DEPLOYMENT|Deployment Config]]
 - [[GUARDRAILS|System Guardrails]]
-- [[Company_Handbook|Company Context]]
+- [[University_Handbook|University Handbook]]
+- [[UNIVERSITY_AGENT|University Agent Notes]]
+
+Production note: set `DASHBOARD_APPROVAL_TOKEN` to require `X-Approval-Token` on dashboard read and write requests.

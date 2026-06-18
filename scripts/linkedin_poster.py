@@ -4,29 +4,14 @@ import yaml
 import json
 import shutil
 from pathlib import Path
-from config import VAULT_DIR, CREDENTIALS_PATH, TOKEN_PATH, NEEDS_ACTION, PLANS, PENDING_APPROVAL, APPROVED, DONE, FAILED, LOGS, PROCESSED_IDS, ENV_PATH
+from config import VAULT_DIR, ENV_PATH
+from workflow_utils import append_log, read_markdown_with_frontmatter
 from datetime import datetime
 try:
     from dotenv import load_dotenv
-    load_dotenv(Path("/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/scripts/.env"))
+    load_dotenv(ENV_PATH)
 except ImportError:
     pass
-
-VAULT_DIR = VAULT_DIR
-
-def read_markdown_with_frontmatter(file_path):
-    with open(file_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    if content.startswith('---'):
-        parts = content.split('---', 2)
-        if len(parts) >= 3:
-            try:
-                frontmatter = yaml.safe_load(parts[1].strip())
-                return frontmatter, parts[2].strip()
-            except yaml.YAMLError as e:
-                print(f"Error parsing YAML: {e}")
-                return None, content
-    return {}, content
 
 def post_to_linkedin_browser(post_text):
     try:
@@ -159,25 +144,7 @@ def post_to_linkedin(post_text):
     return {"id": f"simulated_{len(queue)}", "status": "queued"}
 
 def log_action(action, filename, details=None):
-    today = datetime.now().strftime('%Y-%m-%d')
-    logs_dir = VAULT_DIR / 'Logs'
-    logs_dir.mkdir(exist_ok=True)
-    log_file = logs_dir / f"{today}.json"
-    log_entry = {"timestamp": datetime.now().isoformat(), "action": action, "filename": filename, "details": details}
-    logs = []
-    if log_file.exists():
-        try:
-            with open(log_file, 'r') as f:
-                content = f.read().strip()
-                if content:
-                    logs = json.loads(content)
-                    if not isinstance(logs, list):
-                        logs = []
-        except (json.JSONDecodeError, ValueError):
-            logs = []
-    logs.append(log_entry)
-    with open(log_file, 'w') as f:
-        json.dump(logs, f, indent=2)
+    append_log(action, filename, details)
 
 def move_file(source_path, destination_folder):
     dest_path = VAULT_DIR / destination_folder / source_path.name

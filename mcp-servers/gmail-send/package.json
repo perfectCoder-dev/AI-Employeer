@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "node -e \"const m=require('./index.js'); if (typeof m.sendEmail !== 'function') process.exit(1); console.log('gmail-send smoke test passed')\""
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.6.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "googleapis": "^171.4.0"
   }
 }

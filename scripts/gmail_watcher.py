@@ -4,7 +4,20 @@ import time
 import yaml
 from datetime import datetime
 from pathlib import Path
-from config import VAULT_DIR, CREDENTIALS_PATH, TOKEN_PATH, NEEDS_ACTION, PLANS, PENDING_APPROVAL, APPROVED, DONE, FAILED, LOGS, PROCESSED_IDS, ENV_PATH
+from config import (
+    VAULT_DIR,
+    CREDENTIALS_PATH,
+    TOKEN_PATH,
+    NEEDS_ACTION,
+    LOGS,
+    PROCESSED_IDS,
+    ENV_PATH,
+    GMAIL_SCOPES,
+    GMAIL_QUERY,
+    GMAIL_POLL_INTERVAL,
+    load_processed_ids as config_load_processed_ids,
+    save_processed_ids as config_save_processed_ids,
+)
 import logging
 import pickle
 import base64
@@ -16,34 +29,30 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
+from workflow_utils import unique_path
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 # Define the scopes required for Gmail API
-SCOPES = [
-    'https://www.googleapis.com/auth/gmail.readonly',
-    'https://www.googleapis.com/auth/gmail.send',
-    'https://www.googleapis.com/auth/gmail.modify'
-]
+SCOPES = GMAIL_SCOPES
 
 class GmailWatcher:
     def __init__(self, vault_path=str(VAULT_DIR)):
         self.vault_path = Path(vault_path).resolve()
-        import os
-        self.credentials_path = Path(os.getenv('CREDENTIALS_PATH', './credentials/credentials.json'))
-        self.token_path = Path(os.getenv('TOKEN_PATH', './credentials/token.json'))
-        self.processed_ids_path = self.vault_path / "scripts" / "processed_ids.json"
-        self.needs_action_path = self.vault_path / "Needs_Action"
-        self.logs_path = self.vault_path / "Logs"
+        self.credentials_path = CREDENTIALS_PATH
+        self.token_path = TOKEN_PATH
+        self.processed_ids_path = PROCESSED_IDS
+        self.needs_action_path = NEEDS_ACTION
+        self.logs_path = LOGS
 
         # Create directories if they don't exist
         self.needs_action_path.mkdir(parents=True, exist_ok=True)
         self.logs_path.mkdir(parents=True, exist_ok=True)
 
         from dotenv import load_dotenv
-        load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
+        load_dotenv(dotenv_path=ENV_PATH)
         # Load config from environment variables
         self.config = {
             'vault_paths': {
@@ -120,28 +129,18 @@ class GmailWatcher:
 
     def load_processed_ids(self):
         """Load previously processed email IDs from JSON file"""
-        if self.processed_ids_path.exists():
-            try:
-                with open(self.processed_ids_path, 'r') as f:
-                    return set(json.load(f))
-            except json.JSONDecodeError:
-                logger.warning("Could not decode processed_ids.json, starting with empty set")
-                return set()
-        else:
-            logger.info("Processed IDs file not found, starting with empty set")
-            return set()
+        return config_load_processed_ids()
 
     def save_processed_ids(self):
         """Save processed email IDs to JSON file"""
-        with open(self.processed_ids_path, 'w') as f:
-            json.dump(list(self.processed_email_ids), f)
+        config_save_processed_ids(self.processed_email_ids)
 
     def get_unread_important_emails(self, max_retries=3):
         """Retrieve unread important emails from Gmail with retry logic"""
         import time
         for attempt in range(max_retries):
             try:
-                query = "is:unread in:inbox -category:promotions -category:social -category:updates"
+                query = GMAIL_QUERY
                 results = self.service.users().messages().list(
                     userId='me',
                     q=query,
@@ -251,8 +250,8 @@ class GmailWatcher:
             safe_subject = "untitled_email"
         safe_subject = safe_subject[:50]  # Limit length
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"email_{timestamp}_{safe_subject.replace(' ', '_')}.md"
-        filepath = self.needs_action_path / filename
+        filename = f"email_{timestamp}_{email_data['id']}_{safe_subject.replace(' ', '_')}.md"
+        filepath = unique_path(self.needs_action_path, filename)
 
         # Write the note with YAML frontmatter
         with open(filepath, 'w', encoding='utf-8') as f:
@@ -337,7 +336,7 @@ class GmailWatcher:
             import subprocess
             import sys
             vault_dir = str(VAULT_DIR)
-            python = f"{vault_dir}/.venv/bin/python"
+            python = sys.executable
             script = f"{vault_dir}/scripts/reasoning_loop.py"
             result = subprocess.run([python, script], capture_output=True, text=True)
             if result.returncode == 0:
@@ -370,7 +369,7 @@ def main():
 
     try:
         watcher = GmailWatcher()
-        watcher.run_continuous(interval_minutes=2)
+        watcher.run_continuous(interval_minutes=GMAIL_POLL_INTERVAL / 60)
     except Exception as e:
         logger.error(f"Failed to start Gmail Watcher: {e}")
         print(f"Error: {e}")

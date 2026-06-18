@@ -15,58 +15,14 @@ from pathlib import Path
 from config import VAULT_DIR, CREDENTIALS_PATH, TOKEN_PATH, NEEDS_ACTION, PLANS, PENDING_APPROVAL, APPROVED, DONE, FAILED, LOGS, PROCESSED_IDS, ENV_PATH
 from datetime import datetime
 import re
-
-
-def read_markdown_with_frontmatter(file_path):
-    """Read a markdown file and extract YAML frontmatter and content."""
-    with open(file_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-
-    if content.startswith('---'):
-        # Find the end of YAML frontmatter
-        parts = content.split('---', 2)
-        if len(parts) >= 3:
-            frontmatter_str = parts[1].strip()
-            markdown_content = parts[2].strip()
-
-            try:
-                frontmatter = yaml.safe_load(frontmatter_str)
-                return frontmatter, markdown_content
-            except yaml.YAMLError as e:
-                print(f"Error parsing YAML frontmatter: {e}")
-                return {}, content
-
-    return {}, content
-
-
-def read_company_handbook(vault_dir):
-    """Read the company handbook for context."""
-    handbook_path = vault_dir / 'Company_Handbook.md'
-    if handbook_path.exists():
-        with open(handbook_path, 'r', encoding='utf-8') as f:
-            return f.read()
-    return ""
+from email_drafts import create_email_approval_artifact, generate_email_reply, read_company_handbook
+from handbook_knowledge import CATEGORY_KEYWORDS, classify_university_email
+from workflow_utils import append_log, move_file, read_markdown_with_frontmatter
 
 
 def categorize_email_by_content(content):
-    """Classify email into specific categories"""
-    categories = {
-        'sales_inquiry': ['web development', 'project proposal', 'service offering', 'quote', 'pricing', 'estimate', 'collaboration', 'business opportunity', 'proposal'],
-        'support_issue': ['problem', 'issue', 'bug', 'error', 'trouble', 'help', 'support', 'fix', 'broken', 'not working'],
-        'networking': ['connect', 'linkedin', 'network', 'introduction', 'opportunity', 'collaboration', 'meet', 'relationship'],
-        'meeting_request': ['meeting', 'call', 'schedule', 'appointment', 'calendar', 'availability', 'zoom', 'teams', 'discuss'],
-        'informational': ['thank you', 'appreciate', 'nice to meet', 'follow up', 'update', 'just saying hi']
-    }
-
-    content_lower = content.lower()
-    scores = {}
-
-    for category, keywords in categories.items():
-        score = sum(1 for keyword in keywords if keyword in content_lower)
-        scores[category] = score
-
-    # Return the highest scoring category
-    return max(scores, key=scores.get) if max(scores.values()) > 0 else 'general'
+    """Classify email into university department categories."""
+    return classify_university_email(content)
 
 
 def calculate_priority_score(content, sender_importance=1):
@@ -110,88 +66,48 @@ def create_plan_based_on_advanced_rules(content, handbook_context, original_file
     """
     import re
 
-    # Enhanced pattern matching
-    patterns = {
-        'urgent_indicators': [
-            r'\burgen(t|cy|cies)',
-            r'asap',
-            r'as soon as possible',
-            r'by end of (day|week|month)',
-            r'immediately',
-            r'within (\d+) (hours|days)',
-            r'critical',
-            r'high priority',
-            r'expedited'
-        ],
-        'meeting_requests': [
-            r'(schedule|book|set up|arrange) (a )?meeting',
-            r'available for (a )?call',
-            r'when (are you|can we) talk',
-            r'sync up',
-            r'catch up',
-            r'zoom|teams|call',
-            r'calendar',
-            r'free (slot|time|time slot)',
-            r'appointment'
-        ],
-        'project_inquiries': [
-            r'web development',
-            r'project proposal',
-            r'service offering',
-            r'quote|pricing|cost|estimate',
-            r'estimate',
-            r'collaboration',
-            r'partnership',
-            r'business opportunity',
-            r'development work'
-        ],
-        'social_media': [
-            r'linkedin (post|share|article)',
-            r'social media',
-            r'content creation',
-            r'brand awareness',
-            r'post idea',
-            r'publish content'
-        ]
-    }
-
-    # Score content against patterns
-    scores = {}
-    for category, regex_list in patterns.items():
-        score = 0
-        for pattern in regex_list:
-            matches = re.findall(pattern, content.lower(), re.IGNORECASE)
-            score += len(matches)
-        scores[category] = score
-
-    # Determine action type based on highest scoring category
-    action_type = max(scores, key=scores.get) if max(scores.values()) > 0 else "manual"
+    category = classify_university_email(content)
 
     # Determine urgency
     urgency, priority_score = calculate_priority_score(content)
 
-    # Determine action type mapping
-    action_type_mapping = {
-        'urgent_indicators': 'email_send',
-        'meeting_requests': 'email_send',
-        'project_inquiries': 'email_send',
-        'social_media': 'linkedin_post',
-        'manual': 'manual'
-    }
-
-    final_action_type = action_type_mapping.get(action_type, 'manual')
-
     # Check for informational indicators
     content_lower = content.lower()
-    informational_indicators = ['no action needed', 'for reference', 'just for info', 'informational', 'as a note']
+    informational_indicators = [
+        'no action needed',
+        'for reference',
+        'just for info',
+        'informational',
+        'as a note',
+        'fyi',
+        'newsletter',
+        'announcement only',
+    ]
     is_informational = any(indicator in content_lower for indicator in informational_indicators)
 
     # Determine if action is required
-    action_keywords = ['email', 'send', 'contact', 'reach out', 'reply', 'response', 'linkedin', 'post', 'share', 'urgent', 'important', 'need to', 'required', 'request', 'ask']
-    action_required = any(keyword in content_lower for keyword in action_keywords) and not is_informational
+    question_or_request = '?' in content or any(
+        keyword in content_lower
+        for keyword in [
+            'please',
+            'kindly',
+            'can i',
+            'can you',
+            'how do',
+            'what is',
+            'when',
+            'where',
+            'need',
+            'request',
+            'help',
+            'eligible',
+            'allowed',
+        ]
+    )
+    action_required = question_or_request and not is_informational
 
     # Create more specific steps based on identified patterns
-    steps = generate_contextual_steps(action_type, content)
+    steps = generate_contextual_steps(category, content)
 
     # Create summary based on content
     lines = content.split('\n')
@@ -205,7 +121,8 @@ def create_plan_based_on_advanced_rules(content, handbook_context, original_file
         "summary": summary,
         "steps": steps,
         "action_required": "yes" if action_required else "no",
-        "action_type": final_action_type,
+        "action_type": "email_send" if action_required else "manual",
+        "category": category,
         "priority": urgency,
         "priority_score": priority_score
     }
@@ -214,35 +131,15 @@ def create_plan_based_on_advanced_rules(content, handbook_context, original_file
 def generate_contextual_steps(action_type, content):
     """Generate steps based on detected action type"""
     base_steps = [
-        "Analyze the request details thoroughly",
-        "Reference company handbook for guidelines",
-        "Prepare appropriate response/action"
+        "Identify the student's specific academic or administrative question",
+        "Retrieve the relevant undergraduate handbook policy section",
+        "Prepare a concise department reply grounded in the handbook"
     ]
 
-    if action_type == 'urgent_indicators':
-        base_steps.extend([
-            "Prioritize this request due to urgency indicators",
-            "Respond within 24 hours as specified",
-            "Escalate if needed"
-        ])
-    elif action_type == 'meeting_requests':
-        base_steps.extend([
-            "Check calendar availability",
-            "Propose suitable meeting times",
-            "Send calendar invite once agreed"
-        ])
-    elif action_type == 'project_inquiries':
-        base_steps.extend([
-            "Review project requirements",
-            "Prepare project proposal if appropriate",
-            "Coordinate with relevant team members"
-        ])
-    elif action_type == 'social_media':
-        base_steps.extend([
-            "Review content for brand alignment",
-            "Schedule for optimal posting time",
-            "Monitor engagement after posting"
-        ])
+    if action_type in CATEGORY_KEYWORDS:
+        base_steps.append(f"Classified as: {action_type.replace('_', ' ')}")
+    if action_type == 'general_inquiry':
+        base_steps.append("Ask for missing student/program details if the handbook does not answer it")
 
     base_steps.append("Document outcome and close the task")
     return base_steps
@@ -274,6 +171,9 @@ created: {datetime.now().isoformat()}
 status: pending
 priority: {plan_data.get('priority', 'medium')}
 priority_score: {plan_data.get('priority_score', 0)}
+action_type: {plan_data.get('action_type', 'manual')}
+action_required: {plan_data.get('action_required', 'no')}
+category: {plan_data.get('category', 'general_inquiry')}
 ---
 ## Task Summary
 {plan_data['summary']}
@@ -349,40 +249,7 @@ def log_detailed_action(action, filename, details=None, vault_dir=None):
 
 def log_action(action, filename, details=None, vault_dir=None):
     """Log the action to a daily log file."""
-    if vault_dir is None:
-        vault_dir = VAULT_DIR
-
-    today = datetime.now().strftime('%Y-%m-%d')
-    logs_dir = vault_dir / 'Logs'
-    logs_dir.mkdir(exist_ok=True)
-
-    log_file = logs_dir / f"{today}.json"
-
-    log_entry = {
-        "timestamp": datetime.now().isoformat(),
-        "action": action,
-        "filename": filename,
-        "details": details
-    }
-
-    # Read existing log or create new one
-    logs = []
-    if log_file.exists():
-        try:
-            with open(log_file, 'r') as f:
-                content = f.read().strip()
-                if content:
-                    logs = json.loads(content)
-                    if not isinstance(logs, list):
-                        logs = []
-        except (json.JSONDecodeError, ValueError):
-            # File is corrupted — reset it
-            logs = []
-
-    logs.append(log_entry)
-
-    with open(log_file, 'w') as f:
-        json.dump(logs, f, indent=2)
+    append_log(action, filename, details)
 
 
 def process_needs_action_files():
@@ -404,7 +271,7 @@ def process_needs_action_files():
     print(f"Found {len(md_files)} files to process")
 
     # Read company handbook for context
-    handbook_content = read_company_handbook(vault_dir)
+    handbook_content = read_company_handbook()
     processed_files = []
 
     for file_path in md_files:
@@ -425,13 +292,7 @@ def process_needs_action_files():
             processed_files.append({
                 'filename': file_path.name,
                 'category': plan_data.get('action_type', 'general'),
-                'priority': plan_data.get('priority', 'medium')
-            })
-
-            # Track processed file
-            processed_files.append({
-                'filename': file_path.name,
-                'category': plan_data.get('action_type', 'general'),
+                'action_type': plan_data.get('action_type', 'general'),
                 'priority': plan_data.get('priority', 'medium')
             })
 
@@ -449,9 +310,38 @@ def process_needs_action_files():
 
             # Move original file based on action required
             if plan_data['action_required'] == 'yes':
-                # Move to Pending_Approval/
-                new_location = move_file_to_destination(file_path, 'Pending_Approval', vault_dir)
-                print(f"Moved {file_path.name} to Pending_Approval/")
+                if plan_data['action_type'] == 'email_send':
+                    draft_body = generate_email_reply(
+                        original_content=content,
+                        original_subject=frontmatter.get('subject', file_path.stem),
+                        original_from=frontmatter.get('from', ''),
+                        handbook_context=handbook_content,
+                    )
+                    approval_path = create_email_approval_artifact(
+                        source_file=file_path,
+                        original_frontmatter=frontmatter,
+                        original_body=content,
+                        draft_body=draft_body,
+                    )
+                    new_location = move_file(file_path, DONE)
+                    print(f"Created approval draft: {approval_path.name}")
+                    print(f"Archived source email to Done/: {new_location.name}")
+
+                    log_action(
+                        action='approval_draft_created',
+                        filename=approval_path.name,
+                        details={
+                            'source_file': file_path.name,
+                            'destination': str(approval_path),
+                            'action_type': plan_data['action_type'],
+                            'category': plan_data.get('category'),
+                        },
+                        vault_dir=vault_dir
+                    )
+                else:
+                    # Non-email actions are already exact artifacts, so route them for review.
+                    new_location = move_file_to_destination(file_path, 'Pending_Approval', vault_dir)
+                    print(f"Moved {file_path.name} to Pending_Approval/")
 
                 log_action(
                     action='file_moved_to_approval',
@@ -484,113 +374,11 @@ def process_needs_action_files():
 
     return processed_files
 
-
-def generate_linkedin_post(vault_dir, handbook_content, processed_files):
-    """Auto-generate a LinkedIn post based on business activity."""
-    if not processed_files:
-        return
-
-    # Build post based on recent business activity
-
-    topics = []
-    for f in processed_files:
-        category = f.get('category', 'general')
-        action_type = f.get('action_type', 'general')
-        # Match both category names and action types
-        if category in ('sales_inquiry', 'project_inquiries') or action_type == 'email_send':
-            topics.append("client inquiries")
-        elif category == 'meeting_request':
-            topics.append("business meetings")
-        elif category == 'networking':
-            topics.append("networking opportunities")
-    # Always generate a post if emails were processed
-    if not topics:
-        topics.append("business communications")
-
-    # Try Groq API for post generation
-    post_content = None
-    try:
-        import requests
-        import os
-        from dotenv import load_dotenv
-        load_dotenv(vault_dir / 'scripts' / '.env')
-        groq_key = os.getenv('GROQ_API_KEY')
-
-        if groq_key:
-            response = requests.post(
-                "https://api.groq.com/openai/v1/chat/completions",
-                headers={
-                    "Authorization": f"Bearer {groq_key}",
-                    "Content-Type": "application/json"
-                },
-                json={
-                    "model": "llama-3.3-70b-versatile",
-                    "messages": [
-                        {
-                            "role": "system",
-                            "content": f"""You are a professional LinkedIn content writer.
-Write a short, engaging LinkedIn post to generate business leads.
-Keep it under 200 words. Include 3-5 relevant hashtags.
-Base it on the company context provided.
-Company context: {handbook_content[:300]}"""
-                        },
-                        {
-                            "role": "user",
-                            "content": f"Write a LinkedIn post about our business activity today. We handled: {', '.join(set(topics))}. Make it professional and engaging to attract potential clients."
-                        }
-                    ],
-                    "temperature": 0.8,
-                    "max_tokens": 300
-                },
-                timeout=10
-            )
-            if response.status_code == 200:
-                post_content = response.json()['choices'][0]['message']['content']
-    except Exception as e:
-        print(f"Groq API failed for LinkedIn post: {e}")
-
-    # Fallback post
-    if not post_content:
-        topic_str = ' and '.join(set(topics))
-        post_content = f"""Staying busy with {topic_str} today! 
-
-Our team is committed to delivering excellent results for every client inquiry we receive.
-
-If you're looking for professional services, we'd love to hear from you.
-
-#Business #ProfessionalServices #AI #Automation #BuildingInPublic"""
-
-    # Create the LinkedIn post file in Pending_Approval/
-    today = datetime.now().strftime('%Y%m%d_%H%M%S')
-    post_filename = f"linkedin_post_{today}.md"
-    post_path = vault_dir / 'Pending_Approval' / post_filename
-
-    post_content_md = f"""---
-type: linkedin_post
-title: "Auto-generated LinkedIn Post"
-created: {datetime.now().isoformat()}
----
-
-{post_content}"""
-
-    with open(post_path, 'w', encoding='utf-8') as f:
-        f.write(post_content_md)
-
-    print(f"Auto-generated LinkedIn post: {post_filename}")
-    print("Move from Pending_Approval/ to Approved/ to post on LinkedIn")
-
-
 def main():
     """Main entry point."""
     print("Starting Claude Reasoning Loop...")
-    processed_files = process_needs_action_files()
+    process_needs_action_files()
     print("Reasoning Loop completed!")
-
-    # Auto-generate LinkedIn post if emails were processed
-    if processed_files:
-        vault_dir = VAULT_DIR
-        handbook_content = read_company_handbook(vault_dir)
-        generate_linkedin_post(vault_dir, handbook_content, processed_files)
 
 
 if __name__ == "__main__":

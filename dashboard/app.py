@@ -8,6 +8,7 @@ import json
 import os
 import re
 import shutil
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -15,11 +16,13 @@ import yaml
 from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 
-app = Flask(__name__, static_folder="static", template_folder="templates")
-CORS(app)
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+from config import DASHBOARD_APPROVAL_TOKEN, ENVIRONMENT, VAULT_DIR
 
-# ── Vault root (go up one level from dashboard/) ──────────────────────────────
-VAULT_DIR = Path(__file__).parent.parent.resolve()
+app = Flask(__name__, static_folder="static", template_folder="templates")
+CORS(app, resources={r"/api/*": {"origins": ["http://127.0.0.1:*", "http://localhost:*"]}})
+
+# Vault root comes from scripts/config.py so dashboard and agents agree.
 
 FOLDERS = {
     "needs_action":     VAULT_DIR / "Needs_Action",
@@ -48,6 +51,32 @@ def parse_frontmatter(text: str) -> tuple[dict, str]:
             body = text[end + 3:].strip()
             return fm, body
     return {}, text.strip()
+
+
+def safe_filename(filename: str) -> str | None:
+    """Accept plain markdown filenames only; reject traversal and hidden files."""
+    if not filename or filename.startswith("."):
+        return None
+    if Path(filename).name != filename:
+        return None
+    if not filename.endswith(".md"):
+        return None
+    return filename
+
+
+def require_api_token():
+    if ENVIRONMENT == "production" and not DASHBOARD_APPROVAL_TOKEN:
+        return jsonify({"error": "Dashboard approval token is not configured"}), 503
+    if not DASHBOARD_APPROVAL_TOKEN:
+        return None
+    provided = request.headers.get("X-Approval-Token") or request.args.get("token")
+    if provided != DASHBOARD_APPROVAL_TOKEN:
+        return jsonify({"error": "Approval token required"}), 403
+    return None
+
+
+def require_write_token():
+    return require_api_token()
 
 
 def read_md_file(path: Path) -> dict:
@@ -142,6 +171,9 @@ def index():
 
 @app.route("/api/stats")
 def api_stats():
+    token_error = require_api_token()
+    if token_error:
+        return token_error
     stats = {
         "needs_action":     len(list(FOLDERS["needs_action"].glob("*.md"))) if FOLDERS["needs_action"].exists() else 0,
         "pending_approval": len(list(FOLDERS["pending_approval"].glob("*.md"))) if FOLDERS["pending_approval"].exists() else 0,
@@ -167,6 +199,9 @@ def api_stats():
 
 @app.route("/api/folder/<folder_key>")
 def api_folder(folder_key: str):
+    token_error = require_api_token()
+    if token_error:
+        return token_error
     if folder_key not in FOLDERS:
         return jsonify({"error": "Unknown folder"}), 404
     return jsonify(list_folder(folder_key))
@@ -174,8 +209,14 @@ def api_folder(folder_key: str):
 
 @app.route("/api/file/<folder_key>/<filename>")
 def api_file(folder_key: str, filename: str):
+    token_error = require_api_token()
+    if token_error:
+        return token_error
     if folder_key not in FOLDERS:
         return jsonify({"error": "Unknown folder"}), 404
+    filename = safe_filename(filename)
+    if not filename:
+        return jsonify({"error": "Invalid filename"}), 400
     path = FOLDERS[folder_key] / filename
     if not path.exists():
         return jsonify({"error": "File not found"}), 404
@@ -185,6 +226,12 @@ def api_file(folder_key: str, filename: str):
 @app.route("/api/approve/<filename>", methods=["POST"])
 def api_approve(filename: str):
     """Move a file from Pending_Approval → Approved."""
+    token_error = require_write_token()
+    if token_error:
+        return token_error
+    filename = safe_filename(filename)
+    if not filename:
+        return jsonify({"error": "Invalid filename"}), 400
     src = FOLDERS["pending_approval"] / filename
     if not src.exists():
         return jsonify({"error": "File not found in Pending_Approval"}), 404
@@ -199,6 +246,12 @@ def api_approve(filename: str):
 @app.route("/api/reject/<filename>", methods=["POST"])
 def api_reject(filename: str):
     """Move a file from Pending_Approval → Rejected."""
+    token_error = require_write_token()
+    if token_error:
+        return token_error
+    filename = safe_filename(filename)
+    if not filename:
+        return jsonify({"error": "Invalid filename"}), 400
     src = FOLDERS["pending_approval"] / filename
     if not src.exists():
         return jsonify({"error": "File not found in Pending_Approval"}), 404
@@ -213,11 +266,17 @@ def api_reject(filename: str):
 
 @app.route("/api/logs")
 def api_logs():
+    token_error = require_api_token()
+    if token_error:
+        return token_error
     return jsonify(load_all_logs())
 
 
 @app.route("/api/agent-log")
 def api_agent_log():
+    token_error = require_api_token()
+    if token_error:
+        return token_error
     log_file = FOLDERS["logs"] / "agent.log"
     if not log_file.exists():
         return jsonify({"lines": []})
@@ -231,6 +290,9 @@ def api_agent_log():
 @app.route("/api/all-items")
 def api_all_items():
     """Return every item across all workflow folders for the timeline view."""
+    token_error = require_api_token()
+    if token_error:
+        return token_error
     result = []
     for key in ["needs_action", "pending_approval", "approved", "done", "failed", "rejected", "plans"]:
         for item in list_folder(key):
@@ -243,6 +305,6 @@ def api_all_items():
 if __name__ == "__main__":
     host = os.getenv("HOST", "127.0.0.1")
     port = int(os.getenv("PORT", "5000"))
-    debug = os.getenv("DEBUG", "1").lower() not in {"0", "false", "no"}
+    debug = os.getenv("DEBUG", "0").lower() not in {"0", "false", "no"}
     print(f"🚀 AI Employee Dashboard running at http://{host}:{port}")
     app.run(debug=debug, port=port, host=host)

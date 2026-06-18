@@ -7,23 +7,33 @@ import logging
 import os
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
+from config import (
+    APPROVED,
+    DONE,
+    FAILED,
+    INBOX,
+    LOGS,
+    NEEDS_ACTION,
+    PENDING_APPROVAL,
+    PLANS,
+    REJECTED,
+    VAULT_DIR,
+)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Load configuration from .env
-load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 config = {
     'vault_paths': {
-        'inbox': os.getenv('INBOX_PATH', './Inbox'),
-        'needs_action': os.getenv('NEEDS_ACTION_PATH', './Needs_Action'),
-        'done': os.getenv('DONE_PATH', './Done'),
-        'pending_approval': os.getenv('PENDING_APPROVAL_PATH', './Pending_Approval'),
-        'approved': os.getenv('APPROVED_PATH', './Approved'),
-        'rejected': os.getenv('REJECTED_PATH', './Rejected'),
-        'logs': os.getenv('LOGS_PATH', './Logs'),
-        'plans': os.getenv('PLANS_PATH', './Plans'),
+        'inbox': INBOX.name,
+        'needs_action': NEEDS_ACTION.name,
+        'done': DONE.name,
+        'pending_approval': PENDING_APPROVAL.name,
+        'approved': APPROVED.name,
+        'rejected': REJECTED.name,
+        'logs': LOGS.name,
+        'plans': PLANS.name,
     },
     'watcher': {
         'recursive': os.getenv('WATCHER_RECURSIVE', 'true').lower() == 'true',
@@ -122,11 +132,7 @@ class VaultEventHandler(FileSystemEventHandler):
 
 def watch_vault_changes():
     """Start watching the vault for changes"""
-    vault_root = Path(".").resolve()  # Assuming we run from the vault root
-
-    # Navigate up to find the actual vault root if we're in the scripts directory
-    if 'scripts' in str(vault_root):
-        vault_root = vault_root.parent
+    vault_root = VAULT_DIR
 
     event_handler = VaultEventHandler(vault_root)
     observer = Observer()

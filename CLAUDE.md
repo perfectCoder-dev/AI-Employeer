@@ -11,10 +11,10 @@ A Personal AI Employee that monitors Gmail, reasons about tasks, and takes
 real-world actions with human approval. Local-first, agent-driven, HITL.
 
 ## Vault Location
-/Users/muhammadomerfarooq/Desktop/AI_Employee_Vault
+/Users/muhammadomerfarooq/Desktop/GitHub Repositories/AI_Employee_Vault
 
 ## Python Interpreter
-ALWAYS use: /Users/muhammadomerfarooq/Desktop/AI_Employee_Vault/.venv/bin/python
+ALWAYS use: /Users/muhammadomerfarooq/Desktop/GitHub Repositories/AI_Employee_Vault/scripts/.venv/bin/python
 NEVER use: python or python3 directly
 
 ---
@@ -26,9 +26,9 @@ These run automatically via launchd on startup:
 
 | Agent | Script | Schedule | What it does |
 |---|---|---|---|
-| Gmail Watcher | `scripts/gmail_watcher.py` | Every 2 min | Detects new emails → creates `.md` in `Needs_Action/` |
+| Gmail Watcher | `scripts/gmail_watcher.py` | launchd KeepAlive, polls every 2 min by default | Detects new emails → creates `.md` in `Needs_Action/` |
 | Approval Watcher | `scripts/approval_watcher.py` | Always on | Watches `Approved/` → routes to appropriate action handlers |
-| LinkedIn Poster | `scripts/linkedin_poster.py` | Always on | Watches for LinkedIn posts in `Approved/` → publishes to LinkedIn |
+| Web Dashboard | `dashboard/app.py` | Always on in production | Token-protected monitoring and approve/reject UI |
 
 ### Auto-triggered (No human needed)
 | Agent | Script | Trigger | What it does |
@@ -45,12 +45,12 @@ These run automatically via launchd on startup:
       ↓
 [AUTOMATIC] gmail_watcher.py triggers reasoning_loop.py automatically
       ↓
-[AUTOMATIC] Plan.md created → file moved to Pending_Approval/
+[AUTOMATIC] Plan.md created → exact draft/action created in Pending_Approval/
       ↓
 [HUMAN] Only step: drag file from Pending_Approval/ to Approved/
       ↓
 [AUTOMATIC] approval_watcher.py detects it → routes based on type:
-      ├─ email_send → sends reply via Gmail API → Done/
+      ├─ email_send → sends approved draft_body via Gmail API → Done/
       └─ linkedin_post → linkedin_poster.py → publishes to LinkedIn → Done/
 ```
 
@@ -71,7 +71,7 @@ Claude Code is only needed when:
 - Wait for human input (approval_watcher watches Approved/ automatically)
 
 **Only human action required:**
-- Drag file from Pending_Approval/ to Approved/ to approve
+- Review the exact draft/action in Pending_Approval/, then drag it to Approved/ to approve
 
 ---
 
@@ -98,15 +98,18 @@ All agents import from `scripts/config.py` which contains centralized constants:
 - `LOGS`: Logs/ folder
 - `PROCESSED_IDS`: processed_ids.json
 - `GROQ_MODEL`: llama-3.3-70b-versatile
+- `UNIVERSITY_HANDBOOK_PATH`: handbook markdown used for policy-grounded replies
+- `DASHBOARD_APPROVAL_TOKEN`: required in production for dashboard API access
 
 ---
 
 ## Rules
 See `docs/GUARDRAILS.md` for full safety rules. Summary:
 1. NEVER act without human approval for emails/LinkedIn
-2. ALWAYS use `.venv/bin/python`
+2. ALWAYS use `scripts/.venv/bin/python` from the vault root
 3. ALWAYS work from vault root
 4. NEVER commit credentials
+5. NEVER remove production dashboard token enforcement
 
 ## Agent Skills
 - `.claude/skills/gmail-watcher/SKILL.md` - Gmail Watcher Agent
@@ -132,7 +135,7 @@ URL: `http://127.0.0.1:5000`
 
 ### Start command:
 ```bash
-cd dashboard && python3 app.py
+cd dashboard && ../scripts/.venv/bin/python app.py
 ```
 
 ### What it exposes:
@@ -141,12 +144,26 @@ cd dashboard && python3 app.py
 - Full Activity Log from `Logs/*.json`
 - File detail modal (shows frontmatter + body of any vault file)
 - 8 REST API endpoints — all data read live from vault folders
+- `DASHBOARD_APPROVAL_TOKEN` protection for all API endpoints when configured
 - Auto-refreshes every 30 seconds
 
 ### Dependencies (system Python):
 ```bash
-python3 -m pip install flask flask-cors pyyaml --break-system-packages
+cd scripts && uv sync
 ```
+
+### Production token
+Generate a token with:
+```bash
+openssl rand -hex 32
+```
+
+Set it in `scripts/.env`:
+```bash
+DASHBOARD_APPROVAL_TOKEN=<generated-token>
+```
+
+In `ENVIRONMENT=production`, startup fails if this token is missing.
 
 ---
 

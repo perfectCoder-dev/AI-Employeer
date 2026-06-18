@@ -85,9 +85,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 // Function to send email
 async function sendEmail(to, subject, body) {
   try {
-    // Load credentials and token from the scripts directory
-    const credentialsPath = path.join(__dirname, '..', '..', 'scripts', 'scripts', 'credentials.json');
-    const tokenPath = path.join(__dirname, '..', '..', 'scripts', 'scripts', 'token.json');
+    const vaultDir = process.env.VAULT_DIR || path.resolve(__dirname, '..', '..');
+    const credentialsPath = process.env.CREDENTIALS_PATH || path.join(vaultDir, 'credentials', 'credentials.json');
+    const tokenPath = process.env.TOKEN_PATH || path.join(vaultDir, 'credentials', 'token.json');
 
     if (!fs.existsSync(credentialsPath)) {
       throw new Error(`Credentials file not found at ${credentialsPath}`);

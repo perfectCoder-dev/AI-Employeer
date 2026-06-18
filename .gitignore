@@ -14,6 +14,10 @@ processed_ids.json
 
 # Virtual environments
 .venv/
+.venv.nosync
+
+# Local Codex/agent cache
+.agents/
 
 # Node
 node_modules/

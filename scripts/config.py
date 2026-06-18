@@ -26,8 +26,12 @@ from pathlib import Path
 from typing import Optional
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
+ROOT_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from both supported locations. The scripts/.env
+# path is kept for existing installs; root .env is useful for local services.
+load_dotenv(ROOT_DIR / ".env")
+load_dotenv(ROOT_DIR / "scripts" / ".env", override=False)
 
 # ============================================================================
 # CORE PATHS — Read from environment, fallback to defaults
@@ -35,7 +39,7 @@ load_dotenv()
 
 VAULT_DIR = Path(os.getenv(
     "VAULT_DIR",
-    Path.home() / "Desktop" / "omer" / "AI_Employee_Vault"
+    ROOT_DIR
 )).expanduser().resolve()
 
 SCRIPTS_DIR = Path(os.getenv(
@@ -47,8 +51,14 @@ SCRIPTS_DIR = Path(os.getenv(
 # CREDENTIALS — Must exist and be readable
 # ============================================================================
 
-CREDENTIALS_PATH = VAULT_DIR / "credentials" / "credentials.json"
-TOKEN_PATH = VAULT_DIR / "credentials" / "token.json"
+CREDENTIALS_PATH = Path(os.getenv(
+    "CREDENTIALS_PATH",
+    VAULT_DIR / "credentials" / "credentials.json"
+)).expanduser().resolve()
+TOKEN_PATH = Path(os.getenv(
+    "TOKEN_PATH",
+    VAULT_DIR / "credentials" / "token.json"
+)).expanduser().resolve()
 
 # ============================================================================
 # WORKFLOW FOLDERS — Created automatically if missing
@@ -112,7 +122,10 @@ GMAIL_SCOPES = [
 GMAIL_POLL_INTERVAL = int(os.getenv("GMAIL_POLL_INTERVAL", "120"))
 
 # Gmail query to find emails that need action
-GMAIL_QUERY = "is:inbox -is:archived -is:spam newer_than:1d"
+GMAIL_QUERY = os.getenv(
+    "GMAIL_QUERY",
+    "is:unread in:inbox -category:promotions -category:social -category:updates"
+)
 
 # ============================================================================
 # LLM CONFIGURATION — Groq (for email reply generation)
@@ -122,12 +135,19 @@ GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")  # Must be set in .env
 
+# Knowledge base used to ground university email replies.
+UNIVERSITY_HANDBOOK_PATH = Path(os.getenv(
+    "UNIVERSITY_HANDBOOK_PATH",
+    VAULT_DIR / "docs" / "University_Handbook.md",
+)).expanduser().resolve()
+
 # ============================================================================
 # LINKEDIN CONFIGURATION
 # ============================================================================
 
 LINKEDIN_EMAIL = os.getenv("LINKEDIN_EMAIL")
 LINKEDIN_PASSWORD = os.getenv("LINKEDIN_PASSWORD")
+AUTO_LINKEDIN_POSTS = os.getenv("AUTO_LINKEDIN_POSTS", "false").lower() in {"1", "true", "yes", "on"}
 
 # ============================================================================
 # LOGGING CONFIGURATION
@@ -136,6 +156,10 @@ LINKEDIN_PASSWORD = os.getenv("LINKEDIN_PASSWORD")
 LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
 LOG_FORMAT = "%(asctime)s | %(name)s | %(levelname)s | %(message)s"
 LOG_FILE = LOGS / "agent.log"
+
+# Dashboard write endpoints require this token when set. In local development it
+# may be omitted, but production launchd/service configs should define it.
+DASHBOARD_APPROVAL_TOKEN = os.getenv("DASHBOARD_APPROVAL_TOKEN")
 
 # ============================================================================
 # TIMEOUTS & RETRY CONFIGURATION (defensive against flaky services)
@@ -223,7 +247,7 @@ def validate_config() -> bool:
     if not CREDENTIALS_PATH.exists():
         errors.append(
             f"❌ credentials.json missing: {CREDENTIALS_PATH}\n"
-            f"   → Run: python scripts/authenticate_gmail.py"
+            f"   → Run: scripts/.venv/bin/python scripts/authenticate_gmail.py"
         )
     else:
         logger.info(f"   ✅ credentials.json exists")
@@ -239,16 +263,16 @@ def validate_config() -> bool:
     else:
         warnings.append(
             f"⚠️  token.json missing (you'll need to authenticate)\n"
-            f"   → Run: python scripts/authenticate_gmail.py"
+            f"   → Run: scripts/.venv/bin/python scripts/authenticate_gmail.py"
         )
     
     # ENVIRONMENT VARIABLES
     logger.info("🔑 Secrets:")
     
     if not GROQ_API_KEY:
-        errors.append(
-            f"❌ GROQ_API_KEY not set in {ENV_PATH}\n"
-            f"   → Get free key at https://console.groq.com"
+        warnings.append(
+            f"⚠️  GROQ_API_KEY not set in {ENV_PATH}\n"
+            f"   → AI drafts will use deterministic templates"
         )
     else:
         logger.info(f"   ✅ GROQ_API_KEY is set")
@@ -280,6 +304,23 @@ def validate_config() -> bool:
         warnings.append(f"⚠️  Unknown ENVIRONMENT: {ENVIRONMENT}")
     else:
         logger.info(f"   ✅ Environment: {ENVIRONMENT}")
+
+    if ENVIRONMENT == "production" and not DASHBOARD_APPROVAL_TOKEN:
+        errors.append(
+            "❌ DASHBOARD_APPROVAL_TOKEN is not set\n"
+            "   → Production dashboard access must be token-protected"
+        )
+
+    if ENVIRONMENT == "production" and not TOKEN_PATH.exists():
+        errors.append(
+            f"❌ token.json missing in production: {TOKEN_PATH}\n"
+            f"   → Run: scripts/.venv/bin/python scripts/authenticate_gmail.py"
+        )
+
+    if ENVIRONMENT == "production" and not UNIVERSITY_HANDBOOK_PATH.exists():
+        errors.append(
+            f"❌ University handbook missing in production: {UNIVERSITY_HANDBOOK_PATH}"
+        )
     
     # SUMMARY
     logger.info("=" * 70)
@@ -309,7 +350,11 @@ def load_processed_ids() -> set:
     try:
         with open(PROCESSED_IDS, 'r') as f:
             data = json.load(f)
-            return set(data.get("ids", []))
+            if isinstance(data, list):
+                return set(data)
+            if isinstance(data, dict):
+                return set(data.get("ids", []))
+            return set()
     except (json.JSONDecodeError, IOError) as e:
         logging.getLogger("ai_employee").warning(
             f"Could not load processed_ids.json: {e}. Starting fresh."
