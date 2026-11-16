@@ -136,8 +136,8 @@ personal-ai-employee/
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/omerfa/personal-ai-employee
-cd personal-ai-employee
+git clone https://github.com/perfectCoder-dev/AI-Employeer
+cd AI-Employeer
 ```
 
 ### 2. Install Python dependencies
