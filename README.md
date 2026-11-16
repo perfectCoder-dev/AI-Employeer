@@ -1,12 +1,5 @@
 # 🤖 Personal AI Employee — Panaversity Hackathon 0
 
-**Author:** Muhammad Umar Farooq  
-**GitHub:** [omerfarooq223](https://github.com/omerfarooq223)  
-**Tier:** Silver  
-**Stack:** Claude Code + Obsidian + Python + Flask + Node.js + Gmail API + Groq LLaMA 3.3 70B
-
----
-
 ## What Is This?
 
 A fully autonomous Personal AI Employee that monitors your Gmail, reasons about incoming tasks, waits for your approval, and takes real-world actions — all while you stay in control.
@@ -143,7 +136,7 @@ personal-ai-employee/
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/omerfarooq223/personal-ai-employee
+git clone https://github.com/omerfa/personal-ai-employee
 cd personal-ai-employee
 ```
 
